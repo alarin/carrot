@@ -155,4 +155,4 @@ LOGGING = {
     }
 }
 
-from carrot_tickets import settings
+from carrot_tickets.settings import *

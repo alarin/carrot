@@ -1,0 +1,1684 @@
+[
+  {
+    "pk": 19,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_logentry",
+      "name": "Can add log entry",
+      "content_type": 7
+    }
+  },
+  {
+    "pk": 20,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_logentry",
+      "name": "Can change log entry",
+      "content_type": 7
+    }
+  },
+  {
+    "pk": 21,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_logentry",
+      "name": "Can delete log entry",
+      "content_type": 7
+    }
+  },
+  {
+    "pk": 1,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_group",
+      "name": "Can add group",
+      "content_type": 2
+    }
+  },
+  {
+    "pk": 4,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_group",
+      "name": "Can change group",
+      "content_type": 2
+    }
+  },
+  {
+    "pk": 7,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_group",
+      "name": "Can delete group",
+      "content_type": 2
+    }
+  },
+  {
+    "pk": 2,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_permission",
+      "name": "Can add permission",
+      "content_type": 1
+    }
+  },
+  {
+    "pk": 5,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_permission",
+      "name": "Can change permission",
+      "content_type": 1
+    }
+  },
+  {
+    "pk": 8,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_permission",
+      "name": "Can delete permission",
+      "content_type": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_user",
+      "name": "Can add user",
+      "content_type": 3
+    }
+  },
+  {
+    "pk": 6,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_user",
+      "name": "Can change user",
+      "content_type": 3
+    }
+  },
+  {
+    "pk": 9,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_user",
+      "name": "Can delete user",
+      "content_type": 3
+    }
+  },
+  {
+    "pk": 37,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_carrotprofile",
+      "name": "Can add carrot profile",
+      "content_type": 13
+    }
+  },
+  {
+    "pk": 38,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_carrotprofile",
+      "name": "Can change carrot profile",
+      "content_type": 13
+    }
+  },
+  {
+    "pk": 39,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_carrotprofile",
+      "name": "Can delete carrot profile",
+      "content_type": 13
+    }
+  },
+  {
+    "pk": 25,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_attachment",
+      "name": "Can add attachment",
+      "content_type": 12
+    }
+  },
+  {
+    "pk": 29,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_attachment",
+      "name": "Can change attachment",
+      "content_type": 12
+    }
+  },
+  {
+    "pk": 33,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_attachment",
+      "name": "Can delete attachment",
+      "content_type": 12
+    }
+  },
+  {
+    "pk": 26,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_project",
+      "name": "Can add project",
+      "content_type": 9
+    }
+  },
+  {
+    "pk": 30,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_project",
+      "name": "Can change project",
+      "content_type": 9
+    }
+  },
+  {
+    "pk": 34,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_project",
+      "name": "Can delete project",
+      "content_type": 9
+    }
+  },
+  {
+    "pk": 27,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_ticket",
+      "name": "Can add ticket",
+      "content_type": 11
+    }
+  },
+  {
+    "pk": 31,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_ticket",
+      "name": "Can change ticket",
+      "content_type": 11
+    }
+  },
+  {
+    "pk": 35,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_ticket",
+      "name": "Can delete ticket",
+      "content_type": 11
+    }
+  },
+  {
+    "pk": 28,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_version",
+      "name": "Can add version",
+      "content_type": 10
+    }
+  },
+  {
+    "pk": 32,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_version",
+      "name": "Can change version",
+      "content_type": 10
+    }
+  },
+  {
+    "pk": 36,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_version",
+      "name": "Can delete version",
+      "content_type": 10
+    }
+  },
+  {
+    "pk": 10,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_contenttype",
+      "name": "Can add content type",
+      "content_type": 4
+    }
+  },
+  {
+    "pk": 11,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_contenttype",
+      "name": "Can change content type",
+      "content_type": 4
+    }
+  },
+  {
+    "pk": 12,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_contenttype",
+      "name": "Can delete content type",
+      "content_type": 4
+    }
+  },
+  {
+    "pk": 13,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_session",
+      "name": "Can add session",
+      "content_type": 5
+    }
+  },
+  {
+    "pk": 14,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_session",
+      "name": "Can change session",
+      "content_type": 5
+    }
+  },
+  {
+    "pk": 15,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_session",
+      "name": "Can delete session",
+      "content_type": 5
+    }
+  },
+  {
+    "pk": 16,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_site",
+      "name": "Can add site",
+      "content_type": 6
+    }
+  },
+  {
+    "pk": 17,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_site",
+      "name": "Can change site",
+      "content_type": 6
+    }
+  },
+  {
+    "pk": 18,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_site",
+      "name": "Can delete site",
+      "content_type": 6
+    }
+  },
+  {
+    "pk": 22,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "add_migrationhistory",
+      "name": "Can add migration history",
+      "content_type": 8
+    }
+  },
+  {
+    "pk": 23,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "change_migrationhistory",
+      "name": "Can change migration history",
+      "content_type": 8
+    }
+  },
+  {
+    "pk": 24,
+    "model": "auth.permission",
+    "fields": {
+      "codename": "delete_migrationhistory",
+      "name": "Can delete migration history",
+      "content_type": 8
+    }
+  },
+  {
+    "pk": 1,
+    "model": "auth.group",
+    "fields": {
+      "name": "developer",
+      "permissions": []
+    }
+  },
+  {
+    "pk": 2,
+    "model": "auth.group",
+    "fields": {
+      "name": "pm",
+      "permissions": []
+    }
+  },
+  {
+    "pk": 3,
+    "model": "auth.group",
+    "fields": {
+      "name": "qa",
+      "permissions": []
+    }
+  },
+  {
+    "pk": 4,
+    "model": "auth.group",
+    "fields": {
+      "name": "designer",
+      "permissions": []
+    }
+  },
+  {
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+      "username": "root",
+      "first_name": "\u0422\u043e\u043b\u044f",
+      "last_name": "\u041b\u0430\u0440\u0438\u043d",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2012-08-25T14:18:15Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$10000$923t2gU2xnEb$XOGSRku6T5TGdPBl/S3Jr6zlFHrf/TTi5B3Tz9zSxSA=",
+      "email": "me@alarin.ru",
+      "date_joined": "2012-08-25T13:47:36Z"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "auth.user",
+    "fields": {
+      "username": "seva.ivanov",
+      "first_name": "\u0421\u0435\u0432\u0430",
+      "last_name": "\u0418\u0432\u0430\u043d\u043e\u0432",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-08-25T14:21:18Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$10000$EcXTqiErXug3$/0eWPPRkWsnyJe7lQILYdFezh6n1ASiBr3pxZdFQL30=",
+      "email": "",
+      "date_joined": "2012-08-25T14:21:18Z"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "auth.user",
+    "fields": {
+      "username": "max.kokosh",
+      "first_name": "\u041c\u0430\u043a\u0441\u0438\u043c",
+      "last_name": "\u041a\u043e\u043a\u043e\u0448",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-08-25T14:21:32Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$10000$Eye36oviMT9L$VVMkifNTu+rc4WoQYOCoq07Gj/u0NstKAf7AGbEFrtE=",
+      "email": "",
+      "date_joined": "2012-08-25T14:21:32Z"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "auth.user",
+    "fields": {
+      "username": "alex.k",
+      "first_name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439",
+      "last_name": "\u041a\u043b\u044b\u0448\u043d\u0438\u043a\u043e\u0432",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": "2012-08-25T14:22:10Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$10000$Gl6j9bunjRNP$yvltNYO2uy6ZM26e1D/H9S639WUMUsDIJCt6xgfukE0=",
+      "email": "",
+      "date_joined": "2012-08-25T14:22:10Z"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "carrot_tickets.project",
+    "fields": {
+      "slug": "stream",
+      "parent": null,
+      "name": "Stream"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "carrot_tickets.project",
+    "fields": {
+      "slug": "ios",
+      "parent": 1,
+      "name": "iOs"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "carrot_tickets.project",
+    "fields": {
+      "slug": "android",
+      "parent": 1,
+      "name": "Android"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "carrot_tickets.project",
+    "fields": {
+      "slug": "kids",
+      "parent": 1,
+      "name": "Kids"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "carrot_tickets.version",
+    "fields": {
+      "description": "\u0440\u0435\u043b\u0438\u0437 \u0431\u0438\u043b\u0434\u0430 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u044b-\u043f\u043b\u0430\u043d\u0448\u0435\u0442\u044b",
+      "end_date": "2012-08-24",
+      "is_completed": false,
+      "slug": "phone-02",
+      "project": 3,
+      "start_date": "2012-08-13",
+      "name": "Phone 0.2"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "carrot_tickets.version",
+    "fields": {
+      "description": "EST",
+      "end_date": "2012-08-24",
+      "is_completed": false,
+      "slug": "13",
+      "project": 2,
+      "start_date": "2012-08-09",
+      "name": "1.3"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "carrot_tickets.version",
+    "fields": {
+      "description": "\u0425\u043e\u0447\u0443 \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c",
+      "end_date": "2012-09-07",
+      "is_completed": false,
+      "slug": "131",
+      "project": 2,
+      "start_date": "2012-08-27",
+      "name": "1.3.1"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "carrot_tickets.version",
+    "fields": {
+      "description": "\u043f\u043e\u043a\u0443\u043f\u043a\u0430 \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0438, \u043f\u0440\u043e\u0438\u0433\u0440\u044b\u0432\u0430\u043d\u0438\u0435 \u0444\u0438\u043b\u044c\u043c\u043e\u0432",
+      "end_date": "2012-09-05",
+      "is_completed": false,
+      "slug": "02",
+      "project": 4,
+      "start_date": "2012-08-16",
+      "name": "0.2"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0423\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u043e: HTC Sensation Z710e\r\n\u0412\u0435\u0440\u0441\u0438\u044f Android: 4.0.3\r\n\r\n\u041d\u0430\u0436\u0430\u043b\u0430 \u043d\u0430 \"\u041c\u043e\u0438 \u0444\u0438\u043b\u044c\u043c\u044b\" - \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u043b\u0430\u0441\u044c \u043f\u043e \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u043e\u043c skorpi@yandex.ru/cvbxrf\r\n- \u043f\u0435\u0440\u0432\u044b\u0439 \u0440\u0430\u0437 \u043b\u0435\u043d\u0442\u0430 \u043c\u043e\u0438\u0445 \u0444\u0438\u043b\u044c\u043c\u043e\u0432 \u043f\u043e\u0434\u0433\u0440\u0443\u0437\u0438\u043b\u0430\u0441\u044c, \u043d\u0430\u0436\u0430\u043b\u0430 \u043d\u0430 \u0444\u0438\u043b\u044c\u043c \u043f\u043e\u0441\u0442\u0435\u0440\u0430 \"\u041c\u0430\u0440\u0430\u0434\u043e\u043d\u0430\" - \u043c\u0435\u043d\u044f \u0432\u044b\u043a\u0438\u043d\u0443\u043b\u043e \u0438\u0437 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f\r\n- \u043f\u0440\u0438 \u043f\u0435\u0440\u0435\u0437\u0430\u0445\u043e\u0434\u0435 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0438 \u043d\u0430 \u0436\u0430\u0442\u0438\u0438 \u043d\u0430 \"\u043c\u043e\u0438 \u0444\u0438\u043b\u044c\u043c\u044b\" \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u043b\u043e \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u0442\u044c\u0441\u044f \u0441\u043d\u043e\u0432\u0430, \u043d\u043e \u043f\u043e\u0441\u043b\u0435 \u0443\u0441\u043f\u0435\u0448\u043d\u043e\u0439 \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u0438 \u0432\u043c\u0435\u0441\u0442\u043e \u043b\u0435\u043d\u0442\u044b \u0444\u0438\u043b\u044c\u043c\u043e\u0432 \u0432\u044b\u0434\u0430\u0435\u0442\u0441\u044f \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \"\u0438\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e\" \u0441 \u0433\u0440\u0443\u0441\u0442\u043d\u044b\u043c \u0441\u043c\u0430\u0439\u043b\u043e\u043c",
+      "reporter": 1,
+      "created": "2012-08-25T16:27:47.204Z",
+      "number": "196",
+      "summary": "\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u044b \u0441 \"\u041c\u043e\u0438\u043c\u0438 \u0444\u0438\u043b\u044c\u043c\u0430\u043c\u0438\"",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:06.040Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 2,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041a\u043e\u043b\u043b\u0435\u0433\u0438!\r\n\r\n\u0412 \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0435 GA \u043d\u0435\u0442 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0439 \u043f\u043e\u043a\u0443\u043f\u043e\u043a, \u043f\u0435\u0440\u0435\u0434\u0430\u0432\u0430\u0435\u043c\u044b\u0445 \u0447\u0435\u0440\u0435\u0437 Event Value \u0438 Label, \u0445\u043e\u0442\u044f \u043c\u044b \u0438\u0445 \u0437\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u043b\u0438\r\n\r\n\u0421\u043e\u0431\u044b\u0442\u0438\u044f BuySuccess****\r\n\r\n\u0417\u0430\u0440\u0430\u043d\u0435\u0435 \u0441\u043f\u0430\u0441\u0438\u0431\u043e!\r\n",
+      "reporter": 1,
+      "created": "2012-08-25T16:28:06.431Z",
+      "number": "195",
+      "summary": "\u041d\u0435\u0442 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0439 \u043f\u043e\u043a\u0443\u043f\u043e\u043a \u0432 Google Analytics \u043f\u0435\u0440\u0435\u0434\u0430\u0432\u0430\u0435\u043c\u044b\u0445 \u0447\u0435\u0440\u0435\u0437  Event Value/Label",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:06.284Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u043d\u0430\u0434\u043e \u043f\u043e\u0440\u0435\u0441\u0435\u0447\u0438\u0442\u044c\r\n\u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u043e\u0433\u043e \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u044f \u043f\u043e \u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u0438 \u0434\u043b\u044f \u0432\u043e\u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0434\u0435\u043d\u0438\u044f \u0431\u0430\u0433\u0430 \u043e\u043f\u0438\u0441\u0430\u0442\u044c \u043d\u0435 \u043c\u043e\u0433\u0443 - \u0432\u044b\u0432\u0430\u043b\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u0432 \u0440\u0430\u0437\u043d\u044b\u0445 \u0441\u043b\u0443\u0447\u0430\u044f\u0445 \u043f\u0440\u0438 \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0435 \u043d\u0430\u0437\u0430\u0434\r\n\u0441\u043c.\u0444\u043e\u0442\u043e \u0432\u043e \u0432\u043b\u043e\u0436\u0435\u043d\u0438\u0438",
+      "reporter": 1,
+      "created": "2012-08-25T16:28:06.742Z",
+      "number": "193",
+      "summary": "\u041f\u0440\u0438 \u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u0438 \u043f\u0435\u0440\u0438\u043e\u0434\u0438\u0447\u0435\u0441\u043a\u0438 \u043f\u0440\u0438 \u0432\u043e\u0437\u0432\u0440\u0430\u0442\u0435 \u043d\u0430 \u0433\u043b\u0430\u0432\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0432\u044b\u0432\u0430\u043b\u0438\u0432\u0430\u0435\u0442\u0441\u044f \"\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e\"",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:06.562Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 4,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041f\u043e\u043a\u0430 \u043d\u0435 \u043c\u043e\u0433\u0443 \u043f\u0440\u0438\u043d\u044f\u0442\u044c \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \"\u041d\u0430\u0442\u044f\u0433\u0438\u0432\u0430\u043d\u0438\u0435 \u0434\u0438\u0437\u0430\u0439\u043d\u0430 \u0442\u0430\u0431\u0430 \u00ab\u0444\u0438\u043b\u044c\u043c\u044b\u00bb\"\r\n\u0421\u0435\u0439\u0447\u0430\u0441  \u043c\u0435\u043d\u044e \u0432 \u0442\u0430\u0431\u0435 \"\u0424\u0438\u043b\u044c\u043c\u044b\" \u0440\u0430\u0441\u0442\u044f\u0433\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u043d\u0430 \u0432\u0435\u0441\u044c \u044d\u043a\u0440\u0430\u043d, \u0430 \u043d\u0435 \u0434\u043e\u043b\u0436\u043d\u043e + \u0448\u0440\u0438\u0444\u0442\u044b \u043d\u0435 \u0442\u0435 - \u0441\u043c.\u0432\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0439 \u0444\u0430\u0439\u043b\r\n\r\npsd: http://yadi.sk/d/_rU4qveIEDVD",
+      "reporter": 1,
+      "created": "2012-08-25T16:28:07.043Z",
+      "number": "192",
+      "summary": "\u0421\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0434\u0438\u0437\u0430\u0439\u043d \u0442\u0430\u0431\u0430 \"\u0444\u0438\u043b\u044c\u043c\u044b\"",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:06.840Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 5,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041f\u043e\u043a\u0430 \u043d\u0435 \u043c\u043e\u0433\u0443 \u043f\u0440\u0438\u043d\u044f\u0442\u044c \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438: \"\u041d\u0430\u0442\u044f\u0433\u0438\u0432\u0430\u043d\u0438\u0435 \u0434\u0438\u0437\u0430\u0439\u043d\u0430 \u043f\u0430\u043d\u0435\u043b\u0438 \u0432\u044b\u0431\u043e\u0440\u0430 \u0436\u0430\u043d\u0440\u043e\u0432\"\r\n\r\n\u041c\u044b \u0434\u043e\u0433\u043e\u0432\u0430\u0440\u0438\u0432\u0430\u043b\u0438\u0441\u044c \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u0444\u0438\u043b\u044c\u0442\u0440\u0430\u0446\u0438\u044e/\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443 \u043f\u043e \u043c\u0430\u043a\u0435\u0442\u0430\u043c \u0434\u043b\u044f iPhone:\r\nhttps://streamlet.codebasehq.com/upload/730f74be-519a-26cf-7ac3-1162c0c7da7e/show/original (\u0435\u0434\u0438\u043d\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0435, \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443 \"\u043f\u043e \u0440\u0435\u0439\u0442\u0438\u043d\u0433\u0443\" \u043d\u0443\u0436\u043d\u043e \u0441\u0440\u0430\u0437\u0443 \u043f\u0435\u0440\u0435\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u0442\u044c \u0432 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443 \"\u043f\u043e \u0440\u0435\u0439\u0442\u0438\u043d\u0433\u0443 \u041a\u0438\u043d\u043e\u043f\u043e\u0438\u0441\u043a\u0430\")\r\n\u043f\u043e\u043a\u0430 \u0434\u0438\u0437\u0430\u0439\u043d \u0438 \u0432\u0435\u0440\u0441\u0442\u043a\u0430 \u0434\u0430\u043b\u0435\u043a\u0438 \u043e\u0442 \u043c\u0430\u043a\u0435\u0442\u043e\u0432\r\n\r\n-----------------------------------------------------------------------\r\n\u0423\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u043e: Sony Ericsson LT15i\r\n\u0432\u0435\u0440\u0441\u0438\u044f Android: 2.3.3",
+      "reporter": 1,
+      "created": "2012-08-25T16:28:07.305Z",
+      "number": "191",
+      "summary": "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u0444\u0438\u043b\u044c\u0442\u0440\u0430\u0446\u0438\u044e/\u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443 \u043f\u043e \u043c\u0430\u043a\u0435\u0442\u0430\u043c \u0434\u043b\u044f iPhone",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:07.214Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 6,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041f\u043e\u0438\u0441\u043a \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 - \u0432\u0432\u043e\u0436\u0443 \u0437\u0430\u043f\u0440\u043e\u0441 (\u043b\u044e\u0431\u043e\u0439), \u043d\u0430\u0436\u0438\u043c\u0430\u044e \u043d\u0430 \u0432\u0432\u043e\u0434, \u0437\u0430\u043f\u0440\u043e\u0441 \u0441\u0442\u0438\u0440\u0430\u0435\u0442\u0441\u044f \u0438 \u0432\u0441\u0451\r\n\r\n------------------------------------------------------\r\n\u0423\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u043e: Sony Ericsson LT15i\r\n\u0432\u0435\u0440\u0441\u0438\u044f Android: 2.3.3",
+      "reporter": 1,
+      "created": "2012-08-25T16:28:07.708Z",
+      "number": "190",
+      "summary": "\u041f\u043e\u0438\u0441\u043a \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:07.481Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 7,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0441\u0430\u0431\u0436",
+      "reporter": 1,
+      "created": "2012-08-25T16:28:08.014Z",
+      "number": "189",
+      "summary": "\u041f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e \u0434\u043e\u043b\u0436\u0435\u043d \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c\u0441\u044f \u0440\u0430\u0437\u0434\u0435\u043b \"\u0413\u043b\u0430\u0432\u043d\u0430\u044f\" - \u0441\u0435\u0439\u0447\u0430\u0441 \u0433\u0440\u0443\u0437\u044f\u0442\u0441\u044f \"\u0424\u0438\u043b\u044c\u043c\u044b\"",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:07.733Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 8,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0422\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043b\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0431\u0438\u043b\u0434 \u043d\u0430 Samsung Galaxy Tab (GT-P7500), Android 3.2 - \u043e\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u043b\u0430 \u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043d\u0430 \u044d\u043a\u0440\u0430\u043d\u0435 \u043b\u0435\u043d\u0442\u044b \"\u041d\u043e\u0432\u0438\u043d\u043a\u0438\". \u041e\u0442\u043b\u043e\u0436\u0438\u043b\u0430 \u0434\u0435\u0432\u0430\u0439\u0441 - \u044d\u043a\u0440\u0430\u043d \u043f\u043e\u0433\u0430\u0441.\r\n\u0427\u0435\u0440\u0435\u0437 \u043f\u0430\u0440\u0443 \u0447\u0430\u0441\u043e\u0432 \u0430\u043a\u0442\u0438\u0432\u0438\u0440\u043e\u0432\u0430\u043b\u0430 \u0434\u0435\u0432\u0430\u0439\u0441, \u043e\u0442\u043a\u0440\u044b\u043b\u0441\u044f \u0442\u043e\u0442 \u0436\u0435 \u044d\u043a\u0440\u0430\u043d \"\u041d\u043e\u0432\u0438\u043d\u043a\u0438\" \u0432 \u0440\u0435\u0436\u0438\u043c\u0435 \u043b\u0435\u043d\u0442\u044b - \u043f\u043e\u043f\u044b\u0442\u0430\u043b\u0430\u0441\u044c \u043d\u0430\u0436\u0430\u0442\u044c \u043d\u0430 \u043b\u043e\u0433\u043e\u0442\u0438\u043f, \u0447\u0442\u043e\u0431\u044b \u0432\u044b\u0439\u0442\u0438 \u043d\u0430 \u0433\u043b\u0430\u0432\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 - \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0437\u0430\u0432\u0438\u0441\u043b\u043e. \r\n\u041f\u0440\u0438 \u043f\u043e\u043f\u044b\u0442\u043a\u0435 \u043f\u0435\u0440\u0435\u0437\u0430\u0439\u0442\u0438 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 - \u0432\u0438\u0441\u0435\u043b \u0441\u0435\u043a\u0443\u043d\u0434 10 \u0447\u0435\u0440\u043d\u044b\u0439 \u044d\u043a\u0440\u0430\u043d, \u0430 \u043f\u043e\u0442\u043e\u043c \u0432\u044b\u0432\u0435\u043b\u043e\u0441\u044c \u0441\u0438\u0441\u0442\u0435\u043c\u043d\u043e\u0435 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \"\u041f\u0440\u0438\u043d\u043e\u0441\u0438\u043c \u0438\u0437\u0432\u0438\u043d\u0435\u043d\u0438\u044f. \u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0435 Stream (\u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 Stream) \u043d\u0435 \u043e\u0442\u0432\u0435\u0447\u0430\u0435\u0442\"\r\n",
+      "reporter": 1,
+      "created": "2012-08-25T16:44:08.133Z",
+      "number": "187",
+      "summary": "\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0432\u0438\u0441\u043d\u0435\u0442 \u043f\u043e\u0441\u043b\u0435 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0447\u0430\u0441\u043e\u0432 \u043d\u0430\u0445\u043e\u0436\u0434\u0435\u043d\u0438\u044f \u0432 \u0444\u043e\u043d\u043e\u0432\u043e\u043c \u0440\u0435\u0436\u0438\u043c\u0435",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:08.133Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 9,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0412 \u0445\u043e\u0434\u0435 \u044e\u0437\u0430\u0431\u0438\u043b\u0438\u0442\u0438-\u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f Android Tablet (8-\u044c\u044e \u043b\u044e\u0434\u044c\u043c\u0438 \u043d\u0430 \u043e\u0434\u043d\u043e\u043c \u043f\u043b\u0430\u043d\u0448\u0435\u0442\u0435 Samsung Galaxy Tab 10.1 \u043d\u0430 \u0431\u0430\u0437\u0435 Android 3.1.) \u0431\u044b\u043b\u0438 \u043e\u0431\u043d\u0430\u0440\u0443\u0436\u0435\u043d\u044b \u043a\u0440\u0438\u0442\u0438\u0447\u043d\u044b\u0435 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0441\u0431\u043e\u0438 \u0432 \u0445\u043e\u0434\u0435 \u043f\u043e\u043a\u0443\u043f\u043a\u0438: \r\n\r\n1. \u0422\u0440\u043e\u0435 \u0438\u0437 \u0432\u043e\u0441\u044c\u043c\u0438 \u043d\u0435 \u0441\u043c\u043e\u0433\u043b\u0438 \u043a\u0443\u043f\u0438\u0442\u044c \u0444\u0438\u043b\u044c\u043c, \u043f\u043e\u0442\u043e\u043c\u0443 \u0447\u0442\u043e \u043a\u043d\u043e\u043f\u043a\u0430 \"\u041a\u0443\u043f\u0438\u0442\u044c\" \u043d\u0435 \u0440\u0435\u0430\u0433\u0438\u0440\u043e\u0432\u0430\u043b\u0430; \r\n2. \u041e\u0434\u0438\u043d \u0440\u0435\u0441\u043f\u043e\u043d\u0434\u0435\u043d\u0442 \u043a\u0443\u043f\u0438\u043b \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0443, \u043d\u043e \u0447\u0435\u0440\u0435\u0437 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u0435\u043c\u0443 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0438\u043b\u0438 \u043a\u0443\u043f\u0438\u0442\u044c \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0443 \u0441\u043d\u043e\u0432\u0430; \r\n3. \u0420\u0435\u0441\u043f\u043e\u043d\u0434\u0435\u043d\u0442 \u0434\u043e\u0448\u0451\u043b \u0434\u043e \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0433\u043e \u0448\u0430\u0433\u0430 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u043e\u043f\u043b\u0430\u0442\u044b, \u043e\u043f\u043b\u0430\u0442\u0438\u043b, \u043d\u043e \u0437\u043d\u0430\u0447\u043e\u043a \u043a\u0443\u043f\u0438\u0442\u044c \u043d\u0435 \u043f\u043e\u043c\u0435\u043d\u044f\u043b\u0441\u044f \u043d\u0430 \u0437\u043d\u0430\u0447\u043e\u043a \u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c. \r\n    \u0432\u0442\u043e\u0440\u043e\u0439 \u0440\u0430\u0437 \u0440\u0435\u0441\u043f\u043e\u043d\u0434\u0435\u043d\u0442 \u043d\u0435 \u0441\u0442\u0430\u043b \u043f\u043e\u0432\u0442\u043e\u0440\u044f\u0442\u044c \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443 \u043e\u043f\u043b\u0430\u0442\u044b, \u043e\u043f\u0430\u0441\u0430\u044f\u0441\u044c, \u0447\u0442\u043e \u043c\u043e\u0436\u0435\u0442 \u043a\u0443\u043f\u0438\u0442\u044c \u043e\u0434\u043d\u0443 \u0438 \u0442\u0443\u0436\u0435 \u0443\u0441\u043b\u0443\u0433\u0443 \u0434\u0432\u0430\u0436\u0434\u044b.\r\n\r\n\u043d\u0443\u0436\u043d\u043e \u043f\u0440\u043e\u0440\u0435\u0441\u0435\u0440\u0447\u0438\u0442\u044c, \u0432 \u0447\u0435\u043c \u043c\u043e\u0433\u0443\u0442 \u0437\u0430\u043a\u043b\u044e\u0447\u0430\u0442\u044c\u0441\u044f \u043f\u043e\u0434\u043e\u0431\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b \u0438 \u043a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u0440\u043e\u0446\u0435\u0441\u0441 \u043f\u043e\u043a\u0443\u043f\u043a\u0438.",
+      "reporter": 1,
+      "created": "2012-08-25T16:44:08.429Z",
+      "number": "186",
+      "summary": "\u0420\u0430\u0437\u043e\u0431\u0440\u0430\u0442\u044c\u0441\u044f \u0441 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430\u043c\u0438 \u043f\u0440\u0438 \u043f\u043e\u043a\u0443\u043f\u043a\u0435 \u0444\u0438\u043b\u044c\u043c\u0430",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:08.429Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 10,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041d\u0430 Android Tablet \u0441\u043a\u0438\u043d\u0443\u043b\u0430\u0441\u044c \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u044f \u0437\u0430 \u0432\u044b\u0445\u043e\u0434\u043d\u044b\u0435: \u0442\u043e \u0435\u0441\u0442\u044c \u043e\u0442\u043a\u0440\u044b\u0442 \u0431\u044b\u043b \u043b\u0438\u0441\u0442 \"\u0425\u043e\u0447\u0443 \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c\" \u043d\u0435\u043f\u0443\u0441\u0442\u043e\u0439 (\u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u044f \u0431\u044b\u043b\u0430 \u0437\u0430\u043b\u043e\u0433\u0438\u043d\u0435\u043d\u0430), \u043d\u043e \u043a\u043e\u0433\u0434\u0430 \u043f\u0435\u0440\u0435\u0448\u043b\u0430 \u043d\u0430 \u0433\u043b\u0430\u0432\u043d\u0443\u044e - \u043e\u043a\u0430\u0437\u0430\u043b\u043e\u0441\u044c, \u0447\u0442\u043e \u044f \u0432\u043d\u0435 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430 \u0438 \u0441\u043f\u0438\u0441\u043e\u043a \"\u0425\u043e\u0447\u0443 \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c\" \u043d\u0430 \u0433\u043b\u0430\u0432\u043d\u043e\u0439 \u0431\u044b\u043b \u0443\u0436\u0435 \u043f\u0443\u0441\u0442\u043e\u0439",
+      "reporter": 1,
+      "created": "2012-08-25T16:44:08.706Z",
+      "number": "178",
+      "summary": "\u0427\u0435\u0440\u0435\u0437 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u0441\u043b\u0435\u0442\u0430\u0435\u0442 \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u044f",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:08.706Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 11,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0421\u043e\u0433\u043b\u0430\u0441\u043d\u043e \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438 \u0437\u0430\u0445\u043e\u0436\u0443\r\nhttps://developers.google.com/in-app-payments/\r\n\r\n\u041d\u0430\u0436\u0438\u043c\u0430\u044e Sign UP\r\n\r\n\u041b\u043e\u0433\u0438\u043d\u044e\u0441\u044c \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u043e\u043c, \u043e\u0442 \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u044e\u0442\u0441\u044f \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f\r\n\r\n\u041f\u043e\u043b\u0443\u0447\u0430\u044e \u043e\u0442\u0432\u0435\u0442 - \u0421\u0442\u0440\u0430\u043d\u0430, \u0433\u0434\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0432\u0430\u0448 Google \u041a\u043e\u0448\u0435\u043b\u0435\u043a (streamlet24@gmail.com), \u0441\u0435\u0439\u0447\u0430\u0441 \u043d\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442\u0441\u044f.\r\n\r\n\u0421\u043a\u0438\u043d \u0432 \u0430\u0442\u0442\u0430\u0447\u0435",
+      "reporter": 1,
+      "created": "2012-08-25T16:44:09.078Z",
+      "number": "170",
+      "summary": "\u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u0438\u043d\u0442\u0435\u0433\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c Google Wallet for digital goods API",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:09.078Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 12,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041d\u0430\u0448\u0438 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0449\u0438\u043a\u0438 \u043f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u043e \u0436\u0430\u043b\u0443\u044e\u0442\u0441\u044f, \u0447\u0442\u043e \u043e\u043d\u0438 \u043d\u0430\u043c \u0447\u0435\u0440\u0435\u0437 \u0430\u0434\u043c\u0438\u043d\u043a\u0443 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438 \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u044e\u0442/\u0437\u0430\u043b\u0438\u0432\u0430\u044e\u0442, \u0430 \u043d\u0430 \u043a\u043b\u0438\u0435\u043d\u0442\u0435 (\u043a\u0430\u043a \u043d\u0430 Android, \u0442\u0430\u043a \u0438 \u043d\u0430 iOS) \u043e\u043d\u0438 \u043d\u0435 \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0434\u0430\u0436\u0435 \u0432 \u0442\u0435\u0447\u0435\u043d\u0438\u0435 \u043f\u0430\u0440\u044b \u0434\u043d\u0435\u0439 - \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u043f\u0435\u0440\u0435\u0437\u0430\u043f\u0443\u0441\u043a\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f - \u044d\u0442\u043e \u043d\u0443\u0436\u043d\u043e \u043f\u043e\u043f\u0440\u0430\u0432\u0438\u0442\u044c. \u041e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438 \u0434\u043e\u043b\u0436\u043d\u044b \u043f\u043e\u044f\u0432\u043b\u044f\u0442\u044c\u0441\u044f \u043d\u0430 \u043a\u043b\u0438\u0435\u043d\u0442\u0435 \u043c\u0430\u043a\u0441\u0438\u043c\u0443\u043c \u0447\u0435\u0440\u0435\u0437 \u0447\u0430\u0441 \u043f\u043e\u0441\u043b\u0435 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f. \r\n\u0421\u043f\u0430\u0441\u0438\u0431\u043e.",
+      "reporter": 1,
+      "created": "2012-08-25T16:44:09.525Z",
+      "number": "169",
+      "summary": "\u0420\u0430\u0437\u043e\u0431\u0440\u0430\u0442\u044c\u0441\u044f \u0441 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435\u043c \u043a\u0430\u0440\u0442\u0438\u043d\u043e\u043a \u043d\u0430 \u043a\u043b\u0438\u0435\u043d\u0442\u0435 \u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:09.525Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 13,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u044f\u044f \u0441\u0441\u044b\u043b\u043a\u0430 \u043e\u0442 \u041a\u043e\u0441\u0442\u0438\r\nhttp://wvm.omlet.ru/vod/Viki_Kristina_Barselona_0_android_413651_device.mp4\r\n\r\n\u0421\u0435\u0433\u043e\u0434\u043d\u044f \u043d\u043e\u0447\u044c\u044e \u043e\u0431\u0435\u0449\u0430\u043b \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u043e\u0442 \u0413\u0443\u0433\u043b",
+      "reporter": 1,
+      "created": "2012-08-25T16:44:09.882Z",
+      "number": "168",
+      "summary": "\u0417\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044c WV \u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u043d\u0430 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430\u0445",
+      "project": 3,
+      "assignee": null,
+      "modified": "2012-08-25T16:44:09.882Z",
+      "fix_version": 1
+    }
+  },
+  {
+    "pk": 14,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0432 \"\u0423\u0442\u0438\u043d\u044b\u0445 \u0438\u0441\u0442\u043e\u0440\u0438\u044f\u0445\" \u043d\u0430 \u0441\u0435\u0440\u0438\u044f\u0445 \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u043e\u0434\u043d\u0430 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0430, \u0430 \u043d\u0430 \u0441\u0430\u043c\u043e\u043c \u0434\u0435\u043b\u0435 \u043e\u043d\u0438 \u0435\u0441\u0442\u044c \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 \u0443 \u0432\u0441\u0435\u0445 - http://stream.ru/serials/movie/id/22747364/",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:00.041Z",
+      "number": "41",
+      "summary": "\u041d\u0435 \"\u043f\u043e\u0434\u0441\u0430\u0441\u044b\u0432\u0430\u044e\u0442\u0441\u044f\" \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438 \u0443 \u0441\u0435\u0440\u0438\u0439 \u0441\u0435\u0440\u0438\u0430\u043b\u043e\u0432, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0443\u0436\u0435 \u0435\u0441\u0442\u044c \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:30.913Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 15,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0441\u0430\u0431\u0436 + \u0441\u043a\u0440\u0438\u043d\u0448\u043e\u0442\u044b \u0432\u043e \u0432\u043b\u043e\u0436\u0435\u043d\u0438\u0438",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:00.284Z",
+      "number": "40",
+      "summary": "\u041d\u0435\u043f\u043e\u043d\u044f\u0442\u043d\u043e\u0435 \u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u043f\u043e\u0441\u0442\u0435\u0440\u043e\u0432 \u0443 \"\u0410\u043b\u0438\u0441\"...",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:31.199Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 16,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0421\u043c\u043e\u0442\u0440\u0438\u043c \"\u0421\u043e\u044e\u0437\u043c\u0443\u043b\u044c\u0442\u0444\u0438\u043b\u044c\u043c\" - \u0442\u0430\u043c \u043e\u0442\u043a\u0443\u0434\u0430-\u0442\u043e \u043f\u043e\u044f\u0432\u043b\u044f\u0435\u0442\u044f \u0433\u043e\u043b\u0443\u0431\u0430\u044f \u043f\u043e\u043b\u043e\u0441\u043a\u0430\r\n+ \u043f\u043e\u0434\u043d\u0438\u043c\u0438\u0442\u0435 \u043d\u0435\u043c\u043d\u043e\u0433\u043e \u0443\u0440\u043e\u0432\u0435\u043d\u044c \u043a\u043d\u043e\u043f\u043a\u0438 \"\u043d\u0430\u0437\u0430\u0434\"",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:00.560Z",
+      "number": "39",
+      "summary": "\u041a\u0440\u0438\u0432\u0430\u044f \u0432\u0435\u0440\u0441\u0442\u043a\u0430 \u043f\u0440\u0438 \u043f\u043e\u043a\u0430\u0437\u0435 \u043a\u0430\u0441\u0442\u043e\u043c\u043d\u043e\u0433\u043e \u0444\u043e\u043d\u0430 \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0435\u043c \u044d\u043a\u0440\u0430\u043d\u0435",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:31.512Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 17,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0441\u0430\u0431\u0436",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:00.928Z",
+      "number": "38",
+      "summary": "\u0423 \u0442\u0438\u043f\u043e\u0432 collection \u043d\u0435 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043a\u043e\u043b\u043b\u0435\u043a\u0446\u0438\u0438 \u043d\u0430 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0435\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435, \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e \u0443 \u0442\u0438\u043f\u043e\u0432 \u0441\u0435\u0440\u0430\u043b\u043e\u0432 \u0438 \u0441\u0435\u0437\u043e\u043d\u043e\u0432",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:31.784Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 18,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0441\u0430\u0431\u0436 + \u0432\u043b\u043e\u0436\u0435\u043d\u0438\u0435",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:01.229Z",
+      "number": "37",
+      "summary": "\u0412\u043d\u0443\u0442\u0440\u0438 \u0435\u0434\u0443\u0442 \u043f\u043b\u0430\u0448\u043a\u0438 \u043d\u0430 \u043f\u043e\u0441\u0442\u0435\u0440\u0430\u0445 - \u0438\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:32.060Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 19,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0441\u0430\u0431\u0436",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:01.574Z",
+      "number": "36",
+      "summary": "\u041d\u0430 \u0442\u0440\u043e\u0439\u043d\u044b\u0445 \u043f\u043b\u0430\u0448\u043a\u0430\u0445 \u043f\u0435\u0440\u0432\u043e\u0433\u043e \u0443\u0440\u043e\u0432\u043d\u044f \u043d\u0443\u0436\u043d\u043e \u0443\u0432\u0435\u043b\u0438\u0447\u0438\u0442\u044c \u0440\u0430\u0437\u043c\u0435\u0440 \u043f\u043b\u0430\u0448\u043a\u0438, \u0447\u0442\u043e\u0431\u044b \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u044f \u043d\u0435 \u043e\u0431\u0440\u0435\u0437\u0430\u043b\u0438\u0441\u044c \u0438 \u043d\u0435 \u0431\u044b\u043b\u043e \u0442\u0440\u043e\u0435\u0442\u043e\u0447\u0438\u0439",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:32.336Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 20,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0441\u0430\u0431\u0436...\r\n\u043a \u043f\u0440\u0438\u043c\u0435\u0440\u0443, \u0441\u0435\u0439\u0447\u0430\u0441 \u043d\u0430 \"\u0421\u043e\u044e\u0437\u043c\u0443\u043b\u044c\u0442\u0444\u0438\u043b\u044c\u043c\u0435\" \u0432 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440\u0435 44, \u0430 \u043d\u0430 \u0441\u0430\u043c\u043e\u043c \u0434\u0435\u043b\u0435 \u043d\u0430\u0434\u043e \u043f\u043e\u0441\u0447\u0438\u0442\u0430\u0442\u044c \u0435\u0449\u0435 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \"38 \u043f\u043e\u043f\u0443\u0433\u0430\u0435\u0432\",  \"\u041c\u0443\u043c\u043c\u0438-\u0442\u0440\u043e\u043b\u044f\", \u041a\u043e\u0442\u0430 \u041b\u0435\u043e\u043f\u043e\u043b\u044c\u0434\u0430\"\"",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:01.845Z",
+      "number": "35",
+      "summary": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0432\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0434\u043e\u043b\u0436\u0435\u043d \u0441\u0447\u0438\u0442\u0430\u0442\u044c \u0432\u0441\u0435 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u0432\u0441\u0435\u0445 \u0443\u0440\u043e\u0432\u043d\u0435\u0439",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:32.642Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 21,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0434\u043e\u0431\u0430\u0432\u044c\u0442\u0435 last-modified header \u043a \u043e\u0442\u0432\u0435\u0442\u0443 \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u043d\u0430 http://deti.omlet.ru/exjson.json\r\n\r\nLast-Modified: Wed, 15 Nov 1995 04:58:08 GMT\r\n\r\n\u0442\u0430\u043a \u043c\u044b \u0441\u043c\u043e\u0436\u0435\u043c \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e layout \u043f\u0435\u0440\u0435\u0440\u0438\u0441\u043e\u0432\u044b\u0432\u0430\u0442\u044c",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:02.191Z",
+      "number": "34",
+      "summary": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c header last-modified \u043f\u0440\u0438 \u043e\u0442\u0434\u0430\u0447\u0435 json",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:32.993Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 22,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041d\u0443\u0436\u043d\u043e \u0441\u0434\u0435\u043b\u0430\u0442\u044c, \u0447\u0442\u043e\u0431\u044b \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438-\u043f\u043e\u0441\u0442\u0435\u0440\u044b \u0441\u043d\u0430\u0447\u0430\u043b\u0430 \u043f\u044b\u0442\u0430\u043b\u0438\u0441\u044c \u043f\u043e\u0434\u0433\u0440\u0443\u0436\u0430\u0442\u044c\u0441\u044f \u0438\u0437 URL \u0432 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0435 \"custom_poster\":\"\" \u0438 \u0442\u043e\u043b\u044c\u043a\u043e \u0435\u0441\u043b\u0438 \u044d\u0442\u043e \u043f\u043e\u043b\u0435 \u043f\u0443\u0441\u0442\u043e\u0435 - \u0433\u0440\u0443\u0437\u0438\u043b\u0438 \u043f\u043e ID-\u0448\u043d\u0438\u043a\u0443 \u0441 \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0433\u043e \u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:02.500Z",
+      "number": "33",
+      "summary": "\u041b\u043e\u0433\u0438\u043a\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438 \u043f\u043e\u0441\u0442\u0435\u0440\u043e\u0432",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:33.293Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 23,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0434\u0438\u0437\u0430\u0439\u043d \u0431\u0435\u0440\u0435\u043c \u043e\u0434\u0438\u043d \u0432 \u043e\u0434\u0438\u043d \u0441\u043e \u0432\u0437\u0440\u043e\u0441\u043b\u043e\u0433\u043e \u0441\u0442\u0440\u0438\u043c\u0430",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:02.841Z",
+      "number": "32",
+      "summary": "\u0424\u043e\u0440\u043c\u0430 \u0432\u0445\u043e\u0434\u0430",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:33.669Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 24,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041d\u0415 \u043f\u043e \u043c\u0430\u043a\u0435\u0442\u0430\u043c, \u0431\u0435\u043b\u044b\u0439 \u0442\u0435\u043a\u0441\u0442 \u043d\u0430 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u043e\u043c \u0441\u0438\u043d\u0435\u043c \u0444\u043e\u043d\u0435, \u0431\u0435\u0440\u0435\u0442\u0441\u044f \u043f\u043e \u0441\u0441\u044b\u043b\u043a\u0435 \u043a\u0430\u043a \u0438 \u0432 \u0431\u043e\u043b\u044c\u0448\u043e\u043c \u0441\u0442\u0440\u0438\u043c\u0435",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:03.149Z",
+      "number": "31",
+      "summary": "EULA",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:33.982Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 25,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u043e\u0442\u043a\u0440\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u044b\u0439 \u044d\u043a\u0440\u0430\u043d \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u043f\u043e\u0447\u0442\u044b, \u0435\u0441\u043b\u0438 \u0435\u0433\u043e \u043d\u0435\u0442 \u0442\u043e alert\r\n\r\n\u041f\u043e\u0447\u0442\u043e\u0432\u044b\u0439 \u0430\u0434\u0440\u0435\u0441: kids@stream.ru",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:03.439Z",
+      "number": "30",
+      "summary": "\u041f\u0438\u0448\u0438\u0442\u0435 \u043d\u0430\u043c",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:34.213Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 26,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:46:34.523Z",
+      "number": "28",
+      "summary": "\u0421\u0441\u044b\u043b\u043a\u0430 \u0432 iTunes \u043d\u0430 \u0432\u0437\u0440\u043e\u0441\u043b\u044b\u0439 \u0421\u0442\u0440\u0438\u043c",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:34.523Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 27,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:34.816Z",
+      "number": "27",
+      "summary": "\u0412\u044b\u0435\u0437\u0436\u0430\u044e\u0449\u0430\u044f \u043f\u0430\u043d\u0435\u043b\u044c \u043b\u043e\u0433\u0438\u043d\u0430, \u0435\u0443\u043b\u044b \u0438 \u043d\u0430\u043f\u0438\u0448\u0438\u0442\u0435 \u043d\u0430\u043c",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:34.816Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 28,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:35.074Z",
+      "number": "26",
+      "summary": "\u0418\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440 \u043e\u0441\u0442\u0430\u0432\u0448\u0435\u0433\u043e\u0441\u044f \u0432\u0440\u0435\u043c\u0435\u043d\u0438 \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0438 + \u043a\u043d\u043e\u043f\u043a\u0430 \u043f\u043e\u043a\u0443\u043f\u043a\u0438",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:35.074Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 29,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:46:35.351Z",
+      "number": "25",
+      "summary": "\u041f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0435 \u043e\u0431\u044a\u0435\u043a\u0442\u0430 \u0444\u0438\u043b\u044c\u043c\u0430 \u043f\u043e ContentID",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:35.351Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 30,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:46:35.658Z",
+      "number": "24",
+      "summary": "\u0412\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u0435 \u043e\u0431\u0449\u0435\u0439 \u043b\u043e\u0433\u0438\u043a\u0438 \u043f\u0440\u043e\u0438\u0433\u0440\u044b\u0432\u0430\u043d\u0438\u044f \u0444\u0438\u043b\u044c\u043c\u043e\u0432, \u0438\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u044f WV",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:35.659Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 31,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:46:35.930Z",
+      "number": "23",
+      "summary": "\u0412\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u0435 \u043e\u0431\u0449\u0435\u0439 \u043b\u043e\u0433\u0438\u043a\u0438 \u043f\u043e\u043a\u0443\u043f\u043a\u0438",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:35.930Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 32,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:46:36.202Z",
+      "number": "22",
+      "summary": "\u0412\u043d\u0435\u0434\u0440\u0435\u043d\u0438\u0435 \u043e\u0431\u0449\u0435\u0439 \u043b\u043e\u0433\u0438\u043a\u0438 \u0432\u0445\u043e\u0434\u0430",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:36.203Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 33,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0416\u0434\u0435\u043c \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:36.463Z",
+      "number": "21",
+      "summary": "\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u043e\u0431\u0449\u0435\u0439 \u043b\u043e\u0433\u0438\u043a\u0438 \u043d\u0430 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u0443\u044e \u0440\u0430\u0431\u043e\u0442\u0443 \u0441 \u0440\u0430\u0437\u043d\u044b\u043c\u0438 \u0442\u0438\u043f\u0430\u043c\u0438 \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0438",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:36.463Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 34,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:46:36.754Z",
+      "number": "20",
+      "summary": "\u0412\u044b\u043d\u0435\u0441\u0435\u043d\u0438\u0435 \u043e\u0431\u0449\u0435\u0439 \u043b\u043e\u0433\u0438\u043a\u0438 \u043f\u0440\u043e\u0438\u0433\u0440\u044b\u0432\u0430\u043d\u0438\u044f \u0444\u0438\u043b\u044c\u043c\u043e\u0432 \u0438\u0437 \u0431\u043e\u043b\u044c\u0448\u043e\u0433\u043e \u0421\u0442\u0440\u0438\u043c\u0430",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:36.754Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 35,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:46:37.108Z",
+      "number": "19",
+      "summary": "\u0412\u044b\u043d\u0435\u0441\u0435\u043d\u0438\u0435 \u043e\u0431\u0449\u0435\u0439 \u043b\u043e\u0433\u0438\u043a\u0438 \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u0438 \u043f\u043e \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0443",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:37.108Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 36,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:46:37.377Z",
+      "number": "18",
+      "summary": "\u0412\u044b\u043d\u0435\u0441\u0435\u043d\u0438\u0435 \u043e\u0431\u0449\u0435\u0439 \u043b\u043e\u0433\u0438\u043a\u0438 \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u0438\u0437 \u0431\u043e\u043b\u044c\u0448\u043e\u0433\u043e \u0421\u0442\u0440\u0438\u043c\u0430",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:37.377Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 37,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "json (\u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0430 \u0432 \u0431\u044d\u043a\u0433\u0440\u0430\u0443\u043d\u0434\u0435 -> \u0435\u0441\u043b\u0438 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d, \u0442\u043e \u043f\u0435\u0440\u0435\u0445\u043e\u0434 \u043d\u0430 \u0433\u043b\u0430\u0432\u043d\u044b\u0439 \u044d\u043a\u0440\u0430\u043d), \u0444\u043e\u043d\u044b \u043d\u0430\u0432\u0441\u0435\u0433\u0434\u0430 \u043a\u043b\u0430\u0434\u0443\u0442\u0441\u044f \u0432 \u043a\u0435\u0448",
+      "reporter": 1,
+      "created": "2012-08-25T16:46:37.666Z",
+      "number": "17",
+      "summary": "\u0421\u043a\u0430\u0447\u0438\u0432\u0430\u043d\u0438\u0435 JSON \u0438 \u0444\u043e\u043d\u043e\u0432 \u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+      "project": 4,
+      "assignee": null,
+      "modified": "2012-08-25T16:46:37.666Z",
+      "fix_version": 4
+    }
+  },
+  {
+    "pk": 38,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "feature",
+      "description": "\u041a\u043e\u0441\u0442\u044f, \u044f, \u0432\u0438\u0434\u0438\u043c\u043e, \u0447\u0442\u043e-\u0442\u043e \u043f\u0435\u0440\u0435\u043f\u0443\u0442\u0430\u043b.\r\n\r\n\u0421\u0435\u0439\u0447\u0430\u0441 \u043a\u0443\u043f\u043b\u0435\u043d\u043d\u0430\u044f \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0430 \u043d\u0430 \u043e\u0434\u043d\u043e\u043c \u0430\u0439\u043f\u0430\u0434\u0435 \u043d\u0435 \u043f\u0435\u0440\u0435\u043d\u043e\u0441\u0438\u0442\u0441\u044f \u043d\u0430 \u0434\u0440\u0443\u0433\u043e\u0439 \u0430\u0439\u043f\u0430\u0434 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e.\r\n\u0422.\u0435. \u043f\u0440\u043e\u0438\u0441\u0445\u043e\u0434\u0438\u0442 \u0435\u0449\u0435 \u043e\u0434\u043d\u0430 \u043f\u043e\u043a\u0443\u043f\u043a\u0430 \u0432 iTunes. \u042d\u0442\u043e \u043d\u043e\u0440\u043c\u0430\u043b\u044c\u043d\u043e?",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:01.704Z",
+      "number": "278",
+      "summary": "\u0434\u043e\u043b\u0436\u043d\u0430 \u043b\u0438 \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0430 \u043a\u0443\u043f\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u0430 ios \u043f\u0435\u0440\u0435\u043d\u043e\u0441\u0438\u0442\u044c\u0441\u044f \u043d\u0430 \u0434\u0440\u0443\u0433\u043e\u0435 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u043e \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:01.705Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 39,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041e\u0442\u043c\u0435\u0442\u0438\u0442\u044c \u043f\u0435\u0440\u0432\u043e\u0435 \u043f\u0440\u043e\u0438\u0433\u0440\u044b\u0432\u0430\u043d\u0438\u0435 \u0444\u0438\u043b\u044c\u043c\u0430 - v3.4\r\nGET /context/set_first_play/\r\n\u041c\u0435\u0442\u043e\u0434 \u0432\u044b\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u0434\u043b\u044f \u0442\u043e\u0433\u043e, \u0447\u0442\u043e\u0431\u044b \u043e\u0442\u043c\u0435\u0442\u0438\u0442\u044c \u043f\u0435\u0440\u0432\u043e\u0439 \u043f\u0440\u043e\u0438\u0433\u0440\u044b\u0432\u0430\u043d\u0438\u0435 \u0444\u0438\u043b\u044c\u043c\u0430 \u0432 \u0411\u0414.\r\n\u041d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0434\u043b\u044f \u043d\u0435\u0430\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f. \u041f\u0440\u0438 \u043d\u0435\u0432\u0430\u043b\u0438\u0434\u043d\u043e\u0439 \u0441\u0435\u0441\u0441\u0438\u0438 \u0434\u043e\u043b\u0436\u0435\u043d \u0432\u044b\u0434\u0430\u0432\u0430\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0443 0506.\r\n\r\n\u042e\u043b\u044f \u0433\u043e\u0432\u043e\u0440\u0438\u0442, \u0447\u0442\u043e set_first_play \u043d\u0443\u0436\u043d\u043e \u0432\u044b\u0437\u044b\u0432\u0430\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f tvod \u0444\u0438\u043b\u044c\u043c\u043e\u0432. \u0415\u0441\u043b\u0438 \u044d\u0442\u043e \u0442\u0430\u043a, \u043f\u043e\u043f\u0440\u0430\u0432\u044c\u0442\u0435, \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u044e.",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:01.994Z",
+      "number": "275",
+      "summary": "\u041f\u043e\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u044e \u043f\u0440\u043e set_first_play",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:01.994Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 40,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041a\u043d\u043e\u043f\u043a\u0443 \u0442\u0440\u0435\u0439\u043b\u0435\u0440 \u043f\u0435\u0440\u0435\u043d\u0435\u0441\u0442\u0438 \u0441\u043e\u0433\u043b\u0430\u0441\u043d\u043e \u0434\u0438\u0437\u0430\u0439\u043d\u0443:\r\n\r\niPad: https://streamlet.codebasehq.com/upload/72e8142b-a20f-d041-1f82-e0049948b478/show/original\r\niPhone: https://streamlet.codebasehq.com/upload/c8c5a126-33a6-3da0-46fc-8b723610d7ca/show/original",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:02.248Z",
+      "number": "274",
+      "summary": "\u0421\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0432\u044b\u0437\u043e\u0432\u0430 \u0442\u0440\u0435\u0439\u043b\u0435\u0440\u0430",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:02.248Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 41,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0412 \u0444\u043e\u0440\u043c\u0430\u0442\u0435 \u0444\u0438\u043b\u044c\u043c\u0430 \u0434\u043e\u043f\u0443\u0449\u0435\u043d\u0430 \u043e\u0448\u0438\u0431\u043a\u0430, \u0432\u043e\u0442 \u043f\u0440\u0438\u043c\u0435\u0440 \u0437\u0430\u043f\u0440\u043e\u0441\u0430: http://staging.api.stmbb.ru/promotion/?client=tablet_ios_app%7C1%2E21&device_model=iPad&device_id=911a60b7-0430-433e-b660-0f0bac708da7&device_firmware=iPhone%2BOS%2B5%252E1%252E1& \u0432 \u043e\u0442\u0432\u0435\u0442\u0435 \u043c\u044b \u0432\u0438\u0434\u0438\u043c, \u0447\u0442\u043e \u0443 \u0444\u0438\u043b\u044c\u043c\u043e\u0432 \u043f\u043e\u043b\u044f Actors \u0438  Directors \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u044e\u0442 \u0438\u0437 \u0441\u0435\u0431\u044f \u043c\u0430\u0441\u0441\u0438\u0432 \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432, \u0430 \u044d\u0442\u043e \u043d\u0435 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e, \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u043c\u0430\u0441\u0441\u0438\u0432 \u043e\u0431\u044a\u0435\u043a\u0442\u043e\u0432, \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u0443\u0431\u0440\u0430\u0442\u044c \u043b\u0438\u0448\u043d\u0438\u0435 \u043a\u0432\u0430\u0434\u0440\u0430\u0442\u043d\u044b\u0435 \u0441\u043a\u043e\u0431\u043a\u0438.\r\n\r\n\u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u0434\u043e\u043f\u0438\u0441\u044b\u0432\u0430\u044e",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:02.616Z",
+      "number": "273",
+      "summary": "\u043f\u043e\u043b\u043e\u0432\u0438\u043d\u0430 staging \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:02.616Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 42,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0434\u043b\u044f \u0437\u0430\u043f\u0440\u043e\u0441\u0430 \u043a\u0430\u0440\u0442\u0438\u043d\u043e\u043a \u0441\u0435\u0440\u0432\u0435\u0440 \u043d\u0430\u043c \u043f\u0440\u0438 \u0441\u0442\u0430\u0440\u0442\u0435 \u043e\u0442\u0434\u0430\u0435\u0442 \u0442\u0435\u043c\u043f\u043b\u0435\u0439\u0442 http://media.omlet.ru/media/img/${content_type}/${group}/${profile}/${pk}/${width}_${height}.${extension} \u0433\u0434\u0435 \u043c\u0435\u043d\u044f\u044f \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 content type, profile, pk \u0438 \u0442,\u0434, \u043c\u044b \u0431\u0443\u0434\u0435\u043c \u043f\u043e\u043b\u0443\u0447\u0430\u0442\u044c \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0443, \u044f \u0444\u043e\u0440\u043c\u0438\u0440\u0443\u044e \u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043d\u0430 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0443, \u0430 \u0432 \u043e\u0442\u0432\u0435\u0442 \u043f\u043e\u043b\u0443\u0447\u0430\u044e 404 \u043e\u0448\u0438\u0431\u043a\u0443, \u0432\u043e\u0442 \u043f\u0440\u0438\u043c\u0435\u0440 \u043c\u043e\u0435\u0433\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0430 http://media.omlet.ru/media/img/movie/vposter/magnit/2560444/239_357.png \u0441\u0434\u0435\u043b\u0430\u043d\u043d\u043e \u0432\u0441\u0435 \u0432 \u0442\u043e\u0447\u043d\u043e\u0441\u0442\u0438 \u043f\u043e \u0434\u043e\u043a\u0430\u043c\r\n\r\nhttp://media.omlet.ru/media/img/movieS/vposter/magnit/2560444/239_357.png  \u2014 \u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0430\u044f \u0441\u0441\u044b\u043b\u043a\u0430. \r\n\r\n\u041f\u043e\u043f\u0440\u0430\u0432\u044c\u0442\u0435 \u0438\u043b\u0438 \u0434\u043e\u043a\u0443 \u0438\u043b\u0438 API\r\n",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:02.858Z",
+      "number": "269",
+      "summary": "\u041e\u0448\u0438\u0431\u043a\u0430 \u0432 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438 \u043d\u0430 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438 movie-->movies",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:02.858Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 43,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": null,
+      "reporter": 1,
+      "created": "2012-08-25T16:48:03.090Z",
+      "number": "267",
+      "summary": "\u041f\u0435\u0440\u0435\u0438\u043c\u0435\u043d\u0443\u0439\u0442\u0435 \u043f\u043b\u0438\u0437 \"\u0421\u043e\u0432\u0435\u0442\u0443\u0435\u043c\" \u0432 \"\u041d\u043e\u0432\u0438\u043d\u043a\u0438\"",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:03.090Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 44,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u043d\u0443\u0436\u043d\u043e \u0443\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u0435 \u041a\u0438\u043d\u043e\u043f\u043e\u0438\u0441\u043a\u0430 \u0432 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0438 \u0441\u0430\u043c\u043e\u0433\u043e \u0444\u0438\u043b\u044c\u0442\u0440\u0430",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:03.336Z",
+      "number": "264",
+      "summary": "\u041f\u0435\u0440\u0435\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u0442\u044c \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0443 \u043f\u043e \u043a\u0438\u043d\u043e\u043f\u043e\u0438\u0441\u043a\u0443",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:03.336Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 45,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0432 \u043d\u0435\u043c \u0440\u0435\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u0442\u044c \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0435 \u0442\u0438\u043a\u0435\u0442\u044b \u0438\u0437 \u0434\u0430\u043d\u043d\u043e\u0433\u043e \u0440\u0435\u043b\u0438\u0437\u0430: 224, 225, 252, 254, 255 \u0438 \u0441\u043e\u0431\u0440\u0430\u0442\u044c \u0441\u0431\u043e\u0440\u043a\u0443 \u0432 \u0442\u0435\u0441\u0442\u0444\u043b\u0430\u0439\u0442",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:03.681Z",
+      "number": "262",
+      "summary": "\u041f\u0440\u043e\u043c\u0435\u0436\u0443\u0442\u043e\u0447\u043d\u044b\u0439 \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0431\u0438\u043b\u0434 \u0434\u043b\u044f \u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043d\u043e\u0432\u043e\u0439 \u043b\u043e\u0433\u0438\u043a\u0438",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:03.681Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 46,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u044d\u0442\u043e \u0442\u043e\u043b\u044c\u043a\u043e \u0443 \u043d\u0430\u0441 \u0432\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442\u0441\u044f, \u043d\u043e \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0443 \u0441\u0435\u0431\u044f \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u044d\u0442\u043e \u0442\u043e\u0436\u0435. \u043f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u043e \u0441\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u0442 apple id, \u043a\u043e\u0433\u0434\u0430 \u044f \u0443\u0436\u0435 \u043d\u0430\u0445\u043e\u0436\u0443\u0441\u044c \u043f\u043e\u0434 \u0437\u0430\u0440\u0435\u0433\u0435\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u043c kas@omlet.ru 123456 \u0443 \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u043a\u0443\u043f\u043b\u0435\u043d\u0430 \u043f\u043e\u0434\u043f\u0438\u0441\u043a\u0430.",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:03.962Z",
+      "number": "261",
+      "summary": "\u0437\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u0442 \u043f\u0430\u0440\u043e\u043b\u044c apple id \u043f\u0440\u0438 \u043b\u044e\u0431\u044b\u0445 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f\u0445",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:03.962Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 47,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u043f\u043e\u0441\u043b\u0435 \u0432\u0432\u043e\u0434\u0430 \u0434\u0430\u043d\u043d\u044b\u0445 - \u0432\u044b\u0445\u043e\u0434\u0438\u0442 \u0442\u0430\u043a\u043e\u0435 \u043e\u043a\u043d\u043e \u043a\u0430\u043a \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438.\r\n\r\n\u043f\u0440\u0438 \u044d\u0442\u043e\u043c \u0432 \u043b\u043e\u0433 \u0441\u044b\u043f\u044f\u0442\u0441\u044f \u043e\u0448\u0438\u0431\u043a\u0438, \u0447\u0442\u043e \u043d\u0435 \u0445\u0432\u0430\u0442\u0430\u0435\u0442 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0445 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u0432:\r\n\r\n    D 120806 18:38:04 basic:110] ApiHandler.prepare\r\n    [E 120806 18:38:04 handlers:119] [Code #200] Missing argument [device_model]\r\n    [E 120806 18:38:04 handlers:119] [Code #200] Missing argument [client]\r\n    [E 120806 18:38:04 handlers:119] [Code #200] Missing argument [device_id]\r\n    [E 120806 18:38:04 basic:120] [Code #200] Client type is not set\r\n    [I 120806 18:38:04 application:285] 302 GET /auth/facebook/?next=%2Fauth%2Ffacebook%2Fsuccess%2F%3Fdevice_model%3DiPad%26client%3Dtablet_ios_app%257C1.21%26device_firmware%3DiPhone%252BOS%252B5%25252E1%26device_id%3D98fe24d2-ea49-4161-863a-0c4ff0af0171&error_code=1&error_msg=kError+1349040%3A+%D0%9D%D0%B5%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9+ID+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%3A+%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5+ID+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F++%D0%BD%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%BE. (213.33.251.70) 3.29ms\r\n\r\n\u0435\u0441\u043b\u0438 \u0432\u044b\u0437\u044b\u0432\u0430\u0442\u044c \u043f\u0440\u043e\u0441\u0442\u043e \u0441 api - \u0442\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442\r\nhttp://5.3.staging.api.stmbb.ru/session/login/external/?device_firmware=Android&device_id=123456789&device_model=Android&client=tablet_ios_app%7C1.2&auth_type=facebook&random=1078\r\n\r\n    result: \"39f6515b6e3698ed844256048416e039\",\r\n    api_version: \"3.5dev\",\r\n    error: [ ]\r\n    }",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:04.245Z",
+      "number": "260",
+      "summary": "\u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u044f \u043f\u043e FB",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:04.245Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 48,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "bug",
+      "description": "\u0421\u043e\u0431\u044b\u0442\u0438\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0432 \u043d\u0435\u0432\u0435\u0440\u043d\u043e\u0439 \u043f\u043e\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438 \u0438 \u043d\u0430 \u043d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u044b\u0435 \u0441\u043e\u0431\u044b\u0442\u0438\u044f. \u0421\u0435\u0439\u0447\u0430\u0441 \u043e\u043f\u0438\u0448\u0435\u043c use cases, \u043a\u0430\u043a \u043d\u0430\u0434\u043e.",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:04.791Z",
+      "number": "259",
+      "summary": "\u041d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u0430\u044f \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0441 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:04.791Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 49,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0414\u043b\u044f \u0443\u043b\u0443\u0447\u0448\u0435\u043d\u0438\u044f \u043e\u0431\u0440\u0430\u0442\u043d\u043e\u0439 \u0441\u0432\u044f\u0437\u0438 \u0441 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c\u0438 \u0438 \u0431\u043e\u043b\u0435\u0435 \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0439 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u0445 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u043f\u0443\u043d\u043a\u0442 \"\u0421\u043e\u043e\u0431\u0449\u0438\u0442\u044c \u043e \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0435\" \u0432 \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u043c\u0435\u043d\u044e \r\n(\u043c\u0435\u0436\u0434\u0443 \"\u0412\u043e\u0439\u0442\u0438/\u0412\u044b\u0439\u0442\u0438\" \u0438 \"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u043c \u0441\u043e\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u0435\u043c\").\r\n\u041f\u0440\u0438 \u043d\u0430\u0436\u0430\u0442\u0438\u0438 \u043d\u0430 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0443\u044e \u043a\u043d\u043e\u043f\u043a\u0443 \u0432\u044b\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043f\u043e\u0447\u0442\u043e\u0432\u044b\u0439 \u043a\u043b\u0438\u0435\u043d\u0442 \u0441 \u0438\u043d\u0438\u0446\u0438\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u043c \u043d\u043e\u0432\u044b\u043c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435\u043c.\r\n\r\ne-mail \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e: **support@stream.ru**\r\n\r\n\u0442\u0435\u043c\u0430 \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e \u0434\u043b\u044f iPhone: **iPhone: \u043e\u0431\u0440\u0430\u0442\u043d\u0430\u044f \u0441\u0432\u044f\u0437\u044c**\r\n\u0442\u0435\u043c\u0430 \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e \u0434\u043b\u044f iPad: **iPad: \u043e\u0431\u0440\u0430\u0442\u043d\u0430\u044f \u0441\u0432\u044f\u0437\u044c**\r\n\r\n\u0442\u0435\u043a\u0441\u0442/\u043f\u043e\u0434\u043f\u0438\u0441\u044c \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e:\r\n\r\n**\u041d\u0430\u043f\u0438\u0448\u0438\u0442\u0435 \u0432\u0430\u0448\u0438 \u043f\u043e\u0436\u0435\u043b\u0430\u043d\u0438\u044f \u0438\u043b\u0438 \u0440\u0430\u0441\u0441\u043a\u0430\u0436\u0438\u0442\u0435 \u043e \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0435 - \u043d\u0430\u043c \u044d\u0442\u043e \u043e\u0447\u0435\u043d\u044c \u0432\u0430\u0436\u043d\u043e. \u0421\u043f\u0430\u0441\u0438\u0431\u043e!\r\n\r\n- \u0422\u0438\u043f \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0430 \u0438 \u0432\u0435\u0440\u0441\u0438\u044f \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b: *(iPhone 4S, iOS 4.3.5)*\r\n- \u0422\u0438\u043f \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f: *WiFi*\r\n- \u0412\u0435\u0440\u0441\u0438\u044f \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f: *1.2.1***\r\n\r\n\r\n",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:05.183Z",
+      "number": "258",
+      "summary": "\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b \"\u041d\u0430\u043f\u0438\u0448\u0438\u0442\u0435 \u043d\u0430\u043c\"",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:05.183Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 50,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0421\u043e\u0433\u043b\u0430\u0441\u043d\u043e \u043d\u043e\u0432\u043e\u0439 \u0441\u0445\u0435\u043c\u0435, \u043f\u0435\u0440\u0435\u043d\u043e\u0441 \u043f\u043e\u043a\u0443\u043f\u043e\u043a \u0441 \u043d\u0435\u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430 \u043d\u0430 \"\u043e\u0431\u044b\u0447\u043d\u044b\u0439\", \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u0438 \u0441\u043c\u0435\u043d\u0435 \u0434\u0435\u0432\u0430\u0439\u0441\u0430.",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:05.541Z",
+      "number": "256",
+      "summary": "\u0412\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 EST \u0444\u0438\u043b\u044c\u043c\u043e\u0432 \u043d\u0430 \u0432\u0441\u0435\u0445 \u0434\u0435\u0432\u0430\u0439\u0441\u0430\u0445 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:05.542Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 51,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041f\u0440\u0438 \u043f\u0435\u0440\u0432\u043e\u043c \u0441\u0442\u0430\u0440\u0442\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0441\u043e\u0437\u0434\u0430\u0432\u0430\u0442\u044c \u0430\u043a\u043a\u0430\u0443\u043d\u0442 \u0434\u043b\u044f \u0434\u0430\u043d\u043d\u043e\u0433\u043e \u0434\u0435\u0432\u0430\u0439\u0441\u0430, \u043d\u0430 \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0431\u0443\u0434\u0443\u0442 \u0441\u043e\u0432\u0435\u0440\u0448\u0430\u0442\u044c\u0441\u044f \u043d\u0435\u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0435 \u043f\u043e\u043a\u0443\u043f\u043a\u0438, etc.\r\n\r\n+ 20% \u0442\u0435\u0441\u0442\u044b, 30% \u043c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:05.817Z",
+      "number": "255",
+      "summary": "\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u043b\u043e\u0433\u0438\u043a\u0438 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438/\u043b\u043e\u0433\u0438\u043d\u0430 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u043e\u0432 \u0434\u043b\u044f \u043d\u0435\u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0445 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:05.817Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 52,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0440\u0430\u0431\u043e\u0442\u043e\u0441\u043f\u043e\u0441\u043e\u0431\u043d\u043e\u0441\u0442\u0438 \u0432\u0441\u0435\u0445 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0438 \u043f\u0430\u0440\u0441\u0435\u0440\u043e\u0432\r\n\r\n+ 20% \u0442\u0435\u0441\u0442\u044b, 30% \u043c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:06.075Z",
+      "number": "254",
+      "summary": "\u041f\u0435\u0440\u0435\u0432\u043e\u0434 \u043f\u0430\u0440\u0441\u0435\u0440\u043e\u0432 \u0441 API 3.5 \u043d\u0430 API 4.0",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:06.075Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 53,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0412\u0438\u0437\u0443\u0430\u043b\u044c\u043d\u044b\u0435 \u0437\u0430\u043c\u0435\u0447\u0430\u043d\u0438\u044f \u043f\u043e \u0442\u0435\u043a\u0443\u0449\u0435\u0439 \u0438\u043c\u043f\u043b\u0435\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438.\r\n\r\n+ 20% \u0442\u0435\u0441\u0442\u044b, 30% \u043c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:06.363Z",
+      "number": "253",
+      "summary": "\u0414\u043e\u0434\u0435\u043b\u044b\u0432\u0430\u043d\u0438\u0435 \u0444\u0438\u043b\u044c\u0442\u0440\u0430\u0446\u0438\u0438 \u043d\u0430 iPad",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:06.363Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 54,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041d\u0430\u0434\u043e \u043f\u0440\u0438 \u043e\u043f\u043b\u0430\u0442\u0435 \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u0432 sandbox \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u0438\u043c\u044f @apple.stream.sandbox \u0432\u043c\u0435\u0441\u0442\u043e @apple.stream.local",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:06.612Z",
+      "number": "252",
+      "summary": "\u041f\u043e\u043c\u0435\u043d\u044f\u0442\u044c \u0438\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u0440\u0438 \u043e\u043f\u043b\u0430\u0442\u0435 \u0447\u0435\u0440\u0435\u0437 sandbox",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:06.612Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 55,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041d\u0435\u0430\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u043e, \u0442\u0435\u043a\u0443\u0449\u0430\u044f EULA \u0432\u043f\u043e\u043b\u043d\u0435 \u0437\u0430\u043a\u0440\u044b\u0432\u0430\u0435\u0442 \u0438 EST",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:06.849Z",
+      "number": "243",
+      "summary": "\u0418\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c EULA \u0434\u043b\u044f \u0434\u0430\u043d\u043d\u043e\u0439 \u0432\u0435\u0440\u0441\u0438\u0438 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:06.850Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 56,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0412 \u0440\u0430\u043c\u043a\u0430\u0445 \u0410\u041f\u0418 4.0.",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:07.102Z",
+      "number": "237",
+      "summary": "\u041a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 \u043c\u0435\u0440\u0434\u0436\u0438\u043d\u0433 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u043e\u0432 \u043f\u043e \u0442\u0440\u0430\u043d\u0437\u0430\u043a\u0446\u0438\u043e\u043d\u043d\u043e\u0439 \u043c\u043e\u0434\u0435\u043b\u0438 (EST only)",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:07.102Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 57,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0427\u0442\u043e \u0438\u043c\u0435\u0435\u0442\u0441\u044f \u0432\u0432\u0438\u0434\u0443?",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:07.338Z",
+      "number": "228",
+      "summary": "\u041f\u0435\u0440\u0435\u0434\u0430\u0447\u0430 EST \u0444\u0438\u043b\u044c\u043c\u043e\u0432 \u0432 \u043a\u043b\u0438\u0435\u043d\u0442\u044b iOS",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:07.338Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 58,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:07.593Z",
+      "number": "225",
+      "summary": "\u041f\u043b\u0430\u0448\u043a\u0430 \"\u041c\u043e\u0438 \u0444\u0438\u043b\u044c\u043c\u044b\"",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:07.593Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 59,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "+ 20% \u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, 30% \u043c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442\u0430",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:07.875Z",
+      "number": "224",
+      "summary": "\u0412\u043e\u0437\u0432\u0440\u0430\u0449\u0435\u043d\u0438\u0435 EST \u043f\u043e IAP",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:07.875Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 60,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u041e\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439 \u0438 \u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0449\u0438\u043a\u043e\u0432 \u043f\u043e\u0441\u0442\u0443\u043f\u0430\u044e\u0442 \u0436\u0430\u043b\u043e\u0431\u044b \u043d\u0430 \u043d\u0435\u043e\u0447\u0435\u0432\u0438\u0434\u043d\u044b\u0439 \u0432\u043e\u0437\u0432\u0440\u0430\u0442 \u0432 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441 \u0438\u0437 \u043e\u043a\u043d\u0430 \u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u0441\u043e\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u044f.\r\n\r\n\u0420\u0435\u0448\u0435\u043d\u0438\u0435 \u2014 \u043e\u0442\u043a\u0440\u044b\u0432\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u044d\u043a\u0440\u0430\u043d \u043a\u0430\u043a \u043f\u043e\u043f\u0430\u043f:\r\n- \u0410\u043d\u0438\u043c\u0430\u0446\u0438\u0435\u0439 \u0441\u043d\u0438\u0437\u0443 \u0432\u0432\u0435\u0440\u0445\r\n- \u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a \u0438 \u043a\u043d\u043e\u043f\u043a\u0430 \u00ab\u0417\u0430\u043a\u0440\u044b\u0442\u044c\u00bb \u0432\u0441\u0435\u0433\u0434\u0430 \u0432\u0438\u0434\u043d\u044b, \u0442\u0435\u043a\u0441\u0442 \u0441\u043a\u0440\u043e\u043b\u043b\u0438\u0442\u0441\u044f \u043f\u043e\u0434 \u043d\u0438\u043c\u0438\r\n- \u0422\u0430\u0431\u0431\u0430\u0440 \u043f\u0440\u044f\u0447\u0435\u043c",
+      "reporter": 1,
+      "created": "2012-08-25T16:48:08.131Z",
+      "number": "221",
+      "summary": "\u0414\u043e\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441 EULA - \u0432\u043e\u0432\u0437\u0440\u0430\u0442 \u043d\u0430\u0437\u0430\u0434",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:48:08.131Z",
+      "fix_version": 2
+    }
+  },
+  {
+    "pk": 61,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "https://streamlet.codebasehq.com/upload/92aaee34-9024-54ee-87cc-77242e76572b/show/original",
+      "reporter": 1,
+      "created": "2012-08-25T16:49:04.831Z",
+      "number": "272",
+      "summary": "\u0421\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441 \u0432\u044b\u0432\u043e\u0434 \u0440\u0435\u0439\u0442\u0438\u043d\u0433\u0430 \u041a\u0438\u043d\u043e\u043f\u043e\u0438\u0441\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435 \u0444\u0438\u043b\u044c\u043c\u0430",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:49:04.832Z",
+      "fix_version": 3
+    }
+  },
+  {
+    "pk": 62,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0433\u043b\u0430\u0432\u043d\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435\u0439 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u043d\u0430 iPad \u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u0441\u044f \u043b\u0435\u043d\u0442\u0430 \u0444\u0438\u043b\u044c\u043c\u043e\u0432 \u0438\u0437 \u0440\u0430\u0437\u0434\u0435\u043b\u0430 \"\u0421\u043e\u0432\u0435\u0442\u0443\u0435\u043c\" (\u043f\u0440\u0438 \u044d\u0442\u043e\u043c \"\u0421\u043e\u0432\u0435\u0442\u0443\u0435\u043c\" \u043f\u0435\u0440\u0435\u0438\u043c\u0435\u043d\u043e\u0432\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u0432 \"\u041d\u043e\u0432\u0438\u043d\u043a\u0438\")",
+      "reporter": 1,
+      "created": "2012-08-25T16:49:05.204Z",
+      "number": "266",
+      "summary": "\u041f\u043e\u043c\u0435\u043d\u044f\u0442\u044c \u043b\u043e\u0433\u0438\u043a\u0443 \u0433\u043b\u0430\u0432\u043d\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043d\u0430 iPad (\u0430\u043d\u0430\u043b\u043e\u0433\u0438\u0447\u043d\u043e \u043b\u043e\u0433\u0438\u043a\u0435 \u043d\u0430 iPhone)",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:49:05.204Z",
+      "fix_version": 3
+    }
+  },
+  {
+    "pk": 63,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0434\u043b\u044f iPhone/iPad + Retina",
+      "reporter": 1,
+      "created": "2012-08-25T16:49:05.463Z",
+      "number": "265",
+      "summary": "\u041d\u0430\u0440\u0438\u0441\u043e\u0432\u0430\u0442\u044c \u0438\u043a\u043e\u043d\u043a\u0443 \u0434\u043b\u044f \u0440\u0430\u0437\u0434\u0435\u043b\u0430 \"\u041d\u043e\u0432\u0438\u043d\u043a\u0438\"",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:49:05.463Z",
+      "fix_version": 3
+    }
+  },
+  {
+    "pk": 64,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "",
+      "reporter": 1,
+      "created": "2012-08-25T16:49:05.749Z",
+      "number": "244",
+      "summary": "\"\u0414\u0440\u0443\u0436\u0435\u043b\u044e\u0431\u043d\u0430\u044f\" \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u043e\u0448\u0438\u0431\u043e\u043a Widevine \u043f\u0440\u0438 \u0432\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0434\u0435\u043d\u0438\u0438 \u0444\u0438\u043b\u044c\u043c\u0430",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:49:05.749Z",
+      "fix_version": 3
+    }
+  },
+  {
+    "pk": 65,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "",
+      "reporter": 1,
+      "created": "2012-08-25T16:49:06.072Z",
+      "number": "231",
+      "summary": "\u0418\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441 \u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b \"\u0425\u043e\u0447\u0443 \u043f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c\"",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:49:06.072Z",
+      "fix_version": 3
+    }
+  },
+  {
+    "pk": 66,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "+ 20% \u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, 30% \u043c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442\u0430",
+      "reporter": 1,
+      "created": "2012-08-25T16:49:06.303Z",
+      "number": "229",
+      "summary": "Backdrop'\u044b \u043d\u0430 iPad",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:49:06.303Z",
+      "fix_version": 3
+    }
+  },
+  {
+    "pk": 67,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "\u0412 \u0432\u0435\u0440\u0441\u0438\u0438 \u0410\u041f\u0418 4.0",
+      "reporter": 1,
+      "created": "2012-08-25T16:49:06.698Z",
+      "number": "227",
+      "summary": "\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 backdrop'\u043e\u0432 \u043d\u0430 \u0441\u0442\u043e\u0440\u043e\u043d\u0435 API",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:49:06.698Z",
+      "fix_version": 3
+    }
+  },
+  {
+    "pk": 68,
+    "model": "carrot_tickets.ticket",
+    "fields": {
+      "kind": "task",
+      "description": "https://dl.dropbox.com/u/34937416/cat.psd - iPad \u0441 \u0444\u043e\u043d\u043e\u043c \u043f\u043e\u0434 \u0440\u0435\u0442\u0438\u043d\u0443",
+      "reporter": 1,
+      "created": "2012-08-25T16:49:07.027Z",
+      "number": "223",
+      "summary": "\u041d\u043e\u0432\u0430\u044f \u0444\u0438\u043b\u044c\u0442\u0440\u0430\u0446\u0438\u044f \u0434\u043b\u044f iPhone/iPad",
+      "project": 2,
+      "assignee": null,
+      "modified": "2012-08-25T16:49:07.027Z",
+      "fix_version": 3
+    }
+  },
+  {
+    "pk": 1,
+    "model": "carrot_dash.carrotprofile",
+    "fields": {
+      "user": 2,
+      "projects": [
+        3
+      ]
+    }
+  },
+  {
+    "pk": 2,
+    "model": "carrot_dash.carrotprofile",
+    "fields": {
+      "user": 3,
+      "projects": [
+        2
+      ]
+    }
+  },
+  {
+    "pk": 3,
+    "model": "carrot_dash.carrotprofile",
+    "fields": {
+      "user": 4,
+      "projects": [
+        3
+      ]
+    }
+  },
+  {
+    "pk": 4,
+    "model": "carrot_dash.carrotprofile",
+    "fields": {
+      "user": 1,
+      "projects": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  }
+]

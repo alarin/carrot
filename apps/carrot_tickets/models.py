@@ -46,6 +46,7 @@ class Ticket(models.Model):
     project = models.ForeignKey(Project)
     fix_version = models.ForeignKey(Version)
 
+    number = models.CharField(max_length=20)
     kind = models.CharField(max_length=10, choices=ticket_kind_choices, default=ticket_kind_choices[0][1])
     summary = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
@@ -57,7 +58,7 @@ class Ticket(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return self.name
+        return self.summary
 
 
 class Attachment(models.Model):
