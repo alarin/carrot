@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from carrot_timetrack.models import TicketEstimate
 from django.contrib.auth.models import User
 from carrot_tickets.codebase import tickets
 from carrot_tickets.models import Version, Ticket
@@ -36,6 +37,7 @@ class Command(BaseCommand):
             if notes:
                 options['description'] = notes[0]['ticket_note']['content']
 
+
             options.update(common_options)
             ticket = Ticket.objects.filter(**common_options).filter(summary=options['summary'])
             if len(ticket):
@@ -46,6 +48,10 @@ class Command(BaseCommand):
             for k, v in options.items():
                 setattr(ticket, k, v)
             ticket.save()
+            if cbt.get('estimated_time'):
+                te, created = TicketEstimate.objects.get_or_create(ticket=ticket)
+                te.hours = int(cbt.get('estimated_time')/60)
+                te.save()
             print ticket
 
 

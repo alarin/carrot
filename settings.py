@@ -123,7 +123,8 @@ INSTALLED_APPS = (
     'south',
     'carrot_tickets',
     'carrot_builds',
-    'carrot_dash'
+    'carrot_dash',
+    'carrot_timetrack'
 )
 
 # A sample logging configuration. The only tangible logging
