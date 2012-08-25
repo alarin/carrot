@@ -1,0 +1,1 @@
+AUTOSLUG_SLUGIFY_FUNCTION = 'carrot.utils.slugify'

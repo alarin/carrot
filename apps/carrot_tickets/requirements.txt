@@ -1,0 +1,5 @@
+django==1.4.1
+unidecode
+django-autoslug==1.5.0
+south==0.7.6
+django-annoying

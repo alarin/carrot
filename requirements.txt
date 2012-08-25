@@ -1,0 +1,1 @@
+-r apps/carrot_tickets/requirements.txt
