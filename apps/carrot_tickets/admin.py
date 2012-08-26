@@ -1,6 +1,6 @@
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.contrib.auth.models import User
-from carrot_tickets.models import Version, Ticket, Project
+from carrot_tickets.models import Version, Ticket, Project, TicketComment
 from django.contrib import admin
 
 class VersionAdmin(admin.ModelAdmin):
@@ -10,7 +10,7 @@ class VersionAdmin(admin.ModelAdmin):
 
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('project', 'fix_version', 'summary')
+    list_display = ('project', 'fix_version', 'kind', 'summary')
     list_display_links = ('summary',)
     list_filter = ('project', 'fix_version')
 
@@ -18,3 +18,4 @@ class TicketAdmin(admin.ModelAdmin):
 admin.site.register(Project)
 admin.site.register(Version, VersionAdmin)
 admin.site.register(Ticket, TicketAdmin)
+admin.site.register(TicketComment)

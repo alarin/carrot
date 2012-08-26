@@ -1,0 +1,56 @@
+{% extends 'carrot/site_base.html' %}
+{% load gravatar %}
+{% load humanize %}
+
+{% block title %}#{{ ticket.number }} | Carrot {% endblock %}
+
+{% block bodyclass %}ticket{% endblock %}
+{% block content %}
+    <div class="row">
+      <h1>#{{ ticket.number }} {{ ticket.summary }}</h1>
+    </div>
+
+    <div class="row">
+      <div class="ninecol">
+        <div class="actions">
+          <button class="btn btn-success">Start</button>
+          <button class="btn">Stop</button>
+        </div>
+        <div class="description">
+          {{ ticket.description|linebreaks }}
+        </div>
+      </div>
+      <div class="threecol last info-block">
+        <a class="btn btn-edit btn-small" href="./edit">Edit</a>
+        <dl class="dl-horizontal info">
+          <dt>Project</dt><dd>{{ ticket.project.full_name }}</dd>
+          <dt>Version</dt><dd>{{ ticket.fix_version.name }}</dd>
+          <dt>Status</dt><dd>{{ ticket.get_status_display }}</dd>
+          <dt>Reporter</dt><dd>{{ ticket.reporter.get_full_name }}</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="ninecol">
+        <ul class="comments">
+          {% for c in comments %}
+          <li id="c{{ c.pk }}">
+            <div class="info">
+              <span class="author"><img src="{% gravatar_for_user c.author size=40 %}">{{ c.author.get_full_name }}</span>
+              <span class="posted">{{ c.modified|naturaltime }}</span>
+            </div>
+            <div class="content">
+              {{ c.content|linebreaks }}
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        <form class="comment-form aform" method="post">
+          {% csrf_token %}
+          {{ comment_form.as_div }}
+          <button class="btn btn-primary">Comment</button>
+        </form>
+      </div>
+    </div>
+{% endblock %}

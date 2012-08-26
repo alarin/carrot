@@ -7,15 +7,18 @@ from django.contrib.auth.models import Group, User
 
 
 class Roles:
-    developer = Group.objects.get_or_create(name='developer')
-    pm = Group.objects.get_or_create(name='pm')
-    qa = Group.objects.get_or_create(name='qa')
-    designer = Group.objects.get_or_create(name='designer')
+    developer = Group.objects.get_or_create(name='developer')[0]
+    pm = Group.objects.get_or_create(name='pm')[0]
+    qa = Group.objects.get_or_create(name='qa')[0]
+    designer = Group.objects.get_or_create(name='designer')[0]
+
+    @staticmethod
+    def has_role(user, role):
+        return role.pk in user.groups.all().values_list('pk', flat=True)
 
 
 class CarrotProfile(models.Model):
     user = AutoOneToOneField(User)
-
     projects = models.ManyToManyField(Project)
 
 

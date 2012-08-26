@@ -18,7 +18,7 @@ class TicketAdmin(carrot_tickets.admin.TicketAdmin):
         super(TicketAdmin, self).__init__(*args, **kwargs)
 
     def estimate(self, obj):
-        tes = obj.ticketestimate_set.all()
+        tes = obj.estimates.all()
         if len(tes):
             return tes[0].hours
         return ''

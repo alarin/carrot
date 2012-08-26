@@ -3,7 +3,7 @@ from django.db import models
 
 
 class TicketEstimate(models.Model):
-    ticket = models.ForeignKey(Ticket)
+    ticket = models.ForeignKey(Ticket, related_name='estimates')
     hours = models.PositiveIntegerField(null=True)
     is_expert = models.BooleanField(default=False)
 

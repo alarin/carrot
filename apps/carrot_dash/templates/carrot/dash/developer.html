@@ -1,0 +1,27 @@
+{% extends 'carrot/site_base.html' %}
+
+{% block title %}Dashboard | Carrot Ticket Tracker{% endblock %}
+
+{% block content %}
+<h1>{{ project.full_name }}</h1>
+
+{% for version in versions %}
+    <h2>{{ version.0.name }}</h2>
+    <table class="table tickets">
+    {% for ticket in version.1 %}
+    <tr class="js_ticket status_{{ ticket.status }}">
+      <td class="kind kind_{{ ticket.kind }}">
+        {% if ticket.kind == 'bug' %}
+        <span class="label kind_{{ ticket.kind }}">bug</span>
+        {% endif %}
+      </td>
+      <td class="js_href number"><a class="novisited" href="{% url carrot_ticket ticket.project.slug ticket.number %}">#{{ ticket.number }}</a></td>
+      <td class="status status_{{ ticket.status }}">{{ ticket.get_status_display }}</td>
+      <td class="summary">{{ ticket.summary }}</td>
+      <td class="estimate">{{ ticket.estimates.all.0.hours }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endfor %}
+
+{% endblock %}
