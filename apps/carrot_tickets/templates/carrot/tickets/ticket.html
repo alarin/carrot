@@ -1,6 +1,7 @@
 {% extends 'carrot/site_base.html' %}
-{% load gravatar %}
 {% load humanize %}
+{% load gravatar %}
+{% load thumbnail %}
 
 {% block title %}#{{ ticket.number }} | Carrot {% endblock %}
 
@@ -16,9 +17,27 @@
           <button class="btn btn-success">Start</button>
           <button class="btn">Stop</button>
         </div>
+        <div class="author-when">
+          <span class="author"><img src="{% gravatar_for_user user size=40 %}">{{ user.get_full_name }}</span>
+          <span class="posted">{{ ticket.modified|naturaltime }}</span>
+        </div>
         <div class="description">
           {{ ticket.description|linebreaks }}
         </div>
+        <ul class="files">
+          {% for file in files %}
+          <li class="file f{{ file.kind }}"><a href="{{ file.file.url }}" target="_blank">{{ file.name }}</a>
+            <!--<span class="date">{{ file.created|date:"d.m.Y" }}</span>-->
+          </li>
+          {% endfor %}
+        </ul>
+        <ul class="images">
+          {% for file in images %}
+          <li class="image"><a href="{{ file.file.url }}" target="_blank">{% thumbnail file.file.path "150x150" upscale=True as img %}<div class="img"><img src="{{ img.url }}"></div>{% endthumbnail %}{{ file.name }}</a>
+            <!--<span class="date">{{ file.created|date:"d.m.Y" }}</span>-->
+          </li>
+          {% endfor %}
+        </ul>
       </div>
       <div class="threecol last info-block">
         <a class="btn btn-edit btn-small" href="./edit">Edit</a>
@@ -36,8 +55,8 @@
         <ul class="comments">
           {% for c in comments %}
           <li id="c{{ c.pk }}">
-            <div class="info">
-              <span class="author"><img src="{% gravatar_for_user c.author size=40 %}">{{ c.author.get_full_name }}</span>
+            <div class="author-when">
+              <span class="author"><img src="{% gravatar_for_user user size=40 %}">{{ user.get_full_name }}</span>
               <span class="posted">{{ c.modified|naturaltime }}</span>
             </div>
             <div class="content">

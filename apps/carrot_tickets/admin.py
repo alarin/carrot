@@ -1,6 +1,6 @@
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.contrib.auth.models import User
-from carrot_tickets.models import Version, Ticket, Project, TicketComment
+from carrot_tickets.models import Version, Ticket, Project, TicketComment, TicketAttachment
 from django.contrib import admin
 
 class VersionAdmin(admin.ModelAdmin):
@@ -9,10 +9,15 @@ class VersionAdmin(admin.ModelAdmin):
     list_filter = ('project', 'start_date', 'end_date')
 
 
+class AttachmentInline(admin.StackedInline):
+    model = TicketAttachment
+
 class TicketAdmin(admin.ModelAdmin):
     list_display = ('project', 'fix_version', 'kind', 'summary')
     list_display_links = ('summary',)
     list_filter = ('project', 'fix_version')
+
+    inlines = [AttachmentInline]
 
 
 admin.site.register(Project)

@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import mimetypes
 
 from autoslug.fields import AutoSlugField
 from django.contrib.contenttypes.models import ContentType
@@ -93,25 +94,33 @@ class Ticket(models.Model):
             self.save()
 
 
-class Attachment(models.Model):
-    content_type = models.ForeignKey(ContentType)
-    object_id = models.PositiveIntegerField()
-    content_object = generic.GenericForeignKey('content_type', 'object_id')
-
+class BaseAttachment(models.Model):
     kind = models.CharField(max_length=20, editable=False)
     file = models.FileField(upload_to='ticket_files')
     name = models.CharField(max_length=255)
 
-#    def save(self, force_insert=False, force_update=False, using=None):
-#        if not self.kind:
-#            #FIXME use mime-types
-#            ext = self.name.split('.')[1]
-#            if ext in ['']
-#
-#            self.kind = AttachmentKind.FILE
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    def save(self, force_insert=False, force_update=False, using=None):
+        if not self.kind and self.file:
+            mt = mimetypes.guess_type(self.file.path)[0]
+            if mt and mt.split('/')[0] == 'image':
+                self.kind = 'image'
+            else:
+                self.kind = 'file'
+        super(BaseAttachment, self).save(force_insert, force_update, using)
+
+    class Meta:
+        abstract = True
 
     def __unicode__(self):
         return self.name
+
+
+class TicketAttachment(BaseAttachment):
+    ticket = models.ForeignKey(Ticket, related_name='attachments')
+
 
 
 class TicketComment(models.Model):

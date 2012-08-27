@@ -10,6 +10,9 @@ from carrot_tickets.models import Ticket, TicketComment
 def ticket(request, project_slug, ticket_number):
     ticket = get_object_or_404(Ticket, number=ticket_number, project__slug=project_slug)
     comments = TicketComment.objects.filter(ticket=ticket)
+    images = ticket.attachments.filter(kind='image').order_by('created')
+    files = ticket.attachments.exclude(kind='image').order_by('created')
+
 
     comment_form = CommentForm()
 
@@ -26,5 +29,7 @@ def ticket(request, project_slug, ticket_number):
         'ticket': ticket,
         'comments': comments,
         'comment_form': comment_form,
+        'files': files,
+        'images': images,
     }
     return TemplateResponse(request, 'carrot/tickets/ticket.html', data)

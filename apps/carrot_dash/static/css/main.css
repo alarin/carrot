@@ -472,18 +472,50 @@ p {
         clear: both;
         margin: 2em 0 0 0;
     }
-    .comments .info {
-        color: #999;
-        font-size: 0.9em;
-    }
-        .comments .info .posted {
-            display: block;
-        }
-    .comments .author img {
-        float: left;
-        margin: 0 0.5em 0 0;
-    }
     .comments .content {
         clear: both;
         margin: 0.5em 0 0 0;
     }
+
+.author-when {
+    color: #999;
+    font-size: 0.9em;
+}
+    .author-when .posted {
+        display: block;
+    }
+    .author-when img {
+        border-radius: 5px;
+        float: left;
+        margin: 0 0.5em 0 0;
+    }
+
+.ticket .images {
+    overflow: hidden;
+    clear: both;
+}
+.ticket .files {
+    overflow: hidden;
+    clear: both;
+    margin: 1em 0;
+}
+.ticket .images .image {
+    float: left;
+    margin: 1em 1em 1em 0;
+    text-align: center;
+}
+.ticket .files .file {
+    margin: 0.7em 0.5em 0 0;
+    padding: 0 0.5em 0 0;
+    float: left;
+    text-align: center;
+    width: 150px;
+    xborder-right: 2px solid #EEE;
+}
+.ticket .img {
+    width: 150px;
+    height: 150px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 0 0.3em 0;
+}

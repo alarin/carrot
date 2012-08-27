@@ -4,3 +4,4 @@ django-autoslug==1.5.0
 south==0.7.6
 django-annoying
 django-gravatar==0.1.0
+sorl-thumbnail
