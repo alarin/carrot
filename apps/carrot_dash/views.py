@@ -12,7 +12,7 @@ def home(request):
 
 def dash_developer(request):
     project = request.user.carrotprofile.projects.all()[0]
-    versions = project.version_set.order_by('end_date')
+    versions = project.version_set.filter(is_completed=False).order_by('end_date')
     versions_data = []
     for v in versions:
         versions_data.append((v, v.ticket_set.order_by('kind', 'number')))

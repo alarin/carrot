@@ -21,6 +21,7 @@ a.novisited:visited {
     padding: 0.3em;
     font-size: 0.9em;
     overflow: hidden;
+    position: relative;
 }
     .navbar .brand {
         text-decoration: none;
@@ -53,21 +54,43 @@ h2 {
 .container-fluid {
     margin: 1em 2em;
 }
-
+.alert .error {
+    width: 40em;
+    background: #F66;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-align: center;
+    margin: 1em auto;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
 .tickets {
     width: 90%;
     margin: 1em 0;
 }
-    .tickets tr.status_fixed {
+    .tickets tr.status-in_progress.not-mine {
         color: #CCC;
     }
-        .tickets tr.status_fixed a {
+        .tickets tr.status-in_progress.not-mine a {
+            color: #CCC;
+        }
+    .tickets tr.status-in_progress.mine {
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .tickets tr.status-fixed {
+        color: #CCC;
+    }
+        .tickets tr.status-fixed a {
             color: #CCC;
         }
     .tickets tr:hover {
         background: #EEE;
-        color: #444;
+        color: #444 !important;
     }
+        .tickets tr:hover a {
+            color: #08C !important;
+        }
 
     .tickets td {
         padding: 0.5em 1em;
@@ -470,7 +493,7 @@ p {
 }
     .comments li {
         clear: both;
-        margin: 2em 0 0 0;
+        margin: 2em 0;
     }
     .comments .content {
         clear: both;
@@ -488,6 +511,28 @@ p {
         border-radius: 5px;
         float: left;
         margin: 0 0.5em 0 0;
+    }
+
+.comments li.kind-changes {
+    margin: 1em 0 0 10px;
+}
+    .kind-changes .author-when .posted {
+        display: inline-block;
+    }
+    .kind-changes .author-when .author:after {
+        content: ', ';
+    }
+    .kind-changes .author-when {
+        display: inline-block;
+    }
+    .kind-changes .author-when img {
+        opacity: 0.6;
+    }
+    .kind-changes .content {
+        display: inline-block;
+        margin: 0 0 0 1em;
+        vertical-align: top;
+        font-size: 0.9em;
     }
 
 .ticket .images {

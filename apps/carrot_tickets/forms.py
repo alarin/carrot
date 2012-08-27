@@ -5,7 +5,7 @@ from django import forms
 class CommentForm(CoreFormMixin, forms.ModelForm):
     class Meta:
         model = TicketComment
-        exclude = ('ticket', 'author')
+        fields = ('content',)
 
 
 

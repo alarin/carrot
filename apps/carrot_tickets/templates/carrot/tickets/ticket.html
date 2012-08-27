@@ -8,18 +8,22 @@
 {% block bodyclass %}ticket{% endblock %}
 {% block content %}
     <div class="row">
-      <h1>#{{ ticket.number }} {{ ticket.summary }}</h1>
+      <h1>{% if ticket.kind = 'bug' %}<i class="label kind_bug">bug</i> {% endif %}#{{ ticket.number }} {{ ticket.summary }}</h1>
     </div>
 
     <div class="row">
       <div class="ninecol">
         <div class="actions">
-          <button class="btn btn-success">Start</button>
-          <button class="btn">Stop</button>
+          <form method="post">
+          {% csrf_token %}
+          {% for action, description in actions.items %}
+          <button class="btn btn-{{ action }}" name="action" value="{{ action }}">{{ description.name }}</button>
+          {% endfor %}
+          </form>
         </div>
         <div class="author-when">
           <span class="author"><img src="{% gravatar_for_user user size=40 %}">{{ user.get_full_name }}</span>
-          <span class="posted">{{ ticket.modified|naturaltime }}</span>
+          <span class="posted">{{ ticket.created|naturaltime }}</span>
         </div>
         <div class="description">
           {{ ticket.description|linebreaks }}
@@ -46,6 +50,7 @@
           <dt>Version</dt><dd>{{ ticket.fix_version.name }}</dd>
           <dt>Status</dt><dd>{{ ticket.get_status_display }}</dd>
           <dt>Reporter</dt><dd>{{ ticket.reporter.get_full_name }}</dd>
+          <dt>Assignee</dt><dd>{{ ticket.assignee.get_full_name }}</dd>
         </dl>
       </div>
     </div>
@@ -54,7 +59,8 @@
       <div class="ninecol">
         <ul class="comments">
           {% for c in comments %}
-          <li id="c{{ c.pk }}">
+          <li id="c{{ c.pk }}" class="kind-{{ c.kind }}">
+            {% if c.kind = 'comment' %}
             <div class="author-when">
               <span class="author"><img src="{% gravatar_for_user user size=40 %}">{{ user.get_full_name }}</span>
               <span class="posted">{{ c.modified|naturaltime }}</span>
@@ -62,6 +68,15 @@
             <div class="content">
               {{ c.content|linebreaks }}
             </div>
+            {% else %}
+            <div class="author-when">
+              <span class="author"><img src="{% gravatar_for_user user size=20 %}">{{ user.get_full_name }}</span>
+              <span class="posted">{{ c.modified|naturaltime }}</span>
+            </div>
+            <div class="content">
+              {{ c.content }}
+            </div>
+            {% endif %}
           </li>
           {% endfor %}
         </ul>

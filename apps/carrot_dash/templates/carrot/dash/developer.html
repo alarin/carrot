@@ -9,14 +9,17 @@
     <h2>{{ version.0.name }}</h2>
     <table class="table tickets">
     {% for ticket in version.1 %}
-    <tr class="js_ticket status_{{ ticket.status }}">
+    <tr class="js_ticket status-{{ ticket.status }}
+    {% if ticket.assignee %}{% if ticket.assignee.pk = user.pk %} mine{% else %} not-mine{% endif %}{% endif %}">
       <td class="kind kind_{{ ticket.kind }}">
         {% if ticket.kind == 'bug' %}
         <span class="label kind_{{ ticket.kind }}">bug</span>
         {% endif %}
       </td>
       <td class="js_href number"><a class="novisited" href="{% url carrot_ticket ticket.project.slug ticket.number %}">#{{ ticket.number }}</a></td>
-      <td class="status status_{{ ticket.status }}">{{ ticket.get_status_display }}</td>
+      <td class="status status_{{ ticket.status }}">
+        {{ ticket.get_status_display }}
+      </td>
       <td class="summary">{{ ticket.summary }}</td>
       <td class="estimate">{{ ticket.estimates.all.0.hours }}</td>
     </tr>

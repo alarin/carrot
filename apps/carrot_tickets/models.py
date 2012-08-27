@@ -33,6 +33,9 @@ class Version(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
 
+    real_startdate = models.DateField(null=True, blank=True)
+    real_enddate = models.DateField(null=True, blank=True)
+
     def __unicode__(self):
         return self.name
 
@@ -122,11 +125,22 @@ class TicketAttachment(BaseAttachment):
     ticket = models.ForeignKey(Ticket, related_name='attachments')
 
 
+class CommentKind(object):
+    COMMENT = 'comment'
+    COMMIT = 'commit'
+    CHANGES = 'changes'
+
+comment_kind_choices = (
+    (CommentKind.COMMENT, 'comment'),
+    (CommentKind.COMMIT, 'commit'),
+    (CommentKind.CHANGES, 'changes'),
+)
 
 class TicketComment(models.Model):
     ticket = models.ForeignKey(Ticket)
     author = models.ForeignKey(User)
 
+    kind = models.CharField(max_length=10, choices=comment_kind_choices, default=CommentKind.COMMENT)
     content = models.TextField()
 
     created = models.DateTimeField(auto_now_add=True)
