@@ -26,6 +26,7 @@ workflow = {
         TicketStatus.IN_PROGRESS: {
             TicketStatus.FIXED: {
                 'name': 'Задача выполнена',
+                'condition': lambda user, ticket, new_state: ticket.assignee.pk == user.pk
             },
         },
         TicketStatus.FIXED: {
@@ -39,8 +40,11 @@ workflow = {
 def get_actions(user, ticket):
     actions = {}
     for group in user.groups.all():
-        if workflow.get(group.name, {}).get(ticket.status):
-            actions.update(workflow.get(group.name, {}).get(ticket.status))
+        new_actions = workflow.get(group.name, {}).get(ticket.status)
+        if new_actions:
+            for action, descr in new_actions.items():
+                if descr.get('condition', lambda user, ticket, new_state: True)(user, ticket, action):
+                    actions[action] = descr
     return actions
 
 
