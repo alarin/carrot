@@ -162,3 +162,8 @@ LOGGING = {
 }
 
 from carrot_tickets.settings import *
+
+try:
+    from settings_local import *
+except:
+    pass
