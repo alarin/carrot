@@ -1,0 +1,12 @@
+{% extends 'carrot/site_base.html' %}
+
+{% block title %}Loggin | Carrot {% endblock %}
+
+{% block bodyclass %}login{% endblock %}
+{% block content %}
+<form class="login-form" method="post">
+  {% csrf_token %}
+  {{ login_form.as_p }}
+  <button class="btn">Войти</button>
+</form>
+{% endblock %}

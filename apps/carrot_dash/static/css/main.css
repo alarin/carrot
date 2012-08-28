@@ -564,3 +564,26 @@ p {
     text-align: center;
     margin: 0 0 0.3em 0;
 }
+
+.login .navbar {
+    width: 500px;
+    margin: 10% auto 0 auto;
+    padding: 10px;
+}
+    .login .container-fluid {
+        margin: 0;
+        padding: 0;
+    }
+    .login .login-form {
+        width: 378px;
+        margin: 0 auto;
+        border: 1px solid #999;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-top: none;
+        padding: 20px 120px 20px 20px;
+        text-align: right;
+    }
+    .login .login-form p {
+        margin: 1em 0;
+    }
