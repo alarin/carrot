@@ -1,0 +1,19 @@
+{% extends 'carrot/site_base.html' %}
+{% load humanize %}
+{% load gravatar %}
+{% load thumbnail %}
+
+{% block title %}Edit #{{ ticket.number }} | Carrot {% endblock %}
+
+{% block bodyclass %}ticket-edit{% endblock %}
+{% block content %}
+    <form class="ticket-form aform" method="post">
+    <h1>#{{ ticket.number }}</h1>
+    {% csrf_token %}
+    {{ ticket_form.as_div }}
+    <div class="buttons">
+    <button class="btn btn-primary" name="action" value="save">Save</button>
+    <button class="btn" name="action" value="cancel">Cancel</button>
+    </div>
+    </form>
+{% endblock %}

@@ -587,3 +587,18 @@ p {
     .login .login-form p {
         margin: 1em 0;
     }
+
+.ticket-form {
+    margin: 3em 0 0 3em;
+}
+
+.ticket-form h1 {
+    margin-bottom: 1em;
+}
+.ticket-form .buttons {
+    margin: 3em 0 3em 8em;
+}
+.ticket-form .row.f_summary input, .ticket-form .row.f_description textarea {
+    width: 600px;
+    font-size: 1em;
+}
