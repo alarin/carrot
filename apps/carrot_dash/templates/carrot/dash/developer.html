@@ -1,12 +1,22 @@
 {% extends 'carrot/site_base.html' %}
 
 {% block title %}Dashboard | Carrot Ticket Tracker{% endblock %}
-
+{% block bodyclass %}body-tickets{% endblock %}
 {% block content %}
 <h1>{{ project.full_name }}</h1>
 
 {% for version in versions %}
-    <h2>{{ version.0.name }}</h2>
+    <h2>{{ version.0.name }} <span class="date">до {{version.0.end_date|date:"d.m"}}</span></h2>
+    <div class="version-status-block">
+        <span>Осталось времени:</span>
+        <div class="time-bar"><div class="real-time" style="width: {{ version.2.real_percent }}%">
+          {{ version.2.real_time }} часов</div></div>
+        <span>Осталось задач:</span>
+        <div class="time-bar"><div class="tickets-time {% if version.2.tickets_percent > version.2.real_percent %}fuckup{% endif %}"
+         style="width: {{ version.2.tickets_percent }}%">
+          {{ version.2.tickets_time }} часов
+        </div></div>
+    </div>
     <table class="table tickets">
     {% for ticket in version.1 %}
     <tr class="js_ticket status-{{ ticket.status }}

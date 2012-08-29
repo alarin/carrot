@@ -602,3 +602,40 @@ p {
     width: 600px;
     font-size: 1em;
 }
+
+.version-status-block {
+    overflow: hidden;
+    margin: 1em 0 0 0;
+    /*border: 1px #EEE solid;*/
+    /*border-left: none;*/
+    /*border-right: none;*/
+    padding: 1em 0;
+}
+.version-status-block .time-bar {
+    width: 50%;
+    float: left;
+    background: #EEE;
+}
+.version-status-block  span {
+    float: left;
+    clear: both;
+    width: 10em;
+    text-align: right;
+    padding: 0 1em 0 0;
+}
+.version-status-block .real-time {
+    background: #000;
+    color: #FFF;
+    text-align: center;
+}
+.version-status-block .tickets-time {
+    background: #3F3;
+    color: #000;
+    text-align: center;
+}
+.version-status-block .tickets-time.fuckup {
+    background: #F33;
+}
+.body-tickets h2 span {
+    font-size: 0.6em;
+}

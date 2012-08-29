@@ -1,3 +1,8 @@
+import datetime
+from carrot_tickets.models import TicketStatus
+from carrot_timetrack.utils import work_hours
+from django.db.models.aggregates import Sum
+from carrot_timetrack.models import TicketEstimate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout, login
@@ -20,7 +25,23 @@ def dash_developer(request):
     versions = project.version_set.filter(is_completed=False).order_by('end_date')
     versions_data = []
     for v in versions:
-        versions_data.append((v, v.ticket_set.order_by('kind', 'number')))
+        version_tickets = v.ticket_set.order_by('kind', 'number')
+        tickets_hours = TicketEstimate.objects\
+            .exclude(ticket__status__in=[TicketStatus.FIXED, TicketStatus.CLOSED, TicketStatus.REJECTED])\
+            .filter(ticket__fix_version=v, is_expert=False)\
+            .aggregate(Sum('hours'))['hours__sum']
+        real_time = work_hours(v.end_date)
+        all_real_time = work_hours(v.start_date, v.end_date)
+        statistic = {
+            'tickets_time': tickets_hours,
+            'real_time': real_time,
+            'tickets_percent': int(tickets_hours/float(all_real_time) * 100),
+            'real_percent': int(real_time/float(all_real_time) * 100),
+        }
+        versions_data.append((
+            v,
+            version_tickets,
+            statistic))
     data = {
         'project': project,
         'versions': versions_data
