@@ -24,14 +24,19 @@ a.novisited:visited {
     position: relative;
 }
     .navbar .brand {
+        float: left;
         text-decoration: none;
         color: #000;
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        padding: 0 0 0 0.5em;
+        padding: 0 5em 0 0.5em;
         vertical-align: middle;
     }
     .navbar .nav li {
         padding: 0.5em 1em;
+    }
+    .navbar .nav {
+        float: left;
+        color: #000;
     }
 .icon-carrot-big {
     background: url(../img/carrot_icon.png) no-repeat;
@@ -602,7 +607,9 @@ p {
     width: 600px;
     font-size: 1em;
 }
-
+.ticket-form.new .f_status, .ticket-form.new .f_assignee {
+    display: none;
+}
 .version-status-block {
     overflow: hidden;
     margin: 1em auto 0 auto;
@@ -643,6 +650,9 @@ p {
     font-size: 1.2em;
 }
 
-.body-tickets h2 span {
-    font-size: 0.6em;
+.body-tickets h2 {
+    margin: 1em 0 0 0;
 }
+    .body-tickets h2 span {
+        font-size: 0.6em;
+    }

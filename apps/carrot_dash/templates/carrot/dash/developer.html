@@ -7,6 +7,7 @@
 
 {% for version in versions %}
     <h2>{{ version.0.name }} <span class="date">до {{version.0.end_date|date:"d.m"}}</span></h2>
+    {% if version.2 %}
     <div class="version-status-block">
         <span>Осталось времени:</span>
         <div class="time-bar"><div class="real-time" style="width: {{ version.2.real_percent }}%">
@@ -20,6 +21,7 @@
           {{ version.2.logged_time }} из {{ version.2.real_time_passed }} часов
         </div>
     </div>
+    {% endif %}
     <table class="table tickets">
     {% for ticket in version.1 %}
     <tr class="js_ticket status-{{ ticket.status }}

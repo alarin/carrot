@@ -26,21 +26,23 @@ def dash_developer(request):
     versions_data = []
     for v in versions:
         version_tickets = v.ticket_set.order_by('kind', 'number')
-        tickets_hours = TicketEstimate.objects\
-            .exclude(ticket__status__in=[TicketStatus.FIXED, TicketStatus.CLOSED, TicketStatus.REJECTED])\
-            .filter(ticket__fix_version=v, is_expert=False)\
-            .aggregate(Sum('hours'))['hours__sum'] or 0
-        real_time_left = work_hours(v.end_date)
-        all_real_time = work_hours(v.start_date, v.end_date)
-        logged_time = sum(tl.hours() for tl in TimeLog.objects.filter(ticket__fix_version=v))
-        statistic = {
-            'tickets_time': tickets_hours,
-            'real_time_left': real_time_left,
-            'real_time_passed': all_real_time - real_time_left,
-            'logged_time': logged_time,
-            'tickets_percent': int(tickets_hours/float(all_real_time) * 100),
-            'real_percent': int(real_time_left/float(all_real_time) * 100),
-        }
+        statistic = None
+        if v.end_date >= datetime.datetime.now().date():
+            tickets_hours = TicketEstimate.objects\
+                .exclude(ticket__status__in=[TicketStatus.FIXED, TicketStatus.CLOSED, TicketStatus.REJECTED])\
+                .filter(ticket__fix_version=v, is_expert=False)\
+                .aggregate(Sum('hours'))['hours__sum'] or 0
+            real_time_left = work_hours(v.end_date)
+            all_real_time = work_hours(v.start_date, v.end_date)
+            logged_time = sum(tl.hours() for tl in TimeLog.objects.filter(ticket__fix_version=v))
+            statistic = {
+                'tickets_time': tickets_hours,
+                'real_time_left': real_time_left,
+                'real_time_passed': all_real_time - real_time_left,
+                'logged_time': logged_time,
+                'tickets_percent': int(tickets_hours/float(all_real_time) * 100),
+                'real_percent': int(real_time_left/float(all_real_time) * 100),
+            }
         versions_data.append((
             v,
             version_tickets,

@@ -49,31 +49,44 @@ def ticket(request, project_slug, ticket_number):
 
 
 @login_required
-def ticket_edit(request, project_slug, ticket_number):
-    ticket = get_object_or_404(Ticket, number=ticket_number, project__slug=project_slug)
+def ticket_edit(request, project_slug=None, ticket_number=None):
+    if ticket_number:
+        ticket = get_object_or_404(Ticket, number=ticket_number, project__slug=project_slug)
+    else:
+        ticket = Ticket()
     images = ticket.attachments.filter(kind='image').order_by('created')
     files = ticket.attachments.exclude(kind='image').order_by('created')
 
     ticket_form = TicketForm(instance=ticket)
 
-    if request.method == 'POST':
-        redirect_path = request.POST.get('next') or\
+    def get_redirect_path(ticket):
+        if not ticket.pk:
+            return redirect('/')
+        return request.POST.get('next') or\
             redirect('carrot_ticket', project_slug=ticket.project.slug, ticket_number=ticket.number)
-        if request.POST.get('action', 'cancel') == 'cancel':
-            return redirect_path
+
+    if request.method == 'POST':
         if request.POST.get('action') == 'save':
             ticket_form = TicketForm(request.POST, instance=ticket)
             if ticket_form.is_valid():
                 ticket = ticket_form.save(commit=False)
-                if not ticket.reporter:
+                if not ticket.pk or not ticket.reporter:
                     ticket.reporter = request.user
                 ticket.save()
-            return redirect_path
+                return get_redirect_path(ticket)
+        if request.POST.get('action', 'cancel') == 'cancel':
+            return get_redirect_path(ticket)
 
     data = {
+        'new': ticket_number is None,
         'ticket': ticket,
         'files': files,
         'images': images,
         'ticket_form': ticket_form,
     }
     return TemplateResponse(request, 'carrot/tickets/ticket_edit.html', data)
+
+
+@login_required
+def ticket_new(request):
+    return ticket_edit(request)

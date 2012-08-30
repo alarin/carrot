@@ -3,12 +3,24 @@
 {% load gravatar %}
 {% load thumbnail %}
 
-{% block title %}Edit #{{ ticket.number }} | Carrot {% endblock %}
+{% block title %}
+  {% if new %}
+  New ticket
+  {% else %}
+  Edit #{{ ticket.number }}
+  {% endif %} | Carrot
+{% endblock %}
 
 {% block bodyclass %}ticket-edit{% endblock %}
 {% block content %}
-    <form class="ticket-form aform" method="post">
-    <h1>#{{ ticket.number }}</h1>
+    <form class="ticket-form aform{% if new %} new{% endif %}" method="post">
+    <h1>
+      {% if new %}
+      New ticket
+      {% else %}
+      #{{ ticket.number }}
+      {% endif %}
+    </h1>
     {% csrf_token %}
     {{ ticket_form.as_div }}
     <div class="buttons">

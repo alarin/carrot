@@ -5,8 +5,9 @@
   <div class="navbar-inner">
     <div class="container">
       <a class="brand" href="{% url carrot_home %}"><i class="icon-carrot-big"></i> Carrot Task Tracker</a>
-      <!--<ul class="nav">-->
-      <!--</ul>-->
+      <ul class="nav">
+        <li><a href="{% url carrot_ticket_new %}">+ Ticket</a></li>
+      </ul>
       {% if user.is_authenticated %}
       <ul class="nav pull-right">
         <li>{{ user.get_full_name }}, <a href="{% url carrot_logout %}">выйти</a></li>
