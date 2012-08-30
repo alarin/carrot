@@ -18,7 +18,8 @@ class TimeLog(models.Model):
 
     def hours(self):
         end = self.end or datetime.datetime.now()
-        return int((end-self.start).total_seconds()/60/60)
+        td = end - self.start
+        return int((td.seconds + td.days * 24 * 3600)/60/60)
 
     def __unicode__(self):
         return '#%s %s %s-%s' % (self.ticket.number, self.user.get_full_name(), self.start, self.end)
