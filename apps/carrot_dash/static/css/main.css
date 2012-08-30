@@ -605,11 +605,12 @@ p {
 
 .version-status-block {
     overflow: hidden;
-    margin: 1em 0 0 0;
+    margin: 1em auto 0 auto;
     /*border: 1px #EEE solid;*/
     /*border-left: none;*/
     /*border-right: none;*/
     padding: 1em 0;
+    width: 85%;
 }
 .version-status-block .time-bar {
     width: 50%;
@@ -619,7 +620,7 @@ p {
 .version-status-block  span {
     float: left;
     clear: both;
-    width: 10em;
+    width: 8em;
     text-align: right;
     padding: 0 1em 0 0;
 }
@@ -636,6 +637,12 @@ p {
 .version-status-block .tickets-time.fuckup {
     background: #F33;
 }
+.version-status-block .work-stat {
+    float: right;
+    margin: 0 3em 0 0;
+    font-size: 1.2em;
+}
+
 .body-tickets h2 span {
     font-size: 0.6em;
 }

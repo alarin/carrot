@@ -27,3 +27,4 @@ class TicketAdmin(carrot_tickets.admin.TicketAdmin):
 
 admin.site.unregister(Ticket)
 admin.site.register(Ticket, TicketAdmin)
+admin.site.register(TimeLog)

@@ -10,12 +10,15 @@
     <div class="version-status-block">
         <span>Осталось времени:</span>
         <div class="time-bar"><div class="real-time" style="width: {{ version.2.real_percent }}%">
-          {{ version.2.real_time }} часов</div></div>
+          {{ version.2.real_time_left }} часов</div></div>
         <span>Осталось задач:</span>
         <div class="time-bar"><div class="tickets-time {% if version.2.tickets_percent > version.2.real_percent %}fuckup{% endif %}"
          style="width: {{ version.2.tickets_percent }}%">
           {{ version.2.tickets_time }} часов
         </div></div>
+        <div class="work-stat" title="Отработано/Прошло часов">
+          {{ version.2.logged_time }} из {{ version.2.real_time_passed }} часов
+        </div>
     </div>
     <table class="table tickets">
     {% for ticket in version.1 %}

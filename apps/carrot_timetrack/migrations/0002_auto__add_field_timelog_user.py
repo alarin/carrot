@@ -8,31 +8,15 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'TicketEstimate'
-        db.create_table('carrot_timetrack_ticketestimate', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('ticket', self.gf('django.db.models.fields.related.ForeignKey')(related_name='estimates', to=orm['carrot_tickets.Ticket'])),
-            ('hours', self.gf('django.db.models.fields.PositiveIntegerField')(null=True)),
-            ('is_expert', self.gf('django.db.models.fields.BooleanField')(default=False)),
-        ))
-        db.send_create_signal('carrot_timetrack', ['TicketEstimate'])
-
-        # Adding model 'TimeLog'
-        db.create_table('carrot_timetrack_timelog', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('ticket', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['carrot_tickets.Ticket'])),
-            ('start', self.gf('django.db.models.fields.DateTimeField')()),
-            ('end', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
-        ))
-        db.send_create_signal('carrot_timetrack', ['TimeLog'])
+        # Adding field 'TimeLog.user'
+        db.add_column('carrot_timetrack_timelog', 'user',
+                      self.gf('django.db.models.fields.related.ForeignKey')(default=1, to=orm['auth.User']),
+                      keep_default=False)
 
 
     def backwards(self, orm):
-        # Deleting model 'TicketEstimate'
-        db.delete_table('carrot_timetrack_ticketestimate')
-
-        # Deleting model 'TimeLog'
-        db.delete_table('carrot_timetrack_timelog')
+        # Deleting field 'TimeLog.user'
+        db.delete_column('carrot_timetrack_timelog', 'user_id')
 
 
     models = {
@@ -112,7 +96,8 @@ class Migration(SchemaMigration):
             'end': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'start': ('django.db.models.fields.DateTimeField', [], {}),
-            'ticket': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['carrot_tickets.Ticket']"})
+            'ticket': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['carrot_tickets.Ticket']"}),
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"})
         },
         'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},

@@ -10,6 +10,8 @@ def work_hours(start, end=None):
     if not end:
         end = start
         start = datetime.datetime.today().date()
+#    else:
+
     if end < start:
         raise Exception('End is before Start')
     days = 0

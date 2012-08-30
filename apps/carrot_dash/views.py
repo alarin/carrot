@@ -2,7 +2,7 @@ import datetime
 from carrot_tickets.models import TicketStatus
 from carrot_timetrack.utils import work_hours
 from django.db.models.aggregates import Sum
-from carrot_timetrack.models import TicketEstimate
+from carrot_timetrack.models import TicketEstimate, TimeLog
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout, login
@@ -29,14 +29,17 @@ def dash_developer(request):
         tickets_hours = TicketEstimate.objects\
             .exclude(ticket__status__in=[TicketStatus.FIXED, TicketStatus.CLOSED, TicketStatus.REJECTED])\
             .filter(ticket__fix_version=v, is_expert=False)\
-            .aggregate(Sum('hours'))['hours__sum']
-        real_time = work_hours(v.end_date)
+            .aggregate(Sum('hours'))['hours__sum'] or 0
+        real_time_left = work_hours(v.end_date)
         all_real_time = work_hours(v.start_date, v.end_date)
+        logged_time = sum(tl.hours() for tl in TimeLog.objects.filter(ticket__fix_version=v))
         statistic = {
             'tickets_time': tickets_hours,
-            'real_time': real_time,
+            'real_time_left': real_time_left,
+            'real_time_passed': all_real_time - real_time_left,
+            'logged_time': logged_time,
             'tickets_percent': int(tickets_hours/float(all_real_time) * 100),
-            'real_percent': int(real_time/float(all_real_time) * 100),
+            'real_percent': int(real_time_left/float(all_real_time) * 100),
         }
         versions_data.append((
             v,

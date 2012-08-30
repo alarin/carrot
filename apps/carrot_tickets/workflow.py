@@ -1,7 +1,9 @@
 #encoding: utf-8
 from __future__ import unicode_literals
+import datetime
 
 from carrot_tickets.models import TicketStatus, CommentKind, TicketComment
+from carrot_timetrack.models import TimeLog
 
 
 def assign(user, ticket, new_state):
@@ -54,9 +56,20 @@ def apply_action(user, ticket, action):
         raise Exception('Unexpected actions')
     descr = actions.get(action)
     old_status = ticket.status
+    new_status = action
     ticket.status = action
     ticket.save()
     TicketComment.objects.create(kind=CommentKind.CHANGES, ticket=ticket, author=user,
         content='%s → %s' % (old_status, action))
+
+    #timeloggins
+    if new_status == TicketStatus.IN_PROGRESS:
+        timelog, created = TimeLog.objects.get_or_create(ticket=ticket, user=user, end=None)
+
+    if new_status == TicketStatus.FIXED:
+        timelog, created = TimeLog.objects.get_or_create(ticket=ticket, user=user, end=None)
+        timelog.end = datetime.datetime.now()
+        timelog.save()
+
     if descr.get('action'):
         descr.get('action')(user, ticket, action)
