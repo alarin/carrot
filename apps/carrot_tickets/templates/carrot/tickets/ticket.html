@@ -22,7 +22,7 @@
           </form>
         </div>
         <div class="author-when">
-          <span class="author"><img src="{% gravatar_for_user user size=40 %}">{{ ticket.reporter.get_full_name }}</span>
+          <span class="author"><img src="{% gravatar_for_user ticket.reporter size=40 %}">{{ ticket.reporter.get_full_name }}</span>
           <span class="posted">{{ ticket.created|naturaltime }}</span>
         </div>
         <div class="description">
@@ -62,7 +62,7 @@
           <li id="c{{ c.pk }}" class="kind-{{ c.kind }}">
             {% if c.kind = 'comment' %}
             <div class="author-when">
-              <span class="author"><img src="{% gravatar_for_user user size=40 %}">{{ c.author.get_full_name }}</span>
+              <span class="author"><img src="{% gravatar_for_user c.author size=40 %}">{{ c.author.get_full_name }}</span>
               <span class="posted">{{ c.modified|naturaltime }}</span>
             </div>
             <div class="content">
@@ -70,7 +70,7 @@
             </div>
             {% else %}
             <div class="author-when">
-              <span class="author"><img src="{% gravatar_for_user user size=20 %}">{{ c.author.get_full_name }}</span>
+              <span class="author"><img src="{% gravatar_for_user c.author size=20 %}">{{ c.author.get_full_name }}</span>
               <span class="posted">{{ c.modified|naturaltime }}</span>
             </div>
             <div class="content">

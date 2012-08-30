@@ -3,7 +3,12 @@
 {% block title %}Dashboard | Carrot Ticket Tracker{% endblock %}
 {% block bodyclass %}body-tickets{% endblock %}
 {% block content %}
-<h1>{{ project.full_name }}</h1>
+<ul class="projects">
+{% for p in projects %}
+<li{% if p.pk = project.pk %}  class="active"{% endif %}><a href=".?project_slug={{ p.slug }}">{{ p.full_name }}</a></li>
+{% endfor %}
+</ul>
+
 
 {% for version in versions %}
     <h2>{{ version.0.name }} <span class="date">до {{version.0.end_date|date:"d.m"}}</span></h2>

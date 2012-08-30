@@ -22,6 +22,9 @@ class Project(models.Model):
     def __unicode__(self):
         return self.full_name()
 
+    class Meta:
+        ordering = 'slug',
+
 
 class Version(models.Model):
     project = models.ForeignKey(Project)

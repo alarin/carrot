@@ -21,7 +21,11 @@ def home(request):
 
 @login_required
 def dash_developer(request):
-    project = request.user.carrotprofile.projects.all()[0]
+    projects = request.user.carrotprofile.projects.all()
+    if request.GET.get('project_slug'):
+        project = projects.get(slug=request.GET.get('project_slug'))
+    else:
+        project = projects[0]
     versions = project.version_set.filter(is_completed=False).order_by('end_date')
     versions_data = []
     for v in versions:
@@ -49,6 +53,7 @@ def dash_developer(request):
             statistic))
     data = {
         'project': project,
+        'projects': projects,
         'versions': versions_data
     }
     return TemplateResponse(request, 'carrot/dash/developer.html', data)

@@ -32,6 +32,9 @@ a.novisited:visited {
         vertical-align: middle;
     }
     .navbar .nav li {
+        padding: 0.2em 1em 0 1em;
+    }
+    .navbar .nav.pull-right li {
         padding: 0.5em 1em;
     }
     .navbar .nav {
@@ -656,3 +659,24 @@ p {
     .body-tickets h2 span {
         font-size: 0.6em;
     }
+
+.body-tickets h2 {
+    clear: both;
+}
+
+.body-tickets .projects {
+    float: left;
+    margin: 2em 0;
+}
+    .body-tickets .projects li {
+        float: left;
+        margin: 0 1em 0 0;
+    }
+    .body-tickets .projects li.active {
+        font-size: 2em;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+        .body-tickets .projects li.active a {
+            color: #000;
+            text-decoration: none;
+        }
