@@ -17,7 +17,6 @@ def github(request):
 
     Mostly create ticket comments
     """
-    raise Exception('Just for test')
     if request.method == 'GET':
         return HttpResponse('Carrot GitHub hook url. See more at <a href="https://help.github.com/articles/post-receive-hooks">https://help.github.com/articles/post-receive-hooks</a>')
 
