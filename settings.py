@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'south',
     'gravatar',
+    'carrot_github',
     'carrot_tickets',
     'carrot_builds',
     'carrot_dash',

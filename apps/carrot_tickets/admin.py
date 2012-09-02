@@ -20,7 +20,11 @@ class TicketAdmin(admin.ModelAdmin):
     inlines = [AttachmentInline]
 
 
-admin.site.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    #for extending in carrot_guthub
+    pass
+
+admin.site.register(Project, ProjectAdmin)
 admin.site.register(Version, VersionAdmin)
 admin.site.register(Ticket, TicketAdmin)
 admin.site.register(TicketComment)

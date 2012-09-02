@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^', include('carrot_tickets.urls')),
     url(r'^', include('carrot_builds.urls')),
     url(r'^', include('carrot_dash.urls')),
+    url(r'^', include('carrot_github.urls')),
 )
 
 if settings.DEBUG:
