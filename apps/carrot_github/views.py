@@ -43,4 +43,6 @@ def github(request):
 
         return HttpResponse('ok')
 
+    raise Exception('Unsupported request method %s' % request.method)
+
 
