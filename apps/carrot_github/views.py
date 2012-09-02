@@ -25,7 +25,8 @@ def github(request):
 
         project = ProjectGitHub.objects.filter(repo_url=payload['repository']['url'])
         if not project:
-            return HttpResponse('Project with url %s not found' % payload['repository']['url'])
+            raise Exception('Project with url %s not found' % payload['repository']['url'])
+            #return HttpResponse('Project with url %s not found' % payload['repository']['url'])
         else:
             project = project[0].project
 
@@ -37,6 +38,8 @@ def github(request):
                 .filter(pk__in=ticket_ids):
                 TicketComment.objects.create(ticket=ticket, author=author, kind=CommentKind.COMMIT,
                     content = COMMENT_TEXT % commit)
+            else:
+                raise Exception('No tickets %s, %s, %s' % (author, project, ticket_ids))
 
         return HttpResponse('ok')
 
