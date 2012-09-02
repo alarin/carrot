@@ -51,10 +51,11 @@ test_payload = """{
 
 class GitHubHookTestCase(TestCase):
     def test(self):
-        project = Project.objects.create(slug='test', name='test')
+        pproject = Project.objects.create(slug='parent of test', name='parent of test')
+        project = Project.objects.create(slug='test', name='test', parent=pproject)
         version = Version.objects.create(project=project, slug='1', name='1',
             start_date=datetime.datetime.now(), end_date=datetime.datetime.now())
-        ProjectGitHub.objects.create(project=project, repo_url="http://github.com/defunkt/github")
+        ProjectGitHub.objects.create(project=pproject, repo_url="http://github.com/defunkt/github")
         user1 = User.objects.create(username="test1", email="test1@touchin.ru")
         user2 = User.objects.create(username="test2", email="test2@touchin.ru")
         ticket1 = Ticket.objects.create(project=project, fix_version=version,
