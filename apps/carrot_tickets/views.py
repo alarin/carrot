@@ -60,10 +60,13 @@ def ticket_edit(request, project_slug=None, ticket_number=None):
     images = ticket.attachments.filter(kind='image').order_by('created')
     files = ticket.attachments.exclude(kind='image').order_by('created')
 
-    initial_data = {
-        'project': request.GET.get('project'),
-        'fix_version': request.GET.get('version'),
-    }
+    if is_new:
+        initial_data = {
+            'project': request.GET.get('project'),
+            'fix_version': request.GET.get('version'),
+        }
+    else:
+        initial_data = {}
     ticket_form = TicketForm(instance=ticket, initial=initial_data)
 
     def get_redirect_path(ticket):
