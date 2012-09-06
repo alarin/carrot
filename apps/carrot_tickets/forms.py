@@ -9,6 +9,8 @@ class CommentForm(CoreFormMixin, forms.ModelForm):
 
 
 class TicketForm(CoreFormMixin, forms.ModelForm):
+    file = forms.FileField(required=False)
+
     class Meta:
         model = Ticket
         exclude = ('reporter',)

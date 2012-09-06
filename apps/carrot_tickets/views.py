@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
 from django.template.response import TemplateResponse
 
-from carrot_tickets.models import Ticket, TicketComment
+from carrot_tickets.models import Ticket, TicketComment, TicketAttachment
 
 
 @login_required
@@ -44,7 +44,8 @@ def ticket(request, project_slug, ticket_number):
         'files': files,
         'images': images,
         'actions': actions,
-        'project': ticket.project #for navigation
+        'project': ticket.project, #for navigation
+        'version': ticket.fix_version, #for navigation
     }
     return TemplateResponse(request, 'carrot/tickets/ticket.html', data)
 
@@ -73,18 +74,20 @@ def ticket_edit(request, project_slug=None, ticket_number=None):
 
     if request.method == 'POST':
         if request.POST.get('action') == 'save':
-            ticket_form = TicketForm(request.POST, instance=ticket)
+            ticket_form = TicketForm(request.POST, files=request.FILES, instance=ticket)
             if ticket_form.is_valid():
                 ticket = ticket_form.save(commit=False)
                 if not ticket.pk or not ticket.reporter:
                     ticket.reporter = request.user
                 ticket.save()
+                if ticket_form.cleaned_data['file']:
+                    TicketAttachment.objects.create(ticket=ticket, file=ticket_form.cleaned_data['file'])
                 return get_redirect_path(ticket)
         if request.POST.get('action', 'cancel') == 'cancel':
             return get_redirect_path(ticket)
 
     data = {
-        'new': ticket_number is None,
+        'new': is_new,
         'ticket': ticket,
         'files': files,
         'images': images,

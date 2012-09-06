@@ -13,7 +13,7 @@
 
 {% block bodyclass %}ticket-edit{% endblock %}
 {% block content %}
-    <form class="ticket-form aform{% if new %} new{% endif %}" method="post">
+    <form class="ticket-form aform{% if new %} new{% endif %}" method="post" enctype="multipart/form-data">
     <h1>
       {% if new %}
       New ticket
