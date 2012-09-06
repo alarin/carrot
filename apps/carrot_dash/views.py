@@ -53,6 +53,7 @@ def dash_developer(request):
             statistic))
     data = {
         'project': project,
+        'version': versions[0],# just for +ticket menu option
         'projects': projects,
         'versions': versions_data
     }

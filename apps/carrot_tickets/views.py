@@ -44,20 +44,26 @@ def ticket(request, project_slug, ticket_number):
         'files': files,
         'images': images,
         'actions': actions,
+        'project': ticket.project #for navigation
     }
     return TemplateResponse(request, 'carrot/tickets/ticket.html', data)
 
 
 @login_required
 def ticket_edit(request, project_slug=None, ticket_number=None):
-    if ticket_number:
-        ticket = get_object_or_404(Ticket, number=ticket_number, project__slug=project_slug)
-    else:
+    is_new = not ticket_number
+    if is_new:
         ticket = Ticket()
+    else:
+        ticket = get_object_or_404(Ticket, number=ticket_number, project__slug=project_slug)
     images = ticket.attachments.filter(kind='image').order_by('created')
     files = ticket.attachments.exclude(kind='image').order_by('created')
 
-    ticket_form = TicketForm(instance=ticket)
+    initial_data = {
+        'project': request.GET.get('project'),
+        'fix_version': request.GET.get('version'),
+    }
+    ticket_form = TicketForm(instance=ticket, initial=initial_data)
 
     def get_redirect_path(ticket):
         if not ticket.pk:

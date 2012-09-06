@@ -4,9 +4,11 @@
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="{% url carrot_home %}"><i class="icon-carrot-big"></i> Carrot Task Tracker</a>
+      <a class="brand" href="{% url carrot_home %}{% if project %}?project_slug={{ project.slug}}{% endif %}"><i class="icon-carrot-big"></i> Carrot Task Tracker</a>
       <ul class="nav">
-        <li><a href="{% url carrot_ticket_new %}">+ Ticket</a></li>
+        <li><a href="{% url carrot_ticket_new %}?1=1{% if project %}&project={{ project.pk }}{% endif %}{% if version %}&version={{ version.pk }}{% endif %}">
+          + Ticket
+        </a></li>
       </ul>
       {% if user.is_authenticated %}
       <ul class="nav pull-right">
