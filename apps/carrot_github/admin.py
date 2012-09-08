@@ -16,5 +16,5 @@ class ProjectAdmin(carrot_tickets.admin.ProjectAdmin):
         super(ProjectAdmin, self).__init__(*args, **kwargs)
 
 
-admin.site.unregister(Project)
-admin.site.register(Project, ProjectAdmin)
+#admin.site.unregister(Project)
+#admin.site.register(Project, ProjectAdmin)
