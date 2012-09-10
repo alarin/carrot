@@ -141,6 +141,7 @@ h2 {
         white-space: nowrap;
     }
 
+
 .label.kind_bug  {
     background: #e05b59;
     color: #fff;
@@ -431,3 +432,14 @@ p {
             color: #000;
             text-decoration: none;
         }
+
+.timelog-info {
+    margin: 2em 0 0 2em;
+}
+    .timelog-info li {
+        margin: 1em 0 0 0;
+    }
+.timelog-info .interval {
+    color: #666;
+    font-size: 0.8em;
+}

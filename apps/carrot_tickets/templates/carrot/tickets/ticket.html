@@ -57,6 +57,11 @@
           <dt>Reporter</dt><dd>{{ ticket.reporter.get_full_name }}</dd>
           <dt>Assignee</dt><dd>{{ ticket.assignee.get_full_name }}</dd>
         </dl>
+        <ul class="timelog-info">
+          {% for tl in timelogs %}
+          <li>{{ tl.user.get_full_name }} {{ tl.hours }} часов <span class="interval">{{ tl.start|date:"d.m.Y H:i" }}—{{ tl.end|date:"d.m.Y H:i" }}</span></li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
 

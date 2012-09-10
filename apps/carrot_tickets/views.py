@@ -42,7 +42,7 @@ def ticket(request, project_slug, ticket_number):
         'files': files,
         'images': images,
         'actions': actions,
-#        'timelog': TimeLog.objects.
+        'timelogs': TimeLog.objects.filter(ticket=ticket),
         'project': ticket.project, #for navigation
         'version': ticket.fix_version, #for navigation
     }
