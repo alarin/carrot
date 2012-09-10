@@ -1,7 +1,7 @@
 {% extends 'carrot/site_base.html' %}
 
 {% block title %}Dashboard | Carrot Ticket Tracker{% endblock %}
-{% block bodyclass %}body-tickets{% endblock %}
+{% block bodyclass %}body-tickets{% if pm %} role-pm{% endif %}{% endblock %}
 {% block content %}
 <ul class="projects">
 {% for p in projects %}
@@ -30,10 +30,18 @@
     <table class="table tickets">
     {% for ticket in version.1 %}
     <tr class="js_ticket status-{{ ticket.status }}
-    {% if ticket.assignee %}{% if ticket.assignee.pk = user.pk %} mine{% else %} not-mine{% endif %}{% endif %}">
+    {% if ticket.assignee %}{% if ticket.assignee.pk = user.pk %} mine{% else %} not-mine{% endif %}{% endif %}
+    {% if ticket.is_active %} ticket-active{% endif %}">
       <td class="kind kind_{{ ticket.kind }}">
         {% if ticket.kind == 'bug' %}
         <span class="label kind_{{ ticket.kind }}">bug</span>
+        {% endif %}
+        {% if ticket.status = 'in_progress' %}
+        {% if ticket.is_active %}
+        <i class="icon-play"></i>
+        {% else %}
+        <i class="icon-pause"></i>
+        {% endif %}
         {% endif %}
       </td>
       <td class="js_href number"><a class="novisited" href="{% url carrot_ticket ticket.project.slug ticket.number %}">#{{ ticket.number }}</a></td>
@@ -41,7 +49,12 @@
         {{ ticket.get_status_display }}
       </td>
       <td class="summary">{{ ticket.summary }}</td>
-      <td class="estimate">{{ ticket.estimates.all.0.hours }}</td>
+      <td class="estimate">
+        {% if ticket.time_spent %}
+        <span class="time-spent">{{ ticket.time_spent }}</span> из
+        {% endif %}
+        {{ ticket.estimates.all.0.hours }}
+      </td>
     </tr>
     {% endfor %}
     </table>

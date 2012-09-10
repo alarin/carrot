@@ -82,9 +82,16 @@ h2 {
         .tickets tr.status-in_progress.not-mine a {
             color: #CCC;
         }
-    .tickets tr.status-in_progress.mine {
+    .tickets tr.status-in_progress.mine, .role-pm .tickets tr.status-in_progress.not-mine{
         font-weight: bold;
         font-size: 1.1em;
+        color: #000;
+    }
+        .tickets tr.status-in_progress.mine a, .role-pm .tickets tr.status-in_progress.not-mine a{
+            color: #08C;
+        }
+    .tickets .ticket-active.mine, .role-pm .ticket-active {
+        background: #9F9;
     }
     .tickets tr.status-fixed {
         color: #CCC;
@@ -131,6 +138,7 @@ h2 {
         min-width: 3em;
         text-align: right;
         font-size: 1.1em;
+        white-space: nowrap;
     }
 
 .label.kind_bug  {
@@ -148,263 +156,6 @@ p {
     margin: 0.5em 0 0 0;
 }
 
-/* From twitter bootstrap http://twitter.github.com/bootstrap */
-.dl-horizontal dt {
-    float: left;
-    width: 120px;
-    overflow: hidden;
-    clear: left;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: bold;
-    padding: 0.2em 0;
-}
-.dl-horizontal dd {
-    margin-left: 130px;
-    padding: 0.2em 0;
-}
-.btn {
-    display: inline-block;
-    padding: 4px 14px;
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 20px;
-    color: #333;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    vertical-align: middle;
-    cursor: pointer;
-    background-color: whiteSmoke;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#E6E6E6));
-    background-image: -webkit-linear-gradient(top, white, #E6E6E6);
-    background-image: -o-linear-gradient(top, white, #E6E6E6);
-    background-image: linear-gradient(to bottom, white, #E6E6E6);
-    background-image: -moz-linear-gradient(top, white, #E6E6E6);
-    background-repeat: repeat-x;
-    border: 1px solid #BBB;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    border-bottom-color: #A2A2A2;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-.btn {
-    text-decoration: none;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-.btn:hover,
-.btn:active,
-.btn.active,
-.btn.disabled,
-.btn[disabled] {
-    color: #333333;
-    background-color: #e6e6e6;
-    *background-color: #d9d9d9;
-}
-
-.btn:active,
-.btn.active {
-    background-color: #cccccc \9;
-}
-
-.btn:first-child {
-    *margin-left: 0;
-}
-
-.btn:hover {
-    color: #333333;
-    text-decoration: none;
-    background-color: #e6e6e6;
-    *background-color: #d9d9d9;
-    /* Buttons in IE7 don't get borders, so darken on hover */
-
-    background-position: 0 -15px;
-    -webkit-transition: background-position 0.1s linear;
-    -moz-transition: background-position 0.1s linear;
-    -o-transition: background-position 0.1s linear;
-    transition: background-position 0.1s linear;
-}
-
-.btn:focus {
-    outline: thin dotted #333;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-
-.btn.active,
-.btn:active {
-    background-color: #e6e6e6;
-    background-color: #d9d9d9 \9;
-    background-image: none;
-    outline: 0;
-    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.btn.disabled,
-.btn[disabled] {
-    cursor: default;
-    background-color: #e6e6e6;
-    background-image: none;
-    opacity: 0.65;
-    filter: alpha(opacity=65);
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-
-.btn-large {
-    padding: 9px 14px;
-    font-size: 16px;
-    line-height: normal;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-.btn-large [class^="icon-"] {
-    margin-top: 2px;
-}
-
-.btn-small {
-    padding: 3px 9px;
-    font-size: 12px;
-    line-height: 18px;
-}
-
-.btn-small [class^="icon-"] {
-    margin-top: 0;
-}
-
-.btn-mini {
-    padding: 2px 6px;
-    font-size: 11px;
-    line-height: 16px;
-}
-
-.btn-block {
-    display: block;
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.btn-block + .btn-block {
-    margin-top: 5px;
-}
-
-.btn-primary.active,
-.btn-warning.active,
-.btn-danger.active,
-.btn-success.active,
-.btn-info.active,
-.btn-inverse.active {
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.btn {
-    border-color: #c5c5c5;
-    border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
-}
-.btn-success {
-    color: white;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #5BB75B;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62C462), to(#51A351));
-    background-image: -webkit-linear-gradient(top, #62C462, #51A351);
-    background-image: -o-linear-gradient(top, #62C462, #51A351);
-    background-image: linear-gradient(to bottom, #62C462, #51A351);
-    background-image: -moz-linear-gradient(top, #62C462, #51A351);
-    background-repeat: repeat-x;
-    border-color: #51A351 #51A351 #387038;
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
-    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-}
-.btn-danger {
-    color: white;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #DA4F49;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EE5F5B), to(#BD362F));
-    background-image: -webkit-linear-gradient(top, #EE5F5B, #BD362F);
-    background-image: -o-linear-gradient(top, #EE5F5B, #BD362F);
-    background-image: linear-gradient(to bottom, #EE5F5B, #BD362F);
-    background-image: -moz-linear-gradient(top, #EE5F5B, #BD362F);
-    background-repeat: repeat-x;
-    border-color: #BD362F #BD362F #802420;
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
-    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-}
-.btn-danger:hover,
-.btn-danger:active,
-.btn-danger.active,
-.btn-danger.disabled,
-.btn-danger[disabled] {
-    color: #ffffff;
-    background-color: #bd362f;
-    *background-color: #a9302a;
-}
-
-.btn-danger:active,
-.btn-danger.active {
-    background-color: #942a25 \9;
-}
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-    color: #ffffff;
-    background-color: #51a351;
-    *background-color: #499249;
-}
-
-.btn-success:active,
-.btn-success.active {
-    background-color: #408140 \9;
-}
-.btn-primary {
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #006dcc;
-    *background-color: #0044cc;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-    background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-    background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-    background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-    background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-    background-repeat: repeat-x;
-    border-color: #0044cc #0044cc #002a80;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-}
-
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary.disabled,
-.btn-primary[disabled] {
-    color: #ffffff;
-    background-color: #0044cc;
-    *background-color: #003bb3;
-}
-
-.btn-primary:active,
-.btn-primary.active {
-    background-color: #003399 \9;
-}
-
-/* /Bootstrap */
 .aform .row {
     clear: both;
     margin: 0.5em 0;

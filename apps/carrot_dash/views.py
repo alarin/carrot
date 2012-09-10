@@ -52,6 +52,7 @@ def dash_developer(request):
             version_tickets,
             statistic))
     data = {
+        'pm': Roles.has_role(request.user, Roles.pm),
         'project': project,
         'version': versions[0],# just for +ticket menu option
         'projects': projects,

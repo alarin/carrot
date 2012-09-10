@@ -22,10 +22,7 @@ def ticket(request, project_slug, ticket_number):
     if request.method == 'POST':
         action = request.POST.get('action')
         if action:
-            if not action in actions:
-                messages.error(request, 'Действие недоступно!')
-            else:
-                apply_action(request.user, ticket, action)
+            apply_action(request.user, ticket, action)
             return redirect('.')
 
 
@@ -37,6 +34,7 @@ def ticket(request, project_slug, ticket_number):
             comment.save()
             return redirect(request.path + '#c%d' % comment.pk)
 
+    from carrot_timetrack.models import TimeLog
     data = {
         'ticket': ticket,
         'comments': comments,
@@ -44,6 +42,7 @@ def ticket(request, project_slug, ticket_number):
         'files': files,
         'images': images,
         'actions': actions,
+#        'timelog': TimeLog.objects.
         'project': ticket.project, #for navigation
         'version': ticket.fix_version, #for navigation
     }

@@ -16,8 +16,13 @@
         <div class="actions">
           <form method="post">
           {% csrf_token %}
-          {% for action, description in actions.items %}
-          <button class="btn btn-{{ action }}" name="action" value="{{ action }}">{{ description.name }}</button>
+          {% for action in actions %}
+          <button class="btn btn-{{ action.status }}" name="action" value="{{ action.name }}">
+            {% if action.icon %}
+            <i class="{{ action.icon }}"></i>
+            {% endif %}
+            {{ action.name }}
+          </button>
           {% endfor %}
           </form>
         </div>

@@ -1,12 +1,12 @@
 from __future__ import unicode_literals
 import mimetypes
+from django.db.models.aggregates import Sum
 
 from autoslug.fields import AutoSlugField
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
 from django.db import models
-
 
 class Project(models.Model):
     parent = models.ForeignKey('Project', null=True, blank=True)
@@ -98,6 +98,19 @@ class Ticket(models.Model):
         if not self.number:
             self.number = self.pk
             self.save()
+
+    def time_spent(self):
+        #FIXME brokes separate carrot_timetrack project, may be unite them
+        from carrot_timetrack.models import TimeLog
+        return sum(tl.hours() for tl in TimeLog.objects.filter(ticket__pk=self.pk))
+
+    def is_active(self):
+        """
+        Is ticket timetracked now
+        """
+        #FIXME brokes separate carrot_timetrack project, may be unite them
+        from carrot_timetrack.models import TimeLog
+        return len(TimeLog.objects.filter(ticket__pk=self.pk, end=None)) != 0
 
 
 class BaseAttachment(models.Model):
