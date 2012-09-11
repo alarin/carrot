@@ -14,7 +14,7 @@ class TicketEstimate(models.Model):
 class TimeLogManager(models.Manager):
     def start(self, user, ticket):
         timelog, created = TimeLog.objects.get_or_create(ticket=ticket, user=user, end=None)
-        TimeLog.objects.exclude(ticket=ticket).filter(user=user).update(end=datetime.datetime.now())
+        TimeLog.objects.exclude(ticket=ticket).filter(user=user, end=None).update(end=datetime.datetime.now())
 
     def pause(self, user, ticket):
         timelog = TimeLog.objects.get(ticket=ticket, user=user, end=None)
