@@ -162,6 +162,9 @@ LOGGING = {
     }
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SERVER_EMAIL = 'carrot@touchin.ru'
+
 from carrot_tickets.settings import *
 
 try:

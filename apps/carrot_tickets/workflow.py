@@ -1,6 +1,7 @@
 #encoding: utf-8
 from __future__ import unicode_literals
 import datetime
+from carrot_tickets import signals
 
 from carrot_tickets.models import TicketStatus, CommentKind, TicketComment
 from carrot_timetrack.models import TimeLog
@@ -79,6 +80,7 @@ def apply_action(user, ticket, action_name, POST):
             TimeLog.objects.create(user=ticket.assignee, ticket=ticket, hours=hours, end=datetime.datetime.now())
 
         ticket.status = new_status
+        signals.ticket_will_update.send(sender=__name__, ticket=ticket, changer=user)
         ticket.save()
 
         TicketComment.objects.create(kind=CommentKind.CHANGES, ticket=ticket, author=user,

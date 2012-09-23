@@ -1,5 +1,10 @@
 from __future__ import unicode_literals
 import mimetypes
+from carrot_tickets.signals import ticket_will_update
+from django.contrib.sites.models import Site
+from django.core.urlresolvers import reverse
+from django.db.models.signals import pre_save, post_save
+from django.dispatch.dispatcher import receiver
 from django.db.models.aggregates import Sum
 
 from autoslug.fields import AutoSlugField
@@ -7,6 +12,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
 from django.db import models
+
 
 class Project(models.Model):
     parent = models.ForeignKey('Project', null=True, blank=True)
@@ -112,6 +118,11 @@ class Ticket(models.Model):
         from carrot_timetrack.models import TimeLog
         return len(TimeLog.objects.filter(ticket__pk=self.pk, end=None)) != 0
 
+    def get_url(self):
+        return 'http://%s%s' % (Site.objects.get_current().domain,
+           reverse('carrot_ticket', kwargs={'project_slug': self.project.slug, 'ticket_number': self.number }))
+
+
 
 class BaseAttachment(models.Model):
     kind = models.CharField(max_length=20, editable=False)
@@ -169,3 +180,13 @@ class TicketComment(models.Model):
 
     def __unicode__(self):
         return self.content[:100]
+
+
+def connect_signals():
+    #avoid circular import
+    from carrot_tickets import emailer
+    ticket_will_update.connect(emailer.email_on_ticket_changes)
+
+    post_save.connect(emailer.email_on_comment, sender=TicketComment)
+
+connect_signals()
