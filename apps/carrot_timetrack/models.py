@@ -30,15 +30,19 @@ class TimeLogManager(models.Manager):
 class TimeLog(models.Model):
     ticket = models.ForeignKey(Ticket)
     user = models.ForeignKey(User)
-    start = models.DateTimeField(default=datetime.datetime.now)
+    start = models.DateTimeField(default=datetime.datetime.now, blank=True, null=True)
     end = models.DateTimeField(blank=True, null=True)
+    hours = models.PositiveSmallIntegerField(null=True, blank=True)
 
     objects = TimeLogManager()
 
-    def hours(self):
-        end = self.end or datetime.datetime.now()
-        td = end - self.start
-        return int((td.seconds + td.days * 24 * 3600)/60/60)
+    def get_hours(self):
+        if self.hours:
+            return self.hours
+        else:
+            end = self.end or datetime.datetime.now()
+            td = end - self.start
+            return int((td.seconds + td.days * 24 * 3600)/60/60)
 
     def __unicode__(self):
         return '#%s %s %s-%s' % (self.ticket.number, self.user.get_full_name(), self.start, self.end)

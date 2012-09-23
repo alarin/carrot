@@ -102,7 +102,7 @@ class Ticket(models.Model):
     def time_spent(self):
         #FIXME brokes separate carrot_timetrack project, may be unite them
         from carrot_timetrack.models import TimeLog
-        return sum(tl.hours() for tl in TimeLog.objects.filter(ticket__pk=self.pk))
+        return TimeLog.objects.filter(ticket__pk=self.pk).aggregate(Sum('hours'))['hours__sum'] or 0
 
     def is_active(self):
         """

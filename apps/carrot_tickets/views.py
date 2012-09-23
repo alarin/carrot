@@ -22,7 +22,7 @@ def ticket(request, project_slug, ticket_number):
     if request.method == 'POST':
         action = request.POST.get('action')
         if action:
-            apply_action(request.user, ticket, action)
+            apply_action(request.user, ticket, action, request.POST)
             return redirect('.')
 
 

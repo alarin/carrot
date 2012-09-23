@@ -11,10 +11,13 @@ a {
 a.novisited:visited {
     color: #08C;
 }
-.pull-right {
+.navbar-inner .pull-right {
     position: absolute;
     right: 0;
     top: 0;
+}
+.pull-right {
+    float: right;
 }
 .navbar {
     background: rgb(255, 178, 7);
@@ -83,24 +86,23 @@ h2 {
             color: #CCC;
         }
     .tickets tr.status-in_progress.mine, .role-pm .tickets tr.status-in_progress.not-mine{
-        font-weight: bold;
-        font-size: 1.1em;
+        background: #9F9;
         color: #000;
     }
         .tickets tr.status-in_progress.mine a, .role-pm .tickets tr.status-in_progress.not-mine a{
             color: #08C;
         }
-    .tickets .ticket-active.mine, .role-pm .ticket-active {
-        background: #9F9;
-    }
-    .tickets tr.status-fixed {
+    .tickets tr {
         color: #CCC;
     }
-        .tickets tr.status-fixed a {
+        .tickets tr {
             color: #CCC;
         }
+    .tickets tr.status-open, .tickets tr.status-reopened {
+        color: #000;
+    }
     .tickets tr:hover {
-        background: #EEE;
+        background: #EEE !important;
         color: #444 !important;
     }
         .tickets tr:hover a {
@@ -230,6 +232,7 @@ p {
 }
 .ticket .actions {
     margin: 1.5em 0 2em 0;
+    width: 60%;
 }
 
 .comment-form {

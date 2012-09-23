@@ -17,7 +17,7 @@
           <form method="post">
           {% csrf_token %}
           {% for action in actions %}
-          <button class="btn btn-{{ action.status }}" name="action" value="{{ action.name }}">
+          <button class="btn btn-{{ action.status }} {{ action.class }}" name="action" value="{{ action.name }}">
             {% if action.icon %}
             <i class="{{ action.icon }}"></i>
             {% endif %}
@@ -59,7 +59,7 @@
         </dl>
         <ul class="timelog-info">
           {% for tl in timelogs %}
-          <li>{{ tl.user.get_full_name }} {{ tl.hours }} часов <span class="interval">{{ tl.start|date:"d.m.Y H:i" }}—{{ tl.end|date:"d.m.Y H:i" }}</span></li>
+          <li>{{ tl.user.get_full_name }} {{ tl.get_hours }} часов <span class="interval">{{ tl.start|date:"d.m.Y H:i" }}—{{ tl.end|date:"d.m.Y H:i" }}</span></li>
           {% endfor %}
         </ul>
       </div>

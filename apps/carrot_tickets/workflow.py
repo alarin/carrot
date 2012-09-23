@@ -18,6 +18,11 @@ workflow = {
                 'name': 'Начать работу',
                 'status': TicketStatus.IN_PROGRESS,
                 'action': assign,
+            },
+            {
+                'name': 'Reject',
+                'status': TicketStatus.REJECTED,
+                'class': 'btn-danger pull-right',
             }
         ],
         TicketStatus.REOPENED: [
@@ -29,20 +34,9 @@ workflow = {
         ],
         TicketStatus.IN_PROGRESS: [
             {
-                'name': 'Пауза',
-                'action': lambda user, ticket, new_state: TimeLog.objects.pause(user, ticket),
-                'condition': lambda user, ticket, new_state: ticket.is_active(),
-                'icon': 'icon-pause',
-            },
-            {
-                'name': 'Продолжить',
-                'condition': lambda user, ticket, new_state: not ticket.is_active(),
-                'action': lambda user, ticket, new_state: TimeLog.objects.start(user, ticket),
-                'icon': 'icon-play',
-            },
-            {
                 'status': TicketStatus.FIXED,
                 'name': 'Задача выполнена',
+                'class': 'js_fixed',
                 'condition': lambda user, ticket, new_state: ticket.assignee.pk == user.pk
             },
         ],
@@ -67,7 +61,7 @@ def get_actions(user, ticket):
     return actions
 
 
-def apply_action(user, ticket, action_name):
+def apply_action(user, ticket, action_name, POST):
     actions = get_actions(user, ticket)
     action = None
     for a in actions:
@@ -80,19 +74,15 @@ def apply_action(user, ticket, action_name):
     new_status = action.get('status', None)
 
     if new_status:
+        if new_status == TicketStatus.FIXED and POST.get('hours', None):
+            hours = int(POST.get('hours', None))
+            TimeLog.objects.create(user=ticket.assignee, ticket=ticket, hours=hours, end=datetime.datetime.now())
+
         ticket.status = new_status
         ticket.save()
 
         TicketComment.objects.create(kind=CommentKind.CHANGES, ticket=ticket, author=user,
             content='%s → %s' % (old_status, new_status))
-
-    #auto timeloggins
-    if not old_status == new_status:
-        if new_status == TicketStatus.IN_PROGRESS:
-            TimeLog.objects.start(user, ticket)
-
-        if new_status == TicketStatus.FIXED:
-            TimeLog.objects.stop(user, ticket)
 
     if action.get('action'):
         action.get('action')(user, ticket, new_status)

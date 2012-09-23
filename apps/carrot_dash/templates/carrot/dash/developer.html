@@ -36,13 +36,6 @@
         {% if ticket.kind == 'bug' %}
         <span class="label kind_{{ ticket.kind }}">bug</span>
         {% endif %}
-        {% if ticket.status = 'in_progress' %}
-        {% if ticket.is_active %}
-        <i class="icon-play"></i>
-        {% else %}
-        <i class="icon-pause"></i>
-        {% endif %}
-        {% endif %}
       </td>
       <td class="js_href number"><a class="novisited" href="{% url carrot_ticket ticket.project.slug ticket.number %}">#{{ ticket.number }}</a></td>
       <td class="status status_{{ ticket.status }}">
@@ -51,7 +44,10 @@
       <td class="summary">{{ ticket.summary }}</td>
       <td class="estimate">
         {% if ticket.time_spent %}
-        <span class="time-spent">{{ ticket.time_spent }}</span> из
+        <span class="time-spent">{{ ticket.time_spent }}</span>
+        {% endif %}
+        {% if ticket.time_spent and ticket.estimates.all.0.hours %}
+        из
         {% endif %}
         {{ ticket.estimates.all.0.hours }}
       </td>

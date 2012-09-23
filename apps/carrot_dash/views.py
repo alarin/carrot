@@ -38,7 +38,8 @@ def dash_developer(request):
                 .aggregate(Sum('hours'))['hours__sum'] or 0
             real_time_left = work_hours(v.end_date)
             all_real_time = work_hours(v.start_date, v.end_date)
-            logged_time = sum(tl.hours() for tl in TimeLog.objects.filter(ticket__fix_version=v))
+            logged_time = TimeLog.objects.filter(ticket__fix_version=v)\
+                .aggregate(Sum('hours'))['hours__sum'] or 0
             statistic = {
                 'tickets_time': tickets_hours,
                 'real_time_left': real_time_left,
