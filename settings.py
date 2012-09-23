@@ -9,7 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 #THUMBNAIL_DEBUG = True
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Tony', 'me@alarin.ru'),
 )
 
 MANAGERS = ADMINS
