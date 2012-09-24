@@ -52,6 +52,7 @@ class Command(BaseCommand):
                 setattr(ticket, k, v)
             ticket.save()
 
+            print ticket
             #login to download attach
             cookie_handler = urllib2.HTTPCookieProcessor()
             opener = urllib2.build_opener(cookie_handler)
@@ -64,15 +65,18 @@ class Command(BaseCommand):
                 if attach and attach.get('url'):
                     file_obj, created \
                         = TicketAttachment.objects.get_or_create(name=attach['file-name'], ticket=ticket)
-                    content = opener.open(attach['url']).read()
-                    file_obj.file.save(attach['file-name'], ContentFile(content), save=False)
-                    file_obj.save()
+                    try:
+                        content = opener.open(attach['url']).read()
+                        file_obj.file.save(attach['file-name'], ContentFile(content), save=False)
+                        file_obj.save()
+                    except urllib2.HTTPError:
+                        print 'Cant download %s' % attach['url']
 
             if cbt.get('estimated_time'):
                     te, created = TicketEstimate.objects.get_or_create(ticket=ticket)
                     te.hours = int(cbt.get('estimated_time')/60)
                     te.save()
-            print ticket
+
 
 
 
