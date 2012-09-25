@@ -47,7 +47,7 @@ def email_on_ticket_changes(sender, ticket, changer, **kwargs):
 def email_on_comment(sender, instance, **kwargs):
     if instance.kind != CommentKind.COMMENT:
         #skip status changes and commits
-        pass
+        return
     ticket = instance.ticket
     mail_to = _get_ticket_mailto(ticket, instance.author)
 
