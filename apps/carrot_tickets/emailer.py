@@ -4,7 +4,7 @@ from sets import Set
 from carrot_dash.models import Roles
 from django.contrib import sites
 from django.contrib.auth.models import User
-from carrot_tickets.models import Ticket, TicketComment
+from carrot_tickets.models import Ticket, TicketComment, CommentKind
 from django.contrib.sites.models import Site
 from django.core.mail import send_mail
 from django.conf import settings
@@ -45,6 +45,9 @@ def email_on_ticket_changes(sender, ticket, changer, **kwargs):
 
 
 def email_on_comment(sender, instance, **kwargs):
+    if instance.kind != CommentKind.COMMENT:
+        #skip status changes and commits
+        pass
     ticket = instance.ticket
     mail_to = _get_ticket_mailto(ticket, instance.author)
 
