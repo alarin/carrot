@@ -97,13 +97,14 @@ class Ticket(models.Model):
         return self.summary
 
     def save(self, force_insert=False, force_update=False, using=None):
+        super(Ticket, self).save(force_insert, force_update, using)
+        #FIXME: it's non-thread safe, slow and ugly
         if self.pk:
             if not self.number:
                 self.number = self.pk
-        super(Ticket, self).save(force_insert, force_update, using)
-        if not self.number:
-            self.number = self.pk
-            self.save()
+                while len(Ticket.objects.filter(number=self.number)):
+                    self.number += 1
+                self.save()
 
     def time_spent(self):
         #FIXME brokes separate carrot_timetrack project, may be unite them
