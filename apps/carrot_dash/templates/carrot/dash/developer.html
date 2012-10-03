@@ -41,6 +41,7 @@
       <td class="status status_{{ ticket.status }}">
         {{ ticket.get_status_display }}
       </td>
+      <td class="comments">{% if ticket.ticketcomment_set.count %}<div>{{ ticket.ticketcomment_set.count }}</div>{% endif %}</td>
       <td class="summary">{{ ticket.summary }}</td>
       <td class="estimate">
         {% if ticket.time_spent %}

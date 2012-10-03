@@ -142,6 +142,18 @@ h2 {
         font-size: 1.1em;
         white-space: nowrap;
     }
+    .tickets td.comments {
+        padding: 0;
+    }
+        .tickets td.comments div {
+            background: no-repeat url('../img/comment.png');
+            font-size: 13px;
+            width: 24px;
+            height: 21px;
+            text-align: center;
+            vertical-align: middle;
+            padding: 0;
+        }
 
 
 .label.kind_bug  {
