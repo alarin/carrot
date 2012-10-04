@@ -93,7 +93,7 @@ class Ticket(models.Model):
     project = models.ForeignKey(Project)
     fix_version = models.ForeignKey(Version)
 
-    number = models.CharField(max_length=20, editable=False, blank=True, default=0)
+    number = models.PositiveIntegerField(editable=False, blank=True, default=0)
     kind = models.CharField(max_length=10, choices=ticket_kind_choices, default=TicketKind.BUG)
     summary = models.CharField(max_length=255)
     priority = models.SmallIntegerField(choices=priority_choices, default=TicketPriority.NORMAL)
