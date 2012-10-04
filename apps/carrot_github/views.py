@@ -4,12 +4,14 @@ from django.contrib.auth.models import User
 from carrot_github.models import ProjectGitHub
 from django.db.models.query_utils import Q
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 import re
 
 RE_TICKET_NUMBER = re.compile("#([\d+])")
 
 COMMENT_TEXT = r"%(url)s\n\n%(message)s"
 
+@csrf_exempt
 def github(request):
     """
     Process github service hook.
