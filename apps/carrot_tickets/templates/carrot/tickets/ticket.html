@@ -8,7 +8,9 @@
 {% block bodyclass %}ticket{% endblock %}
 {% block content %}
     <div class="row">
-      <h1>{% if ticket.kind = 'bug' %}<i class="label kind_bug">bug</i> {% endif %}#{{ ticket.number }} {{ ticket.summary }}</h1>
+      <h1>{% if ticket.kind = 'bug' %}<i class="label kind_bug">bug</i> {% endif %}#{{ ticket.number }}
+        <span class="{% if ticket.get_priority_display == 'blocker' %}icon-exclamation-sign{% endif %}{% if ticket.get_priority_display == 'minor' %}icon-arrow-down{% endif %}"></span>
+          {{ ticket.summary }}</h1>
     </div>
 
     <div class="row">
@@ -54,6 +56,7 @@
           <dt>Project</dt><dd>{{ ticket.project.full_name }}</dd>
           <dt>Version</dt><dd>{{ ticket.fix_version.name }}</dd>
           <dt>Status</dt><dd>{{ ticket.get_status_display }}</dd>
+          <dt>Priority</dt><dd>{{ ticket.get_priority_display }}</dd>
           <dt>Reporter</dt><dd>{{ ticket.reporter.get_full_name }}</dd>
           <dt>Assignee</dt><dd>{{ ticket.assignee.get_full_name }}</dd>
         </dl>

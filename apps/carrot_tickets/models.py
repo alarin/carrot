@@ -1,3 +1,4 @@
+#encoding: utf-8
 from __future__ import unicode_literals
 import mimetypes
 from carrot_tickets.signals import ticket_will_update
@@ -76,14 +77,27 @@ status_choices = (
     (TicketStatus.CLOSED, 'closed'),
 )
 
+class TicketPriority(object):
+    BLOCKER = 15
+    NORMAL = 10
+    MINOR = 5
+
+priority_choices = (
+    (TicketPriority.BLOCKER, 'blocker'),
+    (TicketPriority.NORMAL, 'normal'),
+    (TicketPriority.MINOR, 'minor'),
+)
+
 class Ticket(models.Model):
     project = models.ForeignKey(Project)
     fix_version = models.ForeignKey(Version)
 
     number = models.CharField(max_length=20, editable=False, blank=True, default=0)
-    kind = models.CharField(max_length=10, choices=ticket_kind_choices, default=ticket_kind_choices[1][0])
+    kind = models.CharField(max_length=10, choices=ticket_kind_choices, default=TicketKind.BUG)
     summary = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)
+    priority = models.SmallIntegerField(choices=priority_choices, default=TicketPriority.NORMAL)
+    description = models.TextField(blank=True, null=True,
+        help_text='Опишите ошибку полно и <b>понятно</b>. Укажите шаги воспроизведения ошибки.<br>Если ошибка связана с UI – обязательно приложите скриншот.')
 
     status = models.CharField(max_length=30, choices=status_choices, default=status_choices[0][0])
 
@@ -122,6 +136,12 @@ class Ticket(models.Model):
     def get_url(self):
         return 'http://%s%s' % (Site.objects.get_current().domain,
            reverse('carrot_ticket', kwargs={'project_slug': self.project.slug, 'ticket_number': self.number }))
+
+    def real_comments(self):
+        """
+        Only real comments, not changes and commits
+        """
+        return self.ticketcomment_set.filter(kind=CommentKind.COMMENT)
 
 
 

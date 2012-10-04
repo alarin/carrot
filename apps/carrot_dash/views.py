@@ -29,7 +29,7 @@ def dash_developer(request):
     versions = project.version_set.filter(is_completed=False).order_by('end_date')
     versions_data = []
     for v in versions:
-        version_tickets = v.ticket_set.order_by('kind', 'number')
+        version_tickets = v.ticket_set.order_by('kind', '-priority', 'number')
         statistic = None
         if v.end_date >= datetime.datetime.now().date():
             tickets_hours = TicketEstimate.objects\

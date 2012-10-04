@@ -133,6 +133,7 @@ h2 {
     .tickets td.summary {
         /*width: 60%;*/
         /*min-width: 20em;*/
+        padding-left: 0;
     }
 
     .tickets td.estimate {
@@ -154,7 +155,11 @@ h2 {
             vertical-align: middle;
             padding: 0;
         }
-
+    .tickets td.priority {
+        padding: 4px 0.2em 0 0.5em;
+        text-align: center;
+        vertical-align: middle;
+    }
 
 .label.kind_bug  {
     background: #e05b59;
@@ -241,6 +246,9 @@ p {
 
 .ticket h1 {
     margin: 0.7em 0 0 0;
+}
+.ticket h1 span {
+    vertical-align: middle;
 }
 .ticket .actions {
     margin: 1.5em 0 2em 0;
@@ -379,6 +387,12 @@ p {
 }
 .ticket-form.new .f_status, .ticket-form.new .f_assignee {
     display: none;
+}
+
+.ticket-form .f_description .helptext {
+    display: block;
+    color: #666;
+    margin: 0 0 1em 8em;
 }
 .version-status-block {
     overflow: hidden;
