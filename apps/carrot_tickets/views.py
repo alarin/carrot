@@ -82,8 +82,7 @@ def ticket_edit(request, project_slug=None, ticket_number=None):
                 ticket = ticket_form.save(commit=False)
                 if not ticket.pk or not ticket.reporter:
                     ticket.reporter = request.user
-                signals.ticket_will_update.send(sender=__name__, ticket=ticket, changer=request.user)
-                ticket.save()
+                ticket.save(user=request.user)
                 if ticket_form.cleaned_data['file']:
                     TicketAttachment.objects.create(ticket=ticket, file=ticket_form.cleaned_data['file'])
                 return get_redirect_path(ticket)

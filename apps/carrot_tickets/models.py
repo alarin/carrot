@@ -1,6 +1,7 @@
 #encoding: utf-8
 from __future__ import unicode_literals
 import mimetypes
+from carrot_tickets import signals
 from carrot_tickets.signals import ticket_will_update
 from django.contrib.sites.models import Site
 from django.core.urlresolvers import reverse
@@ -110,15 +111,14 @@ class Ticket(models.Model):
     def __unicode__(self):
         return self.summary
 
-    def save(self, force_insert=False, force_update=False, using=None):
+    def save(self, force_insert=False, force_update=False, using=None, user=None):
+        #FIXME: it's non-thread safe and slow
+        if not self.number:
+            self.number = int(Ticket.objects.order_by('-number')[0].number) + 1
+        if user:
+            #FIXME: it's ok here?
+            signals.ticket_will_update.send(sender=__name__, ticket=self, changer=user)
         super(Ticket, self).save(force_insert, force_update, using)
-        #FIXME: it's non-thread safe, slow and ugly
-        if self.pk:
-            if not self.number:
-                self.number = self.pk
-                while len(Ticket.objects.filter(number=self.number)):
-                    self.number += 1
-                self.save()
 
     def time_spent(self):
         #FIXME brokes separate carrot_timetrack project, may be unite them
@@ -136,6 +136,17 @@ class Ticket(models.Model):
     def get_url(self):
         return 'http://%s%s' % (Site.objects.get_current().domain,
            reverse('carrot_ticket', kwargs={'project_slug': self.project.slug, 'ticket_number': self.number }))
+
+    def get_full_summary(self):
+        """
+        Summary with number and priority
+        """
+        priority = ''
+        if self.priority == TicketPriority.BLOCKER:
+            priority = '!'
+        if self.priority == TicketPriority.MINOR:
+            priority = '↓'
+        return '#%s %s %s' % (self.number, priority, self.summary)
 
     def real_comments(self):
         """

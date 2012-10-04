@@ -30,7 +30,7 @@ def email_on_ticket_changes(sender, ticket, changer, **kwargs):
             if not changed_fields:
                 return
 
-            body = '%s\n' % ticket.get_url()
+            body = '%s\n%s\n\n' % (ticket.get_full_summary(), ticket.get_url())
             if len(changed_fields) == 1 and 'status' in changed_fields:
                 subject = '%s: #%s %s→%s by %s' \
                     % (ticket.project.full_name(), ticket.number, changed_fields['status'][0],
@@ -40,7 +40,7 @@ def email_on_ticket_changes(sender, ticket, changer, **kwargs):
                 body += '\n'.join(['%s: %s → %s' % (k, v[0], v[1]) for k, v in changed_fields.items()])
         else:
             subject = '%s: #%s created by %s' % (ticket.project.full_name(), ticket.number, changer.get_full_name())
-            body = ''
+            body = '%s\n%s\n\n%s' % (ticket.get_full_summary(), ticket.get_url(), ticket.description)
         send_mail(subject, body, settings.SERVER_EMAIL, mail_to, fail_silently=False)
 
 
@@ -52,7 +52,7 @@ def email_on_comment(sender, instance, **kwargs):
     mail_to = _get_ticket_mailto(ticket, instance.author)
 
     subject = '%s: #%s commented by %s' % (ticket.project.full_name(), ticket.number, instance.author.get_full_name())
-    body = instance.content
+    body = '%s\n%s\n\n%s' % (ticket.get_full_summary(), ticket.get_url(), instance.content)
     send_mail(subject, body, settings.SERVER_EMAIL, mail_to, fail_silently=False)
 
 

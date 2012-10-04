@@ -80,8 +80,7 @@ def apply_action(user, ticket, action_name, POST):
             TimeLog.objects.create(user=ticket.assignee, ticket=ticket, hours=hours, end=datetime.datetime.now())
 
         ticket.status = new_status
-        signals.ticket_will_update.send(sender=__name__, ticket=ticket, changer=user)
-        ticket.save()
+        ticket.save(user=user)
 
         TicketComment.objects.create(kind=CommentKind.CHANGES, ticket=ticket, author=user,
             content='%s → %s' % (old_status, new_status))
