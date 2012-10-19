@@ -11,6 +11,20 @@ a {
 a.novisited:visited {
     color: #08C;
 }
+
+.data_table {
+
+}
+    .data_table th {
+        padding: 0.5em 2em;
+        background: #EEE;
+    }
+    .data_table td {
+        padding: 0.5em 2em;
+        text-align: center;
+    }
+
+
 .navbar-inner .pull-right {
     position: absolute;
     right: 0;

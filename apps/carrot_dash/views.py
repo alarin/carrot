@@ -1,5 +1,5 @@
 import datetime
-from carrot_tickets.models import TicketStatus
+from carrot_tickets.models import TicketStatus, TicketKind, Ticket
 from carrot_timetrack.utils import work_hours
 from django.db.models.aggregates import Sum
 from carrot_timetrack.models import TicketEstimate, TimeLog
@@ -89,3 +89,48 @@ def login_view(request):
         'login_form': login_form,
     }
     return TemplateResponse(request, 'carrot/dash/login.html', data)
+
+
+def report_timelog(request):
+    today = datetime.datetime.now()
+    end = today
+    start = today - datetime.timedelta(days=today.weekday())
+    timelog_week = TimeLog.objects.filter(end__gte=start, start__lte=end)\
+        .order_by('user').select_related()
+
+    week_data = {}
+    for tl in timelog_week:
+        if not tl.user in week_data:
+            week_data[tl.user] = {}
+        week_data[tl.user]['total'] = week_data[tl.user].get('total', 0) + tl.hours
+        if tl.ticket.estimates.count():
+            week_data[tl.user]['estimate'] = week_data[tl.user].get('estimate', 0) + tl.ticket.estimates.all()[0]
+
+        if tl.ticket.kind == TicketKind.BUG:
+            week_data[tl.user]['total_bug'] = week_data[tl.user].get('total_bug', 0) + tl.hours
+        else:
+            week_data[tl.user]['total_task'] = week_data[tl.user].get('total_task', 0) + tl.hours
+
+    week_tasks_data = {}
+    for tl in timelog_week:
+        if not tl.user in week_tasks_data:
+            week_tasks_data[tl.user] = {}
+        week_tasks_data[tl.user]['tasks'] = week_tasks_data[tl.user].get('total', 0) + tl.hours
+
+    week_tickets = Ticket.objects.filter(pk__in=timelog_week.values_list('ticket__pk', flat=True))\
+        .order_by('assignee')
+    week_tickets_data = {}
+    for t in week_tickets:
+        if not t.assignee in week_tickets_data:
+            week_tickets_data[t.assignee] = []
+        week_tickets_data[t.assignee].append(t)
+
+    data = {
+        'start': start,
+        'end': end,
+        'timelog_week': timelog_week,
+        'week_data': week_data,
+        'week_tickets': week_tickets,
+        'week_tickets_data': week_tickets_data,
+    }
+    return TemplateResponse(request, 'carrot/dash/reports/timelog.html', data)
