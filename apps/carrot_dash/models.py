@@ -20,6 +20,7 @@ class Roles:
 class CarrotProfile(models.Model):
     user = AutoOneToOneField(User)
     projects = models.ManyToManyField(Project)
+    emails = models.CharField(max_length=250, default="", blank=True)
 
 
 

@@ -1,4 +1,5 @@
 import json
+import urllib
 from carrot_tickets.models import TicketComment, Ticket, CommentKind
 from django.contrib.auth.models import User
 from carrot_github.models import ProjectGitHub
@@ -34,7 +35,8 @@ def github(request):
 
         for commit in payload['commits']:
             #I want receive User.DoesNotFound exceptions on my mail to fix it
-            author = User.objects.get(email=commit['author']['email'])
+            email = commit['author']['email']
+            author = User.objects.get(Q(email=email) | Q(carrotprofile__emails__icontains=email))
             ticket_ids = [match.group(1) for match in RE_TICKET_NUMBER.finditer(commit['message'])]
             for ticket in Ticket.objects.filter(Q(project=project)|Q(project__parent=project))\
                 .filter(pk__in=ticket_ids):
