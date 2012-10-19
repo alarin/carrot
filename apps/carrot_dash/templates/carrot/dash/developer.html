@@ -8,10 +8,9 @@
 <li{% if p.pk = project.pk %}  class="active"{% endif %}><a href=".?project_slug={{ p.slug }}">{{ p.full_name }}</a></li>
 {% endfor %}
 </ul>
-
-
+<div class="filter-box js_fixed_filter"></div>
 {% for version in versions %}
-    <h2>{{ version.0.name }} <span class="date">до {{version.0.end_date|date:"d.m"}}</span></h2>
+    <h2 id="h{{ version.0.pk }}">{{ version.0.name }} <span class="date">до {{version.0.end_date|date:"d.m"}}</span></h2>
     {% if version.2 %}
     <div class="version-status-block">
         <span>Осталось времени:</span>
