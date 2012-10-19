@@ -23,8 +23,8 @@ def github(request):
         return HttpResponse('Carrot GitHub hook url. See more at <a href="https://help.github.com/articles/post-receive-hooks">https://help.github.com/articles/post-receive-hooks</a>')
 
     if request.method == 'POST':
-        payload = json.loads(request.read())
-
+        jsonpayload = urllib.unquote(request.read().split('=')[1])
+        payload = json.loads(jsonpayload)
         project = ProjectGitHub.objects.filter(repo_url=payload['repository']['url'])
         if not project:
             raise Exception('Project with url %s not found' % payload['repository']['url'])
