@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
 from django.template.response import TemplateResponse
 
-from carrot_tickets.models import Ticket, TicketComment, TicketAttachment
+from carrot_tickets.models import Ticket, TicketComment, TicketAttachment, Version
 
 
 @login_required
@@ -95,6 +95,7 @@ def ticket_edit(request, project_slug=None, ticket_number=None):
         'files': files,
         'images': images,
         'ticket_form': ticket_form,
+        'all_versions': Version.objects.filter(is_completed=False).select_related(),
     }
     return TemplateResponse(request, 'carrot/tickets/ticket_edit.html', data)
 

@@ -13,7 +13,15 @@
 
 {% block bodyclass %}ticket-edit{% endblock %}
 {% block content %}
-    <form class="ticket-form aform{% if new %} new{% endif %}" method="post" enctype="multipart/form-data">
+    <script>
+      projects = {};
+      {% for v in all_versions %}
+        projects[{{ v.project.id }}] = projects[{{ v.project.id }}] || [];
+      projects[{{ v.project.id }}].push([{{ v.id }}, "{{ v.name }}"]);
+      {% endfor %}
+    </script>
+
+    <form class="js_chained_version ticket-form aform{% if new %} new{% endif %}" method="post" enctype="multipart/form-data">
     <h1>
       {% if new %}
       New ticket

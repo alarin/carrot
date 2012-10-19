@@ -112,6 +112,7 @@ class Ticket(models.Model):
         return self.summary
 
     def save(self, force_insert=False, force_update=False, using=None, user=None):
+        self.project = self.fix_version.project
         #FIXME: it's non-thread safe and slow
         if not self.number:
             self.number = int(Ticket.objects.order_by('-number')[0].number) + 1

@@ -17,7 +17,25 @@ $(function(){
 
 
     Carrot.FixedFilter.init();
+    Carrot.TicketChainedVersion();
 });
+
+Carrot.TicketChainedVersion = function() {
+    if (('.js_chained_version').length)
+    {
+        $('#id_project').change(function(){
+            var $version = $('#id_fix_version');
+            var oldval = $version.val();
+            var newopts = projects[$('#id_project').val()];
+            $version.find('option').remove();
+            for (var i=0; i < newopts.length; i++) {
+                $version.append('<option value="' + newopts[i][0] + '">' + newopts[i][1] + "</option>");
+            }
+            $version.val(oldval);
+        });
+        $('#id_project').change();
+    }
+}
 
 Carrot.FixedFilter = {
     init: function() {
