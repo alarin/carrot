@@ -37,7 +37,10 @@
         <span class="label kind_{{ ticket.kind }}">bug</span>
         {% endif %}
       </td>
-      <td class="js_href number"><a class="novisited" href="{% url carrot_ticket ticket.project.slug ticket.number %}">#{{ ticket.number }}</a></td>
+      <td class="number">
+        <a class="novisited js_href" href="{% url carrot_ticket ticket.project.slug ticket.number %}"></a>
+        <a class="novisited" href="{% url carrot_ticket ticket.project.slug ticket.number %}">#{{ ticket.number }}</a>
+      </td>
       <td class="status status_{{ ticket.status }}">
         {{ ticket.get_status_display }}
       </td>

@@ -254,6 +254,13 @@ p {
     margin: 1.5em 0 2em 0;
     width: 60%;
 }
+.js_ticket .js_href {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1.7em;
+}
+
 
 .comment-form {
     width: 40em;
