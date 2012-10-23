@@ -50,9 +50,25 @@ a.novisited:visited {
     }
     .navbar .nav li {
         padding: 0.2em 1em 0 1em;
+        margin: 0 0.4em 0 0;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        float: left;
+        background: #FFF;
     }
-    .navbar .nav.pull-right li {
+        .navbar .nav li:hover, .navbar .nav li.active {
+            background: #000;
+        }
+            .navbar .nav li:hover a, .navbar .nav li.active a {
+                color: #FFF;
+            }
+        .navbar .nav li a {
+            text-decoration: none;
+            color: #000;
+        }
+    .navbar .pull-right li {
         padding: 0.5em 1em;
+        background: transparent;
     }
     .navbar .nav {
         float: left;
@@ -496,4 +512,22 @@ p {
 .timelog-info .interval {
     color: #666;
     font-size: 0.8em;
+}
+
+.report-timelog .gravatar {
+    margin: 0 10px 0 0;
+}
+.report-timelog td.task {
+    text-align: left
+}
+.report-timelog td.user {
+    text-align: left;
+    vertical-align: top;
+}
+.report-timelog h2 {
+    margin: 1em 0 1em 0;
+}
+.report-timelog h3 {
+    font-size: 1.4em;
+    margin: 1.5em 0 0.5em 0;
 }

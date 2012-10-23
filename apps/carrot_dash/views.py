@@ -93,8 +93,21 @@ def login_view(request):
 
 def report_timelog(request):
     today = datetime.datetime.now()
-    end = today
-    start = today - datetime.timedelta(days=today.weekday())
+    basedate = today
+    try:
+        basedate = datetime.datetime.strptime(request.GET['date'], '%d%m%y')
+    except:
+        pass
+    start = basedate - datetime.timedelta(days=basedate.weekday())
+    start = datetime.datetime.combine(start.date(), datetime.time(00,00))
+    end = basedate + datetime.timedelta(days=6-basedate.weekday())
+    end = datetime.datetime.combine(end.date(), datetime.time(23,59))
+
+    prev = basedate - datetime.timedelta(weeks=1)
+    next = basedate + datetime.timedelta(weeks=1)
+    if (next - datetime.timedelta(days=next.weekday())) > today:
+        next = None
+
     timelog_week = TimeLog.objects.filter(end__gte=start, start__lte=end)\
         .order_by('user').select_related()
 
@@ -104,7 +117,7 @@ def report_timelog(request):
             week_data[tl.user] = {}
         week_data[tl.user]['total'] = week_data[tl.user].get('total', 0) + tl.hours
         if tl.ticket.estimates.count():
-            week_data[tl.user]['estimate'] = week_data[tl.user].get('estimate', 0) + tl.ticket.estimates.all()[0]
+            week_data[tl.user]['estimate'] = week_data[tl.user].get('estimate', 0) + tl.ticket.estimates.all()[0].hours
 
         if tl.ticket.kind == TicketKind.BUG:
             week_data[tl.user]['total_bug'] = week_data[tl.user].get('total_bug', 0) + tl.hours
@@ -123,7 +136,9 @@ def report_timelog(request):
     for t in week_tickets:
         if not t.assignee in week_tickets_data:
             week_tickets_data[t.assignee] = []
-        week_tickets_data[t.assignee].append(t)
+        week_tickets_data[t.assignee].append(
+            (t, TimeLog.objects.filter(ticket=t, user=t.assignee).aggregate(Sum('hours'))['hours__sum'],
+             t.time_spent(), t.estimate()))
 
     data = {
         'start': start,
@@ -132,5 +147,7 @@ def report_timelog(request):
         'week_data': week_data,
         'week_tickets': week_tickets,
         'week_tickets_data': week_tickets_data,
+        'prev': prev,
+        'next': next,
     }
     return TemplateResponse(request, 'carrot/dash/reports/timelog.html', data)

@@ -1,12 +1,17 @@
 {% extends 'carrot/site_base.html' %}
+{% load gravatar %}
 
-{% block title %}Timelog report{% endblock %}
+{% block title %}Week report  {{ start|date:"d.m" }}—{{ end|date:"d.m" }}{% endblock %}
+{% block bodyclass %}report-timelog{% endblock %}
 {% block content %}
-<h1>Timelog report</h1>
-<h2>{{ start|date:"d.m" }}—{{ end|date:"d.m" }}</h2>
-{% for tl in timelog_week %}
-    {{tl.user.get_full_name }} {{tl.hours}} {{tl.ticket}}<br>
-{% endfor %}
+<h1>Week report</h1>
+<h2>{% if prev %}<a class="novisited" href=".?date={{ prev|date:"dmy" }}">←</a>{% endif %}
+  {{ start|date:"d.m" }}—{{ end|date:"d.m" }}
+  {% if next %}<a class="novisited" href=".?date={{ next|date:"dmy" }}">→</a>{% endif %}
+</h2>
+<!--{% for tl in timelog_week %}-->
+    <!--{{tl.user.get_full_name }} {{tl.hours}} {{tl.ticket}}<br>-->
+<!--{% endfor %}-->
 
 <table class="data_table">
   <tr>
@@ -18,7 +23,7 @@
   </tr>
 {% for user, data in week_data.items %}
   <tr>
-    <td>{{ user.get_full_name }}</td>
+    <td class="user"><img class="gravatar" src="{% gravatar_for_user user size=30 %}">{{ user.get_full_name }}</td>
     <td>{{ data.total }}</td>
     <td>{{ data.estimate }}</td>
     <td>{{ data.total_task }}</td>
@@ -27,22 +32,32 @@
 {% endfor %}
 </table>
 
-<!--{% for u, tasks in week_tickets_data.items %}
-<h3>{{ u.get_full_name }}</h3>
+{% for u, tasks in week_tickets_data.items %}
+{% if u %}
+<h3><img class="gravatar" src="{% gravatar_for_user u size=30 %}">{{ u.get_full_name }}</h3>
 
 <table class="data_table">
   <tr>
+    <th></th>
+    <th></th>
     <th>Задача</th>
-    <th>Затрачено</th>
+    <th>Затрачено, неделя</th>
+    <th>Затрачено, всего</th>
+    <th>Оценка</th>
   </tr>
   {% for t in tasks %}
   <tr>
-    <td>{{ t.summary }}</td>
-    <td>{{ t.time_spent }}</td> {# time of all developers #}
+    <td>{{ t.0.number }}</td>
+    <td>{% if t.0.kind == "bug" %}{{ t.0.kind }}{% endif %}</td>
+    <td class="task">{{ t.0.summary }}</td>
+    <td>{{ t.1 }}</td>
+    <td>{{ t.2 }}</td>
+    <td>{{ t.3|default:"" }}</td>
   </tr>
   {% endfor %}
 </table>
-{% endfor %}-->
+{% endif %}
+{% endfor %}
 
 {% endblock %}
 

@@ -22,6 +22,10 @@ class CarrotProfile(models.Model):
     projects = models.ManyToManyField(Project)
     emails = models.CharField(max_length=250, default="", blank=True)
 
+    def role(self):
+        if Roles.has_role(self.user, Roles.pm):
+            return 'pm'
+
 
 
 from south.modelsinspector import add_introspection_rules

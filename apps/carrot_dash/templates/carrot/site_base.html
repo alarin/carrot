@@ -4,14 +4,17 @@
 <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="{% url carrot_home %}{% if project %}?project_slug={{ project.slug}}{% endif %}"><i class="icon-carrot-big"></i> Carrot Task Tracker</a>
+      <a class="brand" href="{% url carrot_home %}{% if project %}?project_slug={{ project.slug}}{% endif %}"> Carrot Task Tracker</a>
       <ul class="nav">
         <li><a href="{% url carrot_ticket_new %}?1=1{% if project %}&project={{ project.pk }}{% endif %}{% if version %}&version={{ version.pk }}{% endif %}">
           + Ticket
         </a></li>
+        {% if user.carrotprofile.role == "pm" %}
+        <li><a href="{% url report_week %}">Отчет за неделю</a></li>
+        {% endif %}
       </ul>
       {% if user.is_authenticated %}
-      <ul class="nav pull-right">
+      <ul class="pull-right">
         <li>{{ user.get_full_name }}, <a href="{% url carrot_logout %}">выйти</a></li>
       </ul>
       {% endif %}

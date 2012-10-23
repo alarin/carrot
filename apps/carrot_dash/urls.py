@@ -9,7 +9,7 @@ urlpatterns = patterns('carrot_dash.views',
     url(r'^/dash/qa$', 'dash_qa', name='dash_qa'),
     url(r'^/dash/designer$', 'dash_designer', name='dash_designer'),
 
-    url(r'reports/timelog/$', 'report_timelog', name='report_timelog'),
+    url(r'reports/timelog/$', 'report_timelog', name='report_week'),
 
     url(r'^logout/$', 'logout_view', name='carrot_logout'),
     url(r'^login/$', 'login_view', name='carrol_login')

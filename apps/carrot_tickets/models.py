@@ -155,6 +155,10 @@ class Ticket(models.Model):
         """
         return self.ticketcomment_set.filter(kind=CommentKind.COMMENT)
 
+    def estimate(self):
+        estimates = self.estimates.all()
+        return estimates and estimates[0].hours or None
+
 
 
 class BaseAttachment(models.Model):
