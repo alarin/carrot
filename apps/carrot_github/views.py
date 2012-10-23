@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import re
 
-RE_TICKET_NUMBER = re.compile("#([\d+])")
+RE_TICKET_NUMBER = re.compile("#(\d+)")
 
 COMMENT_TEXT = r"%(url)s\n\n%(message)s"
 
