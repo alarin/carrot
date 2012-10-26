@@ -39,7 +39,7 @@ def github(request):
             author = User.objects.get(Q(email=email) | Q(carrotprofile__emails__icontains=email))
             ticket_ids = [match.group(1) for match in RE_TICKET_NUMBER.finditer(commit['message'])]
             for ticket in Ticket.objects.filter(Q(project=project)|Q(project__parent=project))\
-                .filter(pk__in=ticket_ids):
+                .filter(number__in=ticket_ids):
                 TicketComment.objects.create(ticket=ticket, author=author, kind=CommentKind.COMMIT,
                     content = COMMENT_TEXT % commit)
             else:
