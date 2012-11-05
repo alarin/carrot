@@ -10,6 +10,8 @@ def rupluralize(value, arg=None):
         number = abs(int(value))
     except ValueError:
         return ''
+    except TypeError:
+        return ''
     a = number % 10
     b = number % 100
 
