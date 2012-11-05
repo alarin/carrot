@@ -35,20 +35,7 @@
         <div class="description">
           {{ ticket.description|urlize|linebreaks }}
         </div>
-        <ul class="files">
-          {% for file in files %}
-          <li class="file f{{ file.kind }}"><a href="{{ file.file.url }}" target="_blank">{{ file.name }}</a>
-            <!--<span class="date">{{ file.created|date:"d.m.Y" }}</span>-->
-          </li>
-          {% endfor %}
-        </ul>
-        <ul class="images">
-          {% for file in images %}
-          <li class="image"><a href="{{ file.file.url }}" target="_blank">{% thumbnail file.file.path "150x150" upscale=True as img %}<div class="img"><img src="{{ img.url }}"></div>{% endthumbnail %}{{ file.name }}</a>
-            <!--<span class="date">{{ file.created|date:"d.m.Y" }}</span>-->
-          </li>
-          {% endfor %}
-        </ul>
+        {% include 'carrot/tickets/_attachments.html' with obj=ticket %}
       </div>
       <div class="threecol last info-block">
         <a class="btn btn-edit btn-small" href="./edit">Edit</a>
@@ -81,6 +68,7 @@
             <div class="content">
               {{ c.content|urlize|linebreaks }}
             </div>
+            {% include 'carrot/tickets/_attachments.html' with obj=c %}
             {% else %}
             <div class="author-when">
               <span class="author"><img src="{% gravatar_for_user c.author size=20 %}">{{ c.author.get_full_name }}</span>
@@ -93,11 +81,7 @@
           </li>
           {% endfor %}
         </ul>
-        <form class="comment-form aform" method="post">
-          {% csrf_token %}
-          {{ comment_form.as_div }}
-          <button class="btn btn-primary">Comment</button>
-        </form>
+        {% include 'carrot/tickets/_comment_form.html' %}
       </div>
     </div>
 {% endblock %}

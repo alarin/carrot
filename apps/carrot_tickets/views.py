@@ -7,15 +7,13 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
 from django.template.response import TemplateResponse
 
-from carrot_tickets.models import Ticket, TicketComment, TicketAttachment, Version
+from carrot_tickets.models import Ticket, TicketComment, TicketAttachment, Version, CommentAttachment
 
 
 @login_required
 def ticket(request, project_slug, ticket_number):
     ticket = get_object_or_404(Ticket, number=ticket_number, project__slug=project_slug)
     comments = TicketComment.objects.filter(ticket=ticket)
-    images = ticket.attachments.filter(kind='image').order_by('created')
-    files = ticket.attachments.exclude(kind='image').order_by('created')
     actions = get_actions(request.user, ticket)
 
     comment_form = CommentForm()
@@ -33,6 +31,9 @@ def ticket(request, project_slug, ticket_number):
             comment.ticket = ticket
             comment.author = request.user
             comment.save()
+
+            for f in request.FILES.getlist('comment_attachment'):
+                CommentAttachment.objects.create(comment=comment, file=f)
             return redirect(request.path + '#c%d' % comment.pk)
 
     from carrot_timetrack.models import TimeLog
@@ -40,8 +41,6 @@ def ticket(request, project_slug, ticket_number):
         'ticket': ticket,
         'comments': comments,
         'comment_form': comment_form,
-        'files': files,
-        'images': images,
         'actions': actions,
         'timelogs': TimeLog.objects.filter(ticket=ticket),
         'project': ticket.project, #for navigation

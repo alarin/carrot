@@ -159,6 +159,11 @@ class Ticket(models.Model):
         estimates = self.estimates.all()
         return estimates and estimates[0].hours or None
 
+    def images(self):
+        return self.attachments.filter(kind='image').order_by('created')
+
+    def files(self):
+        return self.attachments.exclude(kind='image').order_by('created')
 
 
 class BaseAttachment(models.Model):
@@ -178,6 +183,8 @@ class BaseAttachment(models.Model):
                 self.kind = 'file'
         if not self.name and self.file:
             self.name = self.file.name
+        if len(self.name) > 255:
+            raise Exception('Filename cant be longer than 255 symbols')
         super(BaseAttachment, self).save(force_insert, force_update, using)
 
     class Meta:
@@ -189,6 +196,10 @@ class BaseAttachment(models.Model):
 
 class TicketAttachment(BaseAttachment):
     ticket = models.ForeignKey(Ticket, related_name='attachments')
+
+
+class CommentAttachment(BaseAttachment):
+    comment = models.ForeignKey('TicketComment', related_name='attachments')
 
 
 class CommentKind(object):
@@ -217,6 +228,12 @@ class TicketComment(models.Model):
 
     def __unicode__(self):
         return self.content[:100]
+
+    def images(self):
+        return self.attachments.filter(kind='image').order_by('created')
+
+    def files(self):
+        return self.attachments.exclude(kind='image').order_by('created')
 
 
 def connect_signals():

@@ -1,0 +1,17 @@
+{% load thumbnail %}
+<div class="attachments">
+<ul class="files">
+  {% for file in obj.files %}
+  <li class="file f{{ file.kind }}"><a href="{{ file.file.url }}" target="_blank">{{ file.name }}</a>
+    <!--<span class="date">{{ file.created|date:"d.m.Y" }}</span>-->
+  </li>
+  {% endfor %}
+</ul>
+<ul class="images">
+  {% for file in obj.images %}
+  <li class="image"><a href="{{ file.file.url }}" target="_blank">{% thumbnail file.file.path "150x150" upscale=True as img %}<div class="img"><img src="{{ img.url }}"></div>{% endthumbnail %}{{ file.name }}</a>
+    <!--<span class="date">{{ file.created|date:"d.m.Y" }}</span>-->
+  </li>
+  {% endfor %}
+</ul>
+</div>

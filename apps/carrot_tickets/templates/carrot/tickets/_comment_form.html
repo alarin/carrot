@@ -1,0 +1,6 @@
+<form class="comment-form aform" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ comment_form.as_div }}
+  <input type="file" name="comment_attachment" class="js_multi_file"/>
+  <button class="btn btn-primary">Comment</button>
+</form>

@@ -1,6 +1,6 @@
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.contrib.auth.models import User
-from carrot_tickets.models import Version, Ticket, Project, TicketComment, TicketAttachment
+from carrot_tickets.models import Version, Ticket, Project, TicketComment, TicketAttachment, CommentAttachment
 from django.contrib import admin
 
 class VersionAdmin(admin.ModelAdmin):
@@ -20,6 +20,17 @@ class TicketAdmin(admin.ModelAdmin):
     inlines = [AttachmentInline]
 
 
+class CommentAttachmentInline(admin.StackedInline):
+    model = CommentAttachment
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('kind', 'author', 'content', 'created')
+    list_filter = ('ticket__project', 'author')
+
+    inlines = [CommentAttachmentInline]
+
+
 class ProjectAdmin(admin.ModelAdmin):
     #for extending in carrot_guthub
     pass
@@ -27,5 +38,5 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Version, VersionAdmin)
 admin.site.register(Ticket, TicketAdmin)
-admin.site.register(TicketComment)
+admin.site.register(TicketComment, CommentAdmin)
 admin.site.register(TicketAttachment)
