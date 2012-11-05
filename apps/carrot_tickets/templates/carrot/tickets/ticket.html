@@ -75,7 +75,7 @@
               <span class="posted">{{ c.modified|naturaltime }}</span>
             </div>
             <div class="content">
-              {{ c.content }}
+              {{ c.content|urlize|linebreaks }}
             </div>
             {% endif %}
           </li>
