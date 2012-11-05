@@ -1,0 +1,19 @@
+{% extends 'carrot/site_base.html' %}
+
+{% block title %}Поиск: {{ query }}{% endblock %}
+{% block bodyclass %}search{% endblock %}
+{% block content %}
+    <h1>Поиск: {{ query }}</h1>
+    {% regroup tickets by project as tickets_by_project %}
+
+    {% for project in tickets_by_project %}
+    <h2>{{ project.grouper }}</h2>
+    <table class="tickets">
+    {% for ticket in project.list %}
+      {% include 'carrot/_ticket_row.html' %}
+    {% endfor %}
+    </table>
+    {% empty %}
+    Ничего не найдено
+    {% endfor %}
+{% endblock %}

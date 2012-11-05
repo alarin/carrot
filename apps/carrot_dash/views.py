@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout, login
 from carrot_dash.models import Roles
+from django.db.models.query_utils import Q
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.template.response import TemplateResponse
@@ -151,3 +152,14 @@ def report_timelog(request):
         'next': next,
     }
     return TemplateResponse(request, 'carrot/dash/reports/timelog.html', data)
+
+
+def search(request):
+    q = request.GET.get('q', '')
+    tickets = request.user.carrotprofile.visible_tickets().order_by('project').filter(
+        Q(summary__icontains=q) | Q(number__icontains=q) | Q(description__icontains=q))
+    data = {
+        'query': q,
+        'tickets': tickets,
+    }
+    return TemplateResponse(request, 'carrot/search.html', data)

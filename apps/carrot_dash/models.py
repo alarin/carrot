@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
 from annoying.fields import AutoOneToOneField
-from carrot_tickets.models import Project
+from carrot_tickets.models import Project, Ticket
 
 from django.db import models
 from django.contrib.auth.models import Group, User
+from django.db.models.query_utils import Q
 
 
 class Roles:
@@ -25,6 +26,10 @@ class CarrotProfile(models.Model):
     def role(self):
         if Roles.has_role(self.user, Roles.pm):
             return 'pm'
+
+    def visible_tickets(self):
+        selfprojects = self.projects.values_list('id', flat=True)
+        return Ticket.objects.filter(Q(project__in=selfprojects) | Q(project__parent__in=selfprojects))
 
 
 

@@ -69,10 +69,14 @@ a.novisited:visited {
     .navbar .pull-right li {
         padding: 0.5em 1em;
         background: transparent;
+        float: left;
     }
     .navbar .nav {
         float: left;
         color: #000;
+    }
+    .navbar .search input {
+        width: 20em;
     }
 .icon-carrot-big {
     background: url(../img/carrot_icon.png) no-repeat;
@@ -419,4 +423,11 @@ p {
 .report-timelog h3 {
     font-size: 1.4em;
     margin: 1.5em 0 0.5em 0;
+}
+
+.search h1 {
+    margin: 0.5em 0;
+}
+.search .tickets tr {
+    color: #000;
 }

@@ -11,6 +11,8 @@ urlpatterns = patterns('carrot_dash.views',
 
     url(r'reports/timelog/$', 'report_timelog', name='report_week'),
 
+    url(r'search/$', 'search', name='carrot_search'),
+
     url(r'^logout/$', 'logout_view', name='carrot_logout'),
     url(r'^login/$', 'login_view', name='carrol_login')
 )

@@ -1,0 +1,31 @@
+<tr class="js_ticket status-{{ ticket.status }}
+    {% if ticket.assignee %}{% if ticket.assignee.pk = user.pk %} mine{% else %} not-mine{% endif %}{% endif %}
+    {% if ticket.is_active %} ticket-active{% endif %}">
+  <td class="kind kind_{{ ticket.kind }}">
+    {% if ticket.kind == 'bug' %}
+    <span class="label kind_{{ ticket.kind }}">bug</span>
+    {% endif %}
+  </td>
+  <td class="number">
+    <a class="novisited js_href" href="{% url carrot_ticket ticket.project.slug ticket.number %}"></a>
+    <a class="novisited" href="{% url carrot_ticket ticket.project.slug ticket.number %}">#{{ ticket.number }}</a>
+  </td>
+  <td class="status status_{{ ticket.status }}">
+    {{ ticket.get_status_display }}
+  </td>
+  <td class="comments">
+    {% with ticket.real_comments.count as commentscount %}
+    {% if commentscount%}<div>{{ commentscount }}</div>{% endif %}
+    {% endwith %}
+  <td class="priority"><span class="{% if ticket.get_priority_display == 'blocker' %}icon-exclamation-sign{% endif %}{% if ticket.get_priority_display == 'minor' %}icon-arrow-down{% endif %}"></span></td>
+  <td class="summary">{{ ticket.summary }}</td>
+  <td class="estimate">
+    {% if ticket.time_spent %}
+    <span class="time-spent">{{ ticket.time_spent }}</span>
+    {% endif %}
+    {% if ticket.time_spent and ticket.estimates.all.0.hours %}
+    из
+    {% endif %}
+    {{ ticket.estimates.all.0.hours }}
+  </td>
+</tr>
