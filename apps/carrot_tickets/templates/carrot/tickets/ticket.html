@@ -2,6 +2,7 @@
 {% load humanize %}
 {% load gravatar %}
 {% load thumbnail %}
+{% load pluralize %}
 
 {% block title %}#{{ ticket.number }} | Carrot {% endblock %}
 
@@ -44,12 +45,13 @@
           <dt>Version</dt><dd>{{ ticket.fix_version.name }}</dd>
           <dt>Status</dt><dd>{{ ticket.get_status_display }}</dd>
           <dt>Priority</dt><dd>{{ ticket.get_priority_display }}</dd>
+          <dt>Estimate</dt><dd>{{ ticket.estimate }} {{ ticket.estimate|rupluralize:"час,часа,часов" }}</dd>
           <dt>Reporter</dt><dd>{{ ticket.reporter.get_full_name }}</dd>
           <dt>Assignee</dt><dd>{{ ticket.assignee.get_full_name }}</dd>
         </dl>
         <ul class="timelog-info">
           {% for tl in timelogs %}
-          <li>{{ tl.user.get_full_name }} {{ tl.get_hours }} часов <span class="interval">{{ tl.start|date:"d.m.Y H:i" }}—{{ tl.end|date:"d.m.Y H:i" }}</span></li>
+          <li>{{ tl.user.get_full_name }} {{ tl.get_hours}} {{ tl.get_hours|rupluralize:"час,часа,часов" }} <span class="interval">{{ tl.start|date:"d.m.Y H:i" }}—{{ tl.end|date:"d.m.Y H:i" }}</span></li>
           {% endfor %}
         </ul>
       </div>

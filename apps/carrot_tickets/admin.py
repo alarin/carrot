@@ -16,6 +16,7 @@ class TicketAdmin(admin.ModelAdmin):
     list_display = ('project', 'fix_version', 'kind', 'summary')
     list_display_links = ('summary',)
     list_filter = ('project', 'fix_version')
+    search_fields = ('summary', 'number')
 
     inlines = [AttachmentInline]
 
