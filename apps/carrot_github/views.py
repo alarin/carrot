@@ -10,7 +10,7 @@ import re
 
 RE_TICKET_NUMBER = re.compile("#(\d+)")
 
-COMMENT_TEXT = r"%(url)s\n\n%(message)s"
+COMMENT_TEXT = "%(url)s\n\n%(message)s"
 
 @csrf_exempt
 def github(request):
@@ -38,11 +38,14 @@ def github(request):
             email = commit['author']['email']
             author = User.objects.get(Q(email=email) | Q(carrotprofile__emails__icontains=email))
             ticket_ids = [match.group(1) for match in RE_TICKET_NUMBER.finditer(commit['message'])]
-            for ticket in Ticket.objects.filter(Q(project=project)|Q(project__parent=project))\
-                .filter(number__in=ticket_ids):
+
+            found_tickets = Ticket.objects.filter(Q(project=project)|Q(project__parent=project))\
+                .filter(number__in=ticket_ids)
+            for ticket in found_tickets:
                 TicketComment.objects.create(ticket=ticket, author=author, kind=CommentKind.COMMIT,
                     content = COMMENT_TEXT % commit)
-            else:
+
+            if not len(found_tickets):
                 raise Exception('No tickets %s, %s, %s' % (author, project, ticket_ids))
 
         return HttpResponse('ok')
