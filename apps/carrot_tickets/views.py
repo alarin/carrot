@@ -2,6 +2,7 @@
 from carrot_tickets import signals
 from carrot_tickets.forms import CommentForm, TicketForm
 from carrot_tickets.workflow import get_actions, apply_action
+from carrot_timetrack.models import TicketEstimate
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
@@ -58,14 +59,17 @@ def ticket_edit(request, project_slug=None, ticket_number=None):
         ticket = get_object_or_404(Ticket, number=ticket_number, project__slug=project_slug)
     images = ticket.attachments.filter(kind='image').order_by('created')
     files = ticket.attachments.exclude(kind='image').order_by('created')
-
+    estimate = TicketEstimate.objects.filter(ticket=ticket)
     if is_new:
         initial_data = {
             'project': request.GET.get('project'),
             'fix_version': request.GET.get('version'),
+            'estimate': estimate and estimate[0].hours or '',
         }
     else:
-        initial_data = {}
+        initial_data = {
+            'estimate': estimate and estimate[0].hours or '',
+        }
     ticket_form = TicketForm(instance=ticket, initial=initial_data)
 
     def get_redirect_path(ticket):
@@ -82,6 +86,11 @@ def ticket_edit(request, project_slug=None, ticket_number=None):
                 if not ticket.pk or not ticket.reporter:
                     ticket.reporter = request.user
                 ticket.save(user=request.user)
+                if request.user.carrotprofile.role() == 'pm':
+                    if ticket_form.cleaned_data['estimate']:
+                        te = TicketEstimate.objects.get_or_create(ticket=ticket)[0]
+                        te.hours = int(ticket_form.cleaned_data['estimate'])
+                        te.save()
                 if ticket_form.cleaned_data['file']:
                     TicketAttachment.objects.create(ticket=ticket, file=ticket_form.cleaned_data['file'])
                 return get_redirect_path(ticket)
